@@ -36,8 +36,9 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
                 delay: 0.2,
               }}
             >
-              Hi! I’m Nico Pellerin, a developer from Montreal, Canada. My goal
-              is to help you learn new life changing coding skills{' '}
+              Hi! I’m Nico Pellerin, a <strong>software developer</strong> from
+              Montreal, Canada. My goal is to help you learn new{' '}
+              <strong>life changing</strong> coding skills{' '}
               <span style={{ color: 'unset' }}>&#128640;</span>
             </Tagline>
             <Button whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
@@ -169,8 +170,12 @@ const Tagline = styled(motion.h2)`
   letter-spacing: 1.1px;
   margin-bottom: 2.6rem;
   font-family: 'Inter';
-  line-height: 1.3;
+  line-height: 1.4;
   max-width: 35ch;
+
+  strong {
+    color: #9b51e0;
+  }
 
   @media (max-width: 330px) {
     font-size: 2rem;
