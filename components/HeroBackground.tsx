@@ -161,10 +161,6 @@ const Title = styled(motion.h1)`
 
 const Tagline = styled(motion.h2)`
   font-size: 2.4rem;
-  /* background: -webkit-linear-gradient(45deg, #f1f1f1 1%, #f6deff 123.31%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; */
   color: #f1f1f1;
   font-weight: 500;
   letter-spacing: 1.1px;
@@ -174,7 +170,10 @@ const Tagline = styled(motion.h2)`
   max-width: 35ch;
 
   strong {
-    color: #9b51e0;
+    background: -webkit-linear-gradient(45deg, #f6deff 1%, #9b51e0 123.31%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   @media (max-width: 330px) {
