@@ -1,11 +1,10 @@
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
 
-import HeroBackground from "../components/HeroBackground";
-import Layout from "../components/Layout";
+import HeroBackground from '../components/HeroBackground'
+import Layout from '../components/Layout'
 
 const IndexPage = () => {
-  const [toggleDropdown, setToggleDropwdown] = useState(false);
+  const [toggleDropdown, setToggleDropwdown] = useState(false)
 
   return (
     <Layout title="Home | Next.js + TypeScript Example">
@@ -14,7 +13,7 @@ const IndexPage = () => {
         setToggleDropdown={setToggleDropwdown}
       />
     </Layout>
-  );
-};
+  )
+}
 
-export default IndexPage;
+export default IndexPage

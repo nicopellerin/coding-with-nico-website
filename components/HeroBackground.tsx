@@ -1,7 +1,6 @@
-import React, { useState, Dispatch, SetStateAction, FC } from 'react'
+import React, { Dispatch, SetStateAction, FC } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { FaCode } from 'react-icons/fa'
 
 // import dynamic from 'next/dynamic'
