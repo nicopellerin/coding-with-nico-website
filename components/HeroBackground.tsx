@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction, FC } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { FaCode } from 'react-icons/fa'
+import Wave from './Wave'
 
 // import dynamic from 'next/dynamic'
 
@@ -44,7 +45,7 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
             <Button whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
               Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
             </Button>
-            <motion.img
+            <Blob
               src="images/blob.svg"
               style={{ position: 'absolute' }}
               animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
@@ -56,12 +57,9 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
               }}
             />
           </Info>
-          <img src="/images/character.png" style={{ maxWidth: '98%' }} />
+          <Character src="/images/character.png" alt="Character" />
         </Container>
-        <img
-          src="/images/wave.svg"
-          style={{ position: 'absolute', bottom: 0 }}
-        />
+        <Wave />
       </Wrapper>
       {/* <AnimatePresence>
         {toggleDropdown && (
@@ -94,13 +92,31 @@ const Wrapper = styled.div`
     background: url('/images/back.png');
     background-size: cover;
     background-position-y: center;
+    padding: 0 4rem;
+  }
+
+  @media (min-width: 1367px) {
+    padding: 0;
   }
 `
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 160rem;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    margin-top: -5rem;
+  }
+
+  @media (min-width: 1367px) {
+    grid-template-columns: 1fr 1fr;
+    max-width: 140rem;
+  }
+
+  @media (min-width: 1700px) {
+    position: static;
+    max-width: 160rem;
+  }
 `
 
 const Info = styled(motion.div)`
@@ -110,44 +126,36 @@ const Info = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  margin-top: -10rem;
   position: relative;
-  /* position: absolute;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%; */
-
-  /* @media (max-width: 330px) {
-    top: 45%;
-  }
 
   @media (min-width: 768px) {
-    top: 48%;
+    top: -5rem;
+    left: -10rem;
   }
 
   @media (min-width: 1024px) {
-    padding: 0;
-    top: 46%;
+    top: 0rem;
+    left: -20rem;
   }
 
   @media (min-width: 1366px) {
-    padding: 0;
-    top: 40%;
-  } */
+    top: -2rem;
+    left: -30rem;
+  }
+
+  @media (min-width: 1400px) {
+    position: static;
+  }
 `
 
 const Title = styled(motion.h1)`
   font-size: 6.2rem;
-  /* background: -webkit-linear-gradient(45deg, #e39aff 1%, #f4d7ff 123.31%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent; */
   color: #f4d7ff;
   margin-bottom: 2.6rem;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   line-height: 1.05;
+  max-width: 13ch;
 
   @media (max-width: 330px) {
     font-size: 5.2rem;
@@ -160,7 +168,7 @@ const Title = styled(motion.h1)`
   }
 
   @media (min-width: 768px) {
-    font-size: 7.2rem;
+    font-size: 8rem;
     margin-bottom: 3.2rem;
   }
 
@@ -177,7 +185,7 @@ const Tagline = styled(motion.h2)`
   margin-bottom: 2.6rem;
   font-family: 'Inter';
   line-height: 1.4;
-  max-width: 35ch;
+  max-width: 37ch;
 
   strong {
     background: -webkit-linear-gradient(45deg, #f6deff 1%, #9b51e0 123.31%);
@@ -238,4 +246,38 @@ const Button = styled(motion.button)`
   @media (min-width: 1366px) {
     /* font-size: 2.4rem; */
   }
+`
+
+const Character = styled.img`
+  max-width: 98%;
+
+  @media (min-width: 768px) {
+    position: absolute;
+    width: 80rem;
+    right: 0rem;
+    bottom: 8rem;
+  }
+
+  @media (min-width: 1024px) {
+    position: absolute;
+    width: 60rem;
+    right: 0rem;
+    bottom: 8rem;
+  }
+
+  @media (min-width: 1366px) {
+    position: absolute;
+    width: 80rem;
+    right: 0rem;
+    bottom: 10rem;
+  }
+
+  @media (min-width: 1500px) {
+    position: relative;
+    bottom: 0;
+  }
+`
+
+const Blob = styled(motion.img)`
+  max-width: 100%;
 `

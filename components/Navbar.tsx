@@ -23,7 +23,7 @@ const Navbar = () => {
     <Wrapper>
       <Link href="/">
         <a>
-          <Image src="/images/logo.svg" alt="Logo" width={330} height={50} />
+          <Logo src="/images/logo.svg" alt="Logo" />
         </a>
       </Link>
       <Menu>
@@ -67,24 +67,29 @@ export default Navbar
 
 // Styles
 const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  z-index: 100;
-  padding: 3rem 0rem;
-  max-width: 160rem;
+  display: none;
 
-  @media (max-width: 1367px) {
-    padding: 4rem 4rem;
+  @media (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 100;
+    padding: 3rem 0rem;
+    max-width: 140rem;
   }
 
-  @media (max-width: 1023px) {
-    display: none;
+  @media (min-width: 1024px) {
+    padding: 4rem 0rem;
+  }
+
+  @media (min-width: 1700px) {
+    padding: 3rem 0rem;
+    max-width: 160rem;
   }
 `
 
@@ -155,4 +160,8 @@ const Button = styled(motion.button)`
   @media (min-width: 1366px) {
     /* font-size: 2.4rem; */
   }
+`
+
+const Logo = styled.img`
+  width: 33rem;
 `
