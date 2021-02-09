@@ -21,7 +21,11 @@ const Navbar = () => {
 
   return (
     <Wrapper>
-      <Image src="/images/logo.svg" alt="Logo" width={330} height={50} />
+      <Link href="/">
+        <a>
+          <Image src="/images/logo.svg" alt="Logo" width={330} height={50} />
+        </a>
+      </Link>
       <Menu>
         <MenuList onMouseLeave={() => setIndex(null)}>
           <AnimateSharedLayout>
@@ -50,7 +54,9 @@ const Navbar = () => {
               </MenuListItem>
             ))}
           </AnimateSharedLayout>
-          <Button>Login</Button>
+          <Button whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
+            Login
+          </Button>
         </MenuList>
       </Menu>
     </Wrapper>

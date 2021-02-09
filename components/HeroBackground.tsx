@@ -44,7 +44,17 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
             <Button whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
               Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
             </Button>
-            <img src="images/blob.svg" style={{ position: 'absolute' }} />
+            <motion.img
+              src="images/blob.svg"
+              style={{ position: 'absolute' }}
+              animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
+              transition={{
+                type: 'tween',
+                duration: 7,
+                repeat: Infinity,
+                repeatType: 'reverse',
+              }}
+            />
           </Info>
           <img src="/images/character.png" style={{ maxWidth: '98%' }} />
         </Container>
