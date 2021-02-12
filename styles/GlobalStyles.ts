@@ -57,11 +57,12 @@ body {
   height: 100%;
   min-height: 100%;
   font-family: var(--systemFont);
-  color: #333;
+  color: #f4f4f4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translateZ(0);
   overflow-x: hidden;
+  background: #010101;
 }
 
 

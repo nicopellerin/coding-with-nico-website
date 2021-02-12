@@ -7,7 +7,7 @@ const IndexPage = () => {
   const [toggleDropdown, setToggleDropwdown] = useState(false)
 
   return (
-    <Layout title="Home | Next.js + TypeScript Example">
+    <Layout title="Coding With Nico">
       <HeroBackground
         toggleDropdown={toggleDropdown}
         setToggleDropdown={setToggleDropwdown}
