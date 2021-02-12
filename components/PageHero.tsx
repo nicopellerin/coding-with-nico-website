@@ -2,7 +2,6 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import WavePage from './WavePage'
 import Background from './Background'
 
 interface Props {
@@ -12,20 +11,9 @@ interface Props {
   bgGradientTwo?: string
 }
 
-const PageHero: React.FC<Props> = ({
-  title = 'Some page',
-  bgImage = '/images/back.png',
-  bgGradientOne = '146, 146, 240',
-  bgGradientTwo = '30, 144, 255',
-}) => {
+const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
   return (
-    <Wrapper
-      style={{
-        // background: `linear-gradient( rgba(${bgGradientOne}, 0.01), rgba(${bgGradientTwo}, 0.01)), url('${bgImage}')`,
-        backgroundAttachment: 'fixed',
-        backgroundSize: 'cover',
-      }}
-    >
+    <Wrapper>
       <Background />
       <Title
         initial={{ opacity: 0, y: 200 }}
