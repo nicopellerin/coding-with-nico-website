@@ -13,7 +13,7 @@ const Background = () => {
   return (
     <Canvas
       colorManagement
-      concurrent
+      // concurrent
       camera={{
         position: [10, -50, 30],
       }}
@@ -34,26 +34,21 @@ const Background = () => {
         gl.setClearColor(new THREE.Color('#001'))
       }}
     >
-      <React.Suspense fallback={null}>
-        <Stars />
-        <fog attach="fog" args={['#DD5E98', 8, 1]} />
-        <directionalLight position={[0, 1, 2]} color="#DD5E98" />
-        <EffectComposer>
-          <DepthOfField
-            focusDistance={0}
-            focalLength={2}
-            bokehScale={2}
-            height={480}
-          />
-          <Bloom
-            luminanceThreshold={20}
-            luminanceSmoothing={0.9}
-            height={300}
-          />
-          {/* <Noise opacity={0.02} /> */}
-          <Vignette eskil={false} offset={0.1} darkness={1} />
-        </EffectComposer>
-      </React.Suspense>
+      {/* <React.Suspense fallback={null}> */}
+      <Stars />
+      <fog attach="fog" args={['#DD5E98', 8, 1]} />
+      <directionalLight position={[0, 1, 2]} color="#DD5E98" />
+      <EffectComposer>
+        <DepthOfField
+          focusDistance={0}
+          focalLength={2}
+          bokehScale={2}
+          height={480}
+        />
+        <Bloom luminanceThreshold={20} luminanceSmoothing={0.9} height={300} />
+        <Vignette eskil={false} offset={0.1} darkness={1} />
+      </EffectComposer>
+      {/* </React.Suspense> */}
     </Canvas>
   )
 }

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 import Layout from '../components/Layout'
 import PageHero from '../components/PageHero'
+import Me from '../components/Me'
 
 const AboutPage = () => {
   return (
@@ -23,10 +24,7 @@ const AboutPage = () => {
         </Wave>
         <Container>
           <Info>
-            <picture>
-              <source srcSet="/images/me.webp" type="image/webp" />
-              <Me src="/images/me.jpg" alt="Nico Pellerin" />
-            </picture>
+            <Me />
             <div>
               <Blob
                 src="images/blob.svg"
@@ -115,21 +113,6 @@ const Info = styled.div`
   @media (min-width: 768px) {
     grid-template-columns: 1fr 2fr;
     gap: 5rem;
-  }
-`
-
-const Me = styled.img`
-  max-width: 80%;
-  border-radius: 50%;
-  border: 5px solid #f4f4f4;
-  margin: 0 auto;
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 200;
-
-  @media (min-width: 768px) {
-    margin-bottom: 0rem;
-    max-width: 90%;
   }
 `
 
