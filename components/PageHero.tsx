@@ -12,8 +12,10 @@ interface Props {
 }
 
 const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
+  const constraintsRef = React.useRef(null)
+
   return (
-    <Wrapper>
+    <Wrapper ref={constraintsRef}>
       <Background />
       <Title
         initial={{ opacity: 0, y: 200 }}
@@ -24,6 +26,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
       </Title>
       <motion.img
         drag
+        dragConstraints={constraintsRef}
         src="/images/cloud1.png"
         alt="rocket"
         style={{
@@ -44,6 +47,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
       />
       <motion.img
         drag
+        dragConstraints={constraintsRef}
         src="/images/cloud2.png"
         alt="rocket"
         style={{
@@ -64,6 +68,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
       />
       <motion.img
         drag
+        dragConstraints={constraintsRef}
         src="/images/cloud3.png"
         alt="rocket"
         style={{

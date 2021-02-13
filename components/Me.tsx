@@ -1,13 +1,22 @@
 import * as React from 'react'
-import { useState, memo } from 'react'
+import { useState, useEffect, memo } from 'react'
 import styled from 'styled-components'
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import { useRecoilValue } from 'recoil'
 
 import { audioOnState } from '../store/audio'
 
 const Me = () => {
   const [flip, setFlip] = useState(false)
+
+  const controls = useAnimation()
+
+  useEffect(() => {
+    controls.start({
+      skewY: [-5, 2],
+    })
+    return () => controls.stop()
+  }, [])
 
   const audioOn = useRecoilValue(audioOnState)
 
@@ -32,7 +41,7 @@ const Me = () => {
       <MeImg
         src={flip ? '/images/me2.jpg' : '/images/me.jpg'}
         alt="Nico Pellerin"
-        animate={{ rotate: flip ? 10 : 0, skewY: flip ? 2 : [-5, 2] }}
+        animate={controls}
         whileTap={{ scale: 1.2, rotate: 360 }}
         onClick={playSound}
       />

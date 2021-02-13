@@ -4,6 +4,7 @@ import { FiVolume2, FiVolumeX } from 'react-icons/fi'
 import { useRecoilState } from 'recoil'
 
 import { audioOnState } from '../store/audio'
+import { motion } from 'framer-motion'
 
 const SoundControl = () => {
   const [audioOn, setAudioOn] = useRecoilState(audioOnState)
@@ -18,14 +19,18 @@ const SoundControl = () => {
   return (
     <>
       {audioOn ? (
-        <VolumeOnIcon onClick={() => setAudioOn(false)} />
+        <motion.span whileTap={{ scale: 0.98 }}>
+          <VolumeOnIcon onClick={() => setAudioOn(false)} />
+        </motion.span>
       ) : (
-        <VolumeOffIcon
-          onClick={() => {
-            setAudioOn(true)
-            tocSound.play()
-          }}
-        />
+        <motion.span whileTap={{ scale: 0.98 }}>
+          <VolumeOffIcon
+            onClick={() => {
+              setAudioOn(true)
+              tocSound.play()
+            }}
+          />
+        </motion.span>
       )}
     </>
   )
@@ -36,14 +41,14 @@ export default React.memo(SoundControl)
 // Styles
 const VolumeOnIcon = styled(FiVolume2)`
   font-size: 2rem;
-  margin-left: 3rem;
+  margin-left: 3.6rem;
   color: #bb6bd9;
   cursor: pointer;
 `
 
 const VolumeOffIcon = styled(FiVolumeX)`
   font-size: 2rem;
-  margin-left: 3rem;
+  margin-left: 3.6rem;
   color: #bb6bd9;
   cursor: pointer;
 `
