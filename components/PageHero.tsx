@@ -36,10 +36,10 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
         animate={{ y: [5, 0, 5] }}
         transition={{
           type: 'tween',
-          duration: 5,
+          duration: 4,
           repeat: Infinity,
           repeatType: 'loop',
-          delay: 0.4,
+          delay: 0.2,
         }}
       />
       <motion.img
@@ -60,6 +60,27 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
           repeat: Infinity,
           repeatType: 'loop',
           delay: 0.4,
+        }}
+      />
+      <motion.img
+        drag
+        src="/images/cloud3.png"
+        alt="rocket"
+        style={{
+          maxWidth: '7rem',
+          position: 'absolute',
+          top: '11rem',
+          right: '36vw',
+          cursor: 'grab',
+          zIndex: 2,
+        }}
+        animate={{ y: [5, 0, 5] }}
+        transition={{
+          type: 'tween',
+          duration: 4,
+          repeat: Infinity,
+          repeatType: 'loop',
+          delay: 0.3,
         }}
       />
       <motion.img

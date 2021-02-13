@@ -5,6 +5,7 @@ import { useRecoilValue } from 'recoil'
 import { FaCode } from 'react-icons/fa'
 
 import { audioOnState } from '../store/audio'
+import Link from 'next/link'
 
 const HeroButton = () => {
   const audioOn = useRecoilValue(audioOnState)
@@ -18,13 +19,15 @@ const HeroButton = () => {
   const playSound = () => audioOn && clickSound.play()
 
   return (
-    <Button
-      whileHover={{ y: -1 }}
-      whileTap={{ scale: 0.98 }}
-      onClick={playSound}
-    >
-      Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
-    </Button>
+    <Link href="/courses">
+      <Button
+        whileHover={{ y: -1 }}
+        whileTap={{ scale: 0.98 }}
+        onClick={playSound}
+      >
+        Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
+      </Button>
+    </Link>
   )
 }
 
