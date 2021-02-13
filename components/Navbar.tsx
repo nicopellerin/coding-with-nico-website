@@ -1,7 +1,13 @@
-import React, { useState } from 'react'
+import * as React from 'react'
+import { useState } from 'react'
 import { AnimateSharedLayout, motion } from 'framer-motion'
 import Link from 'next/link'
 import styled from 'styled-components'
+import { useRecoilValue } from 'recoil'
+
+import SoundControl from './SoundControl'
+
+import { audioOnState } from '../store/audio'
 
 const links: Link[] = [
   { text: 'About', link: '/about' },
@@ -18,18 +24,40 @@ interface Link {
 const Navbar = () => {
   const [index, setIndex] = useState<number | null>(null)
 
+  const audioOn = useRecoilValue(audioOnState)
+
+  let popSound: HTMLAudioElement
+  let clickSound: HTMLAudioElement
+  let homeSound: HTMLAudioElement
+
+  if (typeof Audio !== 'undefined') {
+    popSound = new Audio('/sounds/pop_drip.mp3')
+    clickSound = new Audio('/sounds/click_snip.mp3')
+    homeSound = new Audio('/sounds/click_natural.mp3')
+  }
+
   return (
     <Wrapper>
       <Link href="/">
         <a>
-          <Logo src="/images/logo.svg" alt="Logo" />
+          <Logo
+            src="/images/logo.svg"
+            alt="Logo"
+            onClick={() => homeSound.play()}
+          />
         </a>
       </Link>
       <Menu>
         <MenuList onMouseLeave={() => setIndex(null)}>
           <AnimateSharedLayout>
             {links.map(({ text, link }, i) => (
-              <MenuListItem key={link} onMouseOver={() => setIndex(i)}>
+              <MenuListItem
+                key={link}
+                onMouseOver={() => {
+                  setIndex(i)
+                }}
+                onClick={() => audioOn && popSound.play()}
+              >
                 <Link href={link}>
                   <StyledLink>
                     {text}
@@ -53,16 +81,21 @@ const Navbar = () => {
               </MenuListItem>
             ))}
           </AnimateSharedLayout>
-          <Button whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
+          <Button
+            whileHover={{ y: -1 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={() => audioOn && clickSound.play()}
+          >
             Login
           </Button>
+          <SoundControl />
         </MenuList>
       </Menu>
     </Wrapper>
   )
 }
 
-export default Navbar
+export default React.memo(Navbar)
 
 // Styles
 const Wrapper = styled.div`
@@ -80,6 +113,7 @@ const Wrapper = styled.div`
     z-index: 100;
     padding: 3rem 0rem;
     max-width: 140rem;
+    pointer-events: none;
   }
 
   @media (min-width: 1024px) {
@@ -94,6 +128,7 @@ const Wrapper = styled.div`
 
 const Menu = styled.nav`
   display: flex;
+  pointer-events: all;
 `
 
 const MenuList = styled.ul`
@@ -163,4 +198,5 @@ const Button = styled(motion.button)`
 
 const Logo = styled.img`
   width: 33rem;
+  pointer-events: all;
 `

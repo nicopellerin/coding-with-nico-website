@@ -1,8 +1,9 @@
 import React, { Dispatch, SetStateAction, FC } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import { FaCode } from 'react-icons/fa'
+
 import Wave from './Wave'
+import HeroButton from './HeroButton'
 
 // import dynamic from 'next/dynamic'
 
@@ -14,7 +15,9 @@ interface Props {
 }
 
 const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
+  // TEMP - REMOVE
   console.log(toggleDropdown, setToggleDropdown)
+
   return (
     <>
       <Wrapper>
@@ -42,9 +45,7 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
               <strong>life changing</strong> coding skills{' '}
               <span style={{ color: 'unset' }}>&#128640;</span>
             </Tagline>
-            <Button whileHover={{ y: -1 }} whileTap={{ scale: 0.98 }}>
-              Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
-            </Button>
+
             <Blob
               src="images/blob.svg"
               style={{ position: 'absolute' }}
@@ -56,8 +57,20 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
                 repeatType: 'reverse',
               }}
             />
+            <HeroButton />
           </Info>
-          <Character src="/images/character.png" alt="Character" />
+          <Character
+            src="/images/character.png"
+            alt="Character"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: 'spring',
+              damping: 18,
+              stiffness: 60,
+              delay: 0.2,
+            }}
+          />
         </Container>
         <Wave />
       </Wrapper>
@@ -73,7 +86,7 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
   )
 }
 
-export default HeroBackground
+export default React.memo(HeroBackground)
 
 // Styles
 const Wrapper = styled.div`
@@ -218,37 +231,7 @@ const Tagline = styled(motion.h2)`
   }
 `
 
-const Button = styled(motion.button)`
-  border: none;
-  padding: 1.4rem 2.6rem;
-  font-size: 2.2rem;
-  border-radius: 0.5rem;
-  font-weight: 700;
-  background: linear-gradient(95.66deg, #61dafb 30.07%, #bb6bd9 104.98%);
-  color: #333;
-  cursor: pointer;
-  position: relative;
-  z-index: 900;
-  box-shadow: 0 0 15px 3px rgba(89, 86, 213, 0.7);
-  outline: none;
-  font-family: 'Space Grotesk', sans-serif;
-  display: flex;
-  align-items: center;
-
-  @media (max-width: 330px) {
-    font-size: 1.8rem;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 2.2rem;
-  }
-
-  @media (min-width: 1366px) {
-    /* font-size: 2.4rem; */
-  }
-`
-
-const Character = styled.img`
+const Character = styled(motion.img)`
   max-width: 98%;
 
   @media (min-width: 768px) {

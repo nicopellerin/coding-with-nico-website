@@ -61,6 +61,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-transform: translateZ(0);
+  transform: translateZ(0);
   overflow-x: hidden;
   background: #010101;
 }
@@ -69,7 +70,7 @@ body {
 h1, h2, h3, h4, h5 {
   margin-top: 0;
   color: #333;
-  font-family: 'Lora', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 

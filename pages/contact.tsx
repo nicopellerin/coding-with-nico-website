@@ -2,12 +2,12 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import Me from '../components/Me'
 import LayoutPage from '../components/LayoutPage'
+import Me from '../components/Me'
 
-const AboutPage = () => {
+const ContactPage = () => {
   return (
-    <LayoutPage title="About">
+    <LayoutPage title="Contact">
       <Wrapper>
         <Wave
           xmlns="http://www.w3.org/2000/svg"
@@ -41,10 +41,9 @@ const AboutPage = () => {
                   position: 'absolute',
                   top: 50,
                   left: 350,
-                  width: 320,
+                  width: 300,
                   opacity: 0.4,
                   rotate: -10,
-                  skewY: 2,
                 }}
                 transition={{
                   type: 'tween',
@@ -53,50 +52,21 @@ const AboutPage = () => {
                   repeatType: 'reverse',
                 }}
               />
-              <Welcome
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: 'spring',
-                  damping: 18,
-                  stiffness: 60,
-                  delay: 0.1,
-                }}
-              >
+              <Welcome>
                 Hi! I'm Nico &#128400;{' '}
                 <img
                   src="/images/icon-books.png "
                   style={{ width: '5rem', marginLeft: 12 }}
                 />
               </Welcome>
-              <Text
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: 'spring',
-                  damping: 18,
-                  stiffness: 60,
-                  delay: 0.1,
-                }}
-              >
-                Based out of Montreal, Canada, I'm a developer with a passion
-                for all things tech. Currently employed as an application
-                developer, I enjoy continually learning new concepts and staying
-                up-to-date with the latest tech in this fast-paced environment.
-              </Text>
-              <Text
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  type: 'spring',
-                  damping: 18,
-                  stiffness: 60,
-                  delay: 0.1,
-                }}
-              >
-                When not coding, I love to produce electronic music, as well as
-                design stuff. I also recently took an interest in creating audio
-                VST plugins.
+              <Text>
+                I will be your instructor for this course. Based out of
+                Montreal, Canada, I'm a developer with a passion for all things
+                tech. Currently employed as an application developer, I enjoy
+                continually learning new concepts and staying up-to-date with
+                the latest tech in this fast-paced environment. When not coding,
+                I love to produce electronic music, as well as design stuff. I
+                also recently took an interest in creating audio VST plugins.
               </Text>
             </div>
           </Info>
@@ -106,7 +76,7 @@ const AboutPage = () => {
   )
 }
 
-export default AboutPage
+export default ContactPage
 
 // Styles
 const Wrapper = styled.div`
@@ -132,13 +102,13 @@ const Container = styled.div`
   }
 `
 
-const Text = styled(motion.p)`
+const Text = styled.p`
   font-size: 2rem;
   font-weight: 500;
   line-height: 1.6;
 `
 
-const Info = styled(motion.div)`
+const Info = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: 1fr;
@@ -149,7 +119,7 @@ const Info = styled(motion.div)`
   }
 `
 
-const Welcome = styled(motion.h3)`
+const Welcome = styled.h3`
   font-size: 3.4rem;
   color: #f4d7ff;
   display: flex;
@@ -162,7 +132,6 @@ const Wave = styled(motion.svg)`
   top: -200px;
   left: 0;
   filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
-  pointer-events: none;
 
   /* @media (min-width: 768px) {
     bottom: -1rem;

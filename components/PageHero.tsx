@@ -23,6 +23,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
         {title}
       </Title>
       <motion.img
+        drag
         src="/images/cloud1.png"
         alt="rocket"
         style={{
@@ -30,6 +31,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
           position: 'absolute',
           top: '15rem',
           left: '26vw',
+          cursor: 'grab',
         }}
         animate={{ y: [5, 0, 5] }}
         transition={{
@@ -41,6 +43,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
         }}
       />
       <motion.img
+        drag
         src="/images/cloud2.png"
         alt="rocket"
         style={{
@@ -48,6 +51,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
           position: 'absolute',
           top: '5rem',
           left: '36vw',
+          cursor: 'grab',
         }}
         animate={{ y: [5, 0, 5] }}
         transition={{
@@ -59,6 +63,8 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
         }}
       />
       <motion.img
+        drag
+        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
         src="/images/rocket.png"
         alt="rocket"
         style={{
@@ -66,6 +72,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
           position: 'absolute',
           top: '10rem',
           right: '22vw',
+          cursor: 'grab',
         }}
         animate={{ y: [7, 0, 7], x: [2, 0, 2] }}
         transition={{
