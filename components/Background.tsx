@@ -9,7 +9,11 @@ import {
   Vignette,
 } from '@react-three/postprocessing'
 
-const Background = () => {
+interface Props {
+  bgColor?: string
+}
+
+const Background: React.FC<Props> = ({ bgColor }) => {
   return (
     <Canvas
       colorManagement
@@ -31,7 +35,7 @@ const Background = () => {
       }}
       onCreated={({ gl }) => {
         gl.toneMapping = THREE.ACESFilmicToneMapping
-        gl.setClearColor(new THREE.Color('#001'))
+        gl.setClearColor(new THREE.Color(`${bgColor}`))
       }}
     >
       {/* <React.Suspense fallback={null}> */}

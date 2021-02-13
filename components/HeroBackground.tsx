@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 import Wave from './Wave'
 import HeroButton from './HeroButton'
+import TechBar from './TechBar'
 
 // import dynamic from 'next/dynamic'
 
@@ -57,7 +58,10 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
                 repeatType: 'reverse',
               }}
             />
-            <HeroButton />
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <HeroButton />
+              <TechBar />
+            </div>
           </Info>
           <Character
             src="/images/character.png"

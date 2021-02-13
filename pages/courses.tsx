@@ -7,7 +7,7 @@ import LayoutPage from '../components/LayoutPage'
 
 const CoursesPage = () => {
   return (
-    <LayoutPage title="Courses">
+    <LayoutPage title="Courses" bgColor="#001" img="/images/course.png">
       <Wrapper>
         <Wave
           xmlns="http://www.w3.org/2000/svg"

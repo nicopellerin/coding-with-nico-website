@@ -6,17 +6,20 @@ import Background from './Background'
 
 interface Props {
   title?: string
-  bgImage?: string
-  bgGradientOne?: string
-  bgGradientTwo?: string
+  img?: string
+  bgColor?: string
 }
 
-const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
+const PageHero: React.FC<Props> = ({
+  title = 'Some page',
+  img = '/images/rocket.png',
+  bgColor = '#001',
+}) => {
   const constraintsRef = React.useRef(null)
 
   return (
     <Wrapper ref={constraintsRef}>
-      <Background />
+      <Background bgColor={bgColor} />
       <Title
         initial={{ opacity: 0, y: 200 }}
         animate={{ opacity: 1, y: 0 }}
@@ -91,7 +94,7 @@ const PageHero: React.FC<Props> = ({ title = 'Some page' }) => {
       <motion.img
         drag
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-        src="/images/rocket.png"
+        src={img}
         alt="rocket"
         style={{
           maxWidth: '40rem',
