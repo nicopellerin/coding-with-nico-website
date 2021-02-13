@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
-import { AnimateSharedLayout, motion } from 'framer-motion'
+import { AnimateSharedLayout, motion, useAnimation } from 'framer-motion'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
@@ -23,8 +23,11 @@ interface Link {
 
 const Navbar = () => {
   const [index, setIndex] = useState<number | null>(null)
+  const [isHover, setIsHover] = useState(false)
 
   const audioOn = useRecoilValue(audioOnState)
+
+  const controls = useAnimation()
 
   let popSound: HTMLAudioElement
   let clickSound: HTMLAudioElement
@@ -36,15 +39,37 @@ const Navbar = () => {
     homeSound = new Audio('/sounds/click_natural.mp3')
   }
 
+  React.useEffect(() => {
+    if (isHover) {
+      controls.start({
+        y: [0, -20, 10, 0],
+        rotate: [0, 360],
+      })
+    }
+  }, [isHover])
+
   return (
     <Wrapper>
       <Link href="/">
         <a>
-          <Logo
-            src="/images/logo.svg"
-            alt="Logo"
-            onClick={() => homeSound.play()}
-          />
+          <div
+            style={{ position: 'relative' }}
+            onMouseOver={() => setIsHover(true)}
+            onMouseOut={() => setIsHover(false)}
+          >
+            <Logo
+              src="/images/logo.svg"
+              alt="Logo"
+              onClick={() => homeSound.play()}
+            />
+            <motion.img
+              src="/images/logo-o.svg"
+              alt="Logo"
+              // initial={{ rotate: 90 }}
+              animate={controls}
+              style={{ position: 'absolute', left: 23, top: 18 }}
+            />
+          </div>
         </a>
       </Link>
       <Menu>

@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
 
-import Navbar from './Navbar'
 import PageHero from './PageHero'
 
 interface Props {
@@ -23,7 +22,6 @@ const LayoutPage: React.FC<Props> = ({
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     </Head>
-    <Navbar />
     <PageHero title={title} bgColor={bgColor} img={img} />
     {children}
   </>
