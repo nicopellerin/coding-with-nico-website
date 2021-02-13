@@ -66,7 +66,7 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
           <Character
             src="/images/character.png"
             alt="Character"
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 20, skewY: -2 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               type: 'spring',
