@@ -112,6 +112,7 @@ export default AboutPage
 const Wrapper = styled.div`
   position: relative;
   background: #001;
+  z-index: 100;
 `
 
 const Container = styled.div`

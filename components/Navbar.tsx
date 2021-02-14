@@ -65,7 +65,6 @@ const Navbar = () => {
             <motion.img
               src="/images/logo-o.svg"
               alt="Logo"
-              // initial={{ rotate: 90 }}
               animate={controls}
               style={{ position: 'absolute', left: 23, top: 18 }}
             />
@@ -106,15 +105,21 @@ const Navbar = () => {
               </MenuListItem>
             ))}
           </AnimateSharedLayout>
-          <Button
-            whileHover={{ y: -1 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => audioOn && clickSound.play()}
-          >
-            Login
-          </Button>
-          <SoundControl />
         </MenuList>
+        <Controls>
+          <Link href="/login">
+            <a>
+              <Button
+                whileHover={{ y: -1 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => audioOn && clickSound.play()}
+              >
+                Login
+              </Button>
+            </a>
+          </Link>
+          <SoundControl />
+        </Controls>
       </Menu>
     </Wrapper>
   )
@@ -223,4 +228,9 @@ const Button = styled(motion.button)`
 const Logo = styled.img`
   width: 33rem;
   pointer-events: all;
+`
+
+const Controls = styled.div`
+  display: flex;
+  align-items: center;
 `

@@ -7,7 +7,7 @@ import Me from '../components/Me'
 
 const ContactPage = () => {
   return (
-    <LayoutPage title="Contact">
+    <LayoutPage title="Contact" img="/images/contact.png">
       <Wrapper>
         <Wave
           xmlns="http://www.w3.org/2000/svg"
@@ -132,6 +132,7 @@ const Wave = styled(motion.svg)`
   top: -200px;
   left: 0;
   filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
+  pointer-events: none;
 
   /* @media (min-width: 768px) {
     bottom: -1rem;

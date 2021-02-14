@@ -63,7 +63,7 @@ body {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   overflow-x: hidden;
-  background: #010101;
+  background: #001;
 }
 
 
