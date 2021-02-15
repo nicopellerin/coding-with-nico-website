@@ -50,6 +50,7 @@ const Button = styled(motion.button)`
   font-family: 'Space Grotesk', sans-serif;
   display: flex;
   align-items: center;
+  white-space: nowrap;
 
   @media (max-width: 330px) {
     font-size: 1.8rem;

@@ -87,7 +87,7 @@ const Container = styled.div`
 const Wave = styled(motion.svg)`
   position: absolute;
   width: 100vw;
-  top: -200px;
+  top: -129px;
   left: 0;
   filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
   pointer-events: none;

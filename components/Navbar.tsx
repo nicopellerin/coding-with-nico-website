@@ -62,11 +62,10 @@ const Navbar = () => {
               alt="Logo"
               onClick={() => homeSound.play()}
             />
-            <motion.img
+            <LogoCode
               src="/images/logo-o.svg"
-              alt="Logo"
+              alt="Logo code"
               animate={controls}
-              style={{ position: 'absolute', left: 23, top: 18 }}
             />
           </div>
         </a>
@@ -233,4 +232,15 @@ const Logo = styled.img`
 const Controls = styled.div`
   display: flex;
   align-items: center;
+`
+
+const LogoCode = styled(motion.img)`
+  position: absolute;
+  left: 2.2rem;
+  top: 1.6rem;
+
+  @media (min-width: 1500px) {
+    left: 2.3rem;
+    top: 1.8rem;
+  }
 `
