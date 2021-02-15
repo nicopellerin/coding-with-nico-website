@@ -2,10 +2,9 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import LayoutPage from '../../components/LayoutPage'
-import SelectTech from '../../components/SelectTech'
+import LayoutPage from '../../../components/LayoutPage'
 
-const TipsTricksPage = () => {
+const JavascriptPage = () => {
   return (
     <LayoutPage title={'Tips & Tricks'} img="/images/tips.png">
       <Wrapper>
@@ -21,43 +20,26 @@ const TipsTricksPage = () => {
           ></path>
         </Wave>
         <Container>
-          <SelectTech />
-          <Blob
-            src="images/blob.svg"
-            style={{ position: 'absolute', top: -150, left: 250 }}
-            animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
-            transition={{
-              type: 'tween',
-              duration: 7,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
+          <TechLogo
+            src="/images/tech/javascript.png"
+            layoutId="javascript"
+            width="100rem"
           />
-          <Blob
-            src="images/donut.png"
-            style={{
-              position: 'absolute',
-              top: 120,
-              left: 380,
-              width: 310,
-              opacity: 0.5,
-              rotate: 15,
-              skewY: 2,
-            }}
-            transition={{
-              type: 'tween',
-              duration: 7,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
-          />
+          <Tech>Javascript</Tech>
+          <ComingSoon
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', damping: 18, delay: 0.6 }}
+          >
+            Coming soon!
+          </ComingSoon>
         </Container>
       </Wrapper>
     </LayoutPage>
   )
 }
 
-export default TipsTricksPage
+export default JavascriptPage
 
 // Styles
 const Wrapper = styled.div`
@@ -69,19 +51,35 @@ const Wrapper = styled.div`
 const Container = styled.div`
   max-width: 110rem;
   margin: 0 auto;
-  padding: 6rem 2rem 10rem;
+  padding: 2rem 2rem 10rem;
+  text-align: center;
 
   @media (min-width: 768px) {
-    padding: 5rem 3rem 14rem;
+    padding: 2rem 3rem 14rem;
   }
 
   @media (min-width: 1024px) {
-    padding: 4rem 3rem 22rem;
+    padding: 2rem 3rem 22rem;
   }
 
   @media (min-width: 1800px) {
-    padding: 6rem 3rem 27rem;
+    padding: 2rem 3rem 27rem;
   }
+`
+
+const Tech = styled(motion.h2)`
+  color: #f4d7ff;
+  font-size: 2.4rem;
+`
+
+const TechLogo = styled(motion.img)`
+  margin-bottom: 1rem;
+`
+
+const ComingSoon = styled(motion.h3)`
+  font-size: 4rem;
+  margin-top: 8rem;
+  color: #61dafb;
 `
 
 const Wave = styled(motion.svg)`
@@ -103,8 +101,4 @@ const Wave = styled(motion.svg)`
   @media (min-width: 1800px) {
     bottom: -5.2rem;
   } */
-`
-
-const Blob = styled(motion.img)`
-  max-width: 40%;
 `

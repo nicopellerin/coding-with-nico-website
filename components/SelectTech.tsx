@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 
 const width = 80
 
@@ -41,7 +42,25 @@ const SelectTech = () => {
   const [perc, setPerc] = useState(0)
   const [showTech, setShowTech] = useState(false)
 
+  // Saves seenLoadingTech to localStorage
+  let hasSeen: boolean
   useEffect(() => {
+    if (process.env.NODE_ENV !== 'production') {
+      return
+    }
+    const storage = localStorage.getItem('seenLoadingTech')
+    hasSeen = storage ? !!JSON.parse(storage) : false
+    if (!hasSeen) {
+      localStorage.setItem('seenLoadingTech', JSON.stringify(true))
+    }
+  }, [])
+
+  //   If hasSeen is true, return early. Else, start loading db count to 100%
+  useEffect(() => {
+    if (hasSeen) {
+      setShowTech(true)
+      return
+    }
     const inter = window.setInterval(
       () => setPerc((prevState) => (prevState <= 99 ? prevState + 1 : 100)),
       10
@@ -96,20 +115,29 @@ const SelectTech = () => {
                       onMouseOut={() => setIndex(null)}
                       variants={item}
                     >
-                      <motion.img
-                        src={logo}
-                        alt={tech}
-                        width={width}
-                        whileHover={{ scale: 1.05 }}
-                      />
-                      {index === i && (
-                        <Name
-                          initial={{ x: '-50%', opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                        >
-                          {tech}
-                        </Name>
-                      )}
+                      <Link href={`/tips-tricks/${tech.toLowerCase()}`}>
+                        <a>
+                          <TechImage
+                            layoutId={tech.toLowerCase()}
+                            src={logo}
+                            alt={tech}
+                            width={width}
+                            animate={{
+                              opacity: index === i || index === null ? 1 : 0.3,
+                              //   scale: index === i || index === null ? 1 : 0.88,
+                            }}
+                            transition={{ type: 'tween', duration: 0.2 }}
+                          />
+                          {index === i && (
+                            <Name
+                              initial={{ x: '-50%', opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                            >
+                              {tech}
+                            </Name>
+                          )}
+                        </a>
+                      </Link>
                     </Tech>
                   ))}
                 </AnimatePresence>
@@ -137,7 +165,7 @@ const SelectTech = () => {
         </AnimatePresence>
         <Terminal
           src="/images/terminal.png"
-          style={{ position: 'absolute', width: '90rem', top: '2rem' }}
+          style={{ position: 'absolute', width: '90rem', top: '-4rem' }}
         />
       </Container>
     </Wrapper>
@@ -149,6 +177,8 @@ export default SelectTech
 // Styles
 const Wrapper = styled.div`
   height: 100%;
+  position: relative;
+  z-index: 2;
 `
 
 const Container = styled.div`
@@ -187,7 +217,7 @@ const Tech = styled(motion.div)`
 const Name = styled(motion.span)`
   position: absolute;
   left: 50%;
-  bottom: -3.2rem;
+  bottom: -3rem;
   font-size: 1.6rem;
   font-weight: 500;
   color: #f4d7ff;
@@ -212,3 +242,5 @@ const LoadingText = styled(motion.pre)`
   display: flex;
   font-size: 3rem;
 `
+
+const TechImage = styled(motion.img)``
