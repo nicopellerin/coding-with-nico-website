@@ -22,35 +22,6 @@ const TipsTricksPage = () => {
         </Wave>
         <Container>
           <SelectTech />
-          <Blob
-            src="images/blob.svg"
-            style={{ position: 'absolute', top: -150, left: 250 }}
-            animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
-            transition={{
-              type: 'tween',
-              duration: 7,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
-          />
-          <Blob
-            src="images/donut.png"
-            style={{
-              position: 'absolute',
-              top: 120,
-              left: 380,
-              width: 310,
-              opacity: 0.5,
-              rotate: 5,
-              skewY: 2,
-            }}
-            transition={{
-              type: 'tween',
-              duration: 7,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
-          />
         </Container>
       </Wrapper>
     </LayoutPage>
@@ -80,14 +51,14 @@ const Container = styled.div`
   }
 
   @media (min-width: 1800px) {
-    padding: 6rem 3rem 27rem;
+    padding: 6rem 3rem 12rem;
   }
 `
 
 const Wave = styled(motion.svg)`
   position: absolute;
   width: 100vw;
-  top: -129px;
+  top: -150px;
   left: 0;
   filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
   pointer-events: none;
@@ -106,5 +77,5 @@ const Wave = styled(motion.svg)`
 `
 
 const Blob = styled(motion.img)`
-  max-width: 40%;
+  /* max-width: 40%; */
 `

@@ -24,35 +24,6 @@ const AboutPage = () => {
           <Info>
             <Me />
             <div>
-              <Blob
-                src="images/blob.svg"
-                style={{ position: 'absolute', top: -150, left: 250 }}
-                animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
-                transition={{
-                  type: 'tween',
-                  duration: 7,
-                  repeat: Infinity,
-                  repeatType: 'reverse',
-                }}
-              />
-              <Blob
-                src="images/Triangle.png"
-                style={{
-                  position: 'absolute',
-                  top: 50,
-                  left: 350,
-                  width: 320,
-                  opacity: 0.4,
-                  rotate: -10,
-                  skewY: 2,
-                }}
-                transition={{
-                  type: 'tween',
-                  duration: 7,
-                  repeat: Infinity,
-                  repeatType: 'reverse',
-                }}
-              />
               <Welcome
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -129,7 +100,7 @@ const Container = styled.div`
   }
 
   @media (min-width: 1800px) {
-    padding: 6rem 3rem 27rem;
+    padding: 8rem 3rem 27rem;
   }
 `
 
@@ -160,7 +131,7 @@ const Welcome = styled(motion.h3)`
 const Wave = styled(motion.svg)`
   position: absolute;
   width: 100vw;
-  top: -129px;
+  top: -150px;
   left: 0;
   filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
   pointer-events: none;

@@ -41,6 +41,7 @@ const SelectTech = () => {
   const [index, setIndex] = useState<number | null>(null)
   const [perc, setPerc] = useState(0)
   const [showTech, setShowTech] = useState(false)
+  const [minimizeTerminal, setMinimizeTerminal] = useState(false)
 
   // Saves seenLoadingTech to localStorage
   let hasSeen: boolean
@@ -76,96 +77,143 @@ const SelectTech = () => {
     }
   }, [])
 
+  //   let laughSound: HTMLAudioElement
+  //   if (typeof Audio !== 'undefined') {
+  //     laughSound = new Audio('/sounds/wiz.mp3')
+  //     laughSound.volume = 0.3
+  //   }
+
   return (
     <Wrapper>
       <Container>
-        <AnimatePresence>
-          {showTech ? (
-            <>
-              <Title
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ type: 'spring', damping: 6 }}
-              >
-                Pick a technology
-                <motion.span
-                  animate={{ opacity: [0, 1] }}
-                  transition={{ yoyo: Infinity }}
-                  style={{
-                    display: 'inline-block',
-                    fontSize: '3.4rem',
-                    lineHeight: 1,
-                    marginLeft: 4,
-                  }}
-                >
-                  &#9646;
-                </motion.span>
-              </Title>
-              <Grid
-                variants={list}
-                initial="hidden"
-                animate="visible"
-                style={{ border: '2px solid rgba(144, 238, 144, 0.1)' }}
-              >
-                <AnimatePresence>
-                  {techImages.map(({ tech, logo, width }, i) => (
-                    <Tech
-                      key={tech}
-                      onMouseOver={() => setIndex(i)}
-                      onMouseOut={() => setIndex(null)}
-                      variants={item}
-                    >
-                      <Link href={`/tips-tricks/${tech.toLowerCase()}`}>
-                        <a>
-                          <TechImage
-                            layoutId={tech.toLowerCase()}
-                            src={logo}
-                            alt={tech}
-                            width={width}
-                            animate={{
-                              opacity: index === i || index === null ? 1 : 0.3,
-                              //   scale: index === i || index === null ? 1 : 0.88,
-                            }}
-                            transition={{ type: 'tween', duration: 0.2 }}
-                          />
-                          {index === i && (
-                            <Name
-                              initial={{ x: '-50%', opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                            >
-                              {tech}
-                            </Name>
-                          )}
-                        </a>
-                      </Link>
-                    </Tech>
-                  ))}
-                </AnimatePresence>
-              </Grid>
-            </>
-          ) : (
-            <LoadingWrapper>
-              <LoadingText initial={{ y: 10 }} animate={{ y: 0 }}>
-                Loading from database... {perc}%
-                <motion.span
-                  animate={{ opacity: [0, 1] }}
-                  transition={{ yoyo: Infinity }}
-                  style={{
-                    display: 'inline-block',
-                    fontSize: '3.5rem',
-                    lineHeight: 0.7,
-                    marginLeft: 2,
-                  }}
-                >
-                  &#9646;
-                </motion.span>
-              </LoadingText>
-            </LoadingWrapper>
-          )}
-        </AnimatePresence>
         <Terminal
-          src="/images/terminal.png"
-          style={{ position: 'absolute', width: '90rem', top: '-4rem' }}
+          initial={{ y: 100 }}
+          animate={{ y: minimizeTerminal ? 375 : 0 }}
+          transition={{ type: 'spring', damping: 16 }}
+        >
+          <TerminalImage src="/images/terminal.png" alt="Terminal" />
+          <button
+            onClick={() => {
+              setMinimizeTerminal(true)
+            }}
+            style={{
+              position: 'absolute',
+              top: 15,
+              left: 55,
+              opacity: 0,
+              cursor: 'pointer',
+            }}
+          >
+            X
+          </button>
+          <button
+            onClick={() => setMinimizeTerminal(false)}
+            style={{
+              position: 'absolute',
+              top: 15,
+              left: 75,
+              opacity: 0,
+              cursor: 'pointer',
+            }}
+          >
+            X
+          </button>
+          <AnimatePresence>
+            {showTech ? (
+              <>
+                <Title
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ type: 'spring', damping: 6 }}
+                >
+                  Pick a technology
+                  <motion.span
+                    animate={{ opacity: [0, 1] }}
+                    transition={{ yoyo: Infinity }}
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '3.4rem',
+                      lineHeight: 1,
+                      marginLeft: 4,
+                    }}
+                  >
+                    &#9646;
+                  </motion.span>
+                </Title>
+                <Grid
+                  variants={list}
+                  initial="hidden"
+                  animate="visible"
+                  style={{ border: '2px solid rgba(144, 238, 144, 0.1)' }}
+                >
+                  <AnimatePresence>
+                    {techImages.map(({ tech, logo, width }, i) => (
+                      <Tech
+                        key={tech}
+                        onMouseOver={() => setIndex(i)}
+                        onMouseOut={() => setIndex(null)}
+                        variants={item}
+                      >
+                        <Link href={`/tips-tricks/${tech.toLowerCase()}`}>
+                          <a>
+                            <TechImage
+                              layoutId={tech.toLowerCase()}
+                              src={logo}
+                              alt={tech}
+                              width={width}
+                              transition={{ type: 'tween', duration: 0.2 }}
+                            />
+                            {index === i && (
+                              <Name
+                                initial={{ x: '-50%', opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                              >
+                                {tech}
+                              </Name>
+                            )}
+                          </a>
+                        </Link>
+                      </Tech>
+                    ))}
+                  </AnimatePresence>
+                </Grid>
+              </>
+            ) : (
+              <LoadingWrapper>
+                <LoadingText initial={{ y: 10 }} animate={{ y: 0 }}>
+                  Loading from database... {perc}%
+                  <motion.span
+                    animate={{ opacity: [0, 1] }}
+                    transition={{ yoyo: Infinity }}
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '3.5rem',
+                      lineHeight: 0.7,
+                      marginLeft: 2,
+                    }}
+                  >
+                    &#9646;
+                  </motion.span>
+                </LoadingText>
+              </LoadingWrapper>
+            )}
+          </AnimatePresence>
+        </Terminal>
+        <motion.img
+          src="/images/php.jpg"
+          alt="php"
+          style={{
+            position: 'absolute',
+            top: 10,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            maxWidth: '25rem',
+            zIndex: -1,
+            opacity: 0,
+          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
         />
       </Container>
     </Wrapper>
@@ -182,17 +230,29 @@ const Wrapper = styled.div`
 `
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   width: 100%;
-  height: 100%;
+  height: 48rem;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    width: 120%;
+    height: 5px;
+    background: rgba(131, 82, 253, 0.1);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.5));
+  }
 `
 
 const Title = styled(motion.pre)`
   font-size: 3rem;
+  line-height: 1;
   color: lightgreen;
-  margin-bottom: 5rem;
+  margin-top: 0;
+  margin-bottom: 4rem;
   position: relative;
   z-index: 2;
 `
@@ -223,10 +283,6 @@ const Name = styled(motion.span)`
   color: #f4d7ff;
 `
 
-const Terminal = styled(motion.img)`
-  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.05));
-`
-
 const LoadingWrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
@@ -244,3 +300,20 @@ const LoadingText = styled(motion.pre)`
 `
 
 const TechImage = styled(motion.img)``
+
+const Terminal = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+`
+
+const TerminalImage = styled(motion.img)`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.05));
+`

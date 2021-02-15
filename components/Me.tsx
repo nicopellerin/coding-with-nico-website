@@ -30,22 +30,58 @@ const Me = () => {
   const playSound = () => audioOn && spinSound.play()
 
   return (
-    <picture
-      onMouseOver={() => setFlip(true)}
-      onMouseOut={() => setFlip(false)}
-    >
-      <source
-        srcSet={flip ? '/images/me2.webp' : '/images/me.webp'}
-        type="image/webp"
+    <div style={{ position: 'relative' }}>
+      <picture
+        onMouseOver={() => setFlip(true)}
+        onMouseOut={() => setFlip(false)}
+      >
+        <source
+          srcSet={flip ? '/images/me2.webp' : '/images/me.webp'}
+          type="image/webp"
+        />
+        <MeImg
+          src={flip ? '/images/me2.jpg' : '/images/me.jpg'}
+          alt="Nico Pellerin"
+          animate={controls}
+          whileTap={{ scale: 1.2, rotate: 360 }}
+          onClick={playSound}
+        />
+      </picture>
+      <Blob
+        src="images/blob.svg"
+        style={{
+          position: 'absolute',
+          top: '-80%',
+          left: '-70%',
+          width: '75rem',
+        }}
+        animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
+        transition={{
+          type: 'tween',
+          duration: 7,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
       />
-      <MeImg
-        src={flip ? '/images/me2.jpg' : '/images/me.jpg'}
-        alt="Nico Pellerin"
-        animate={controls}
-        whileTap={{ scale: 1.2, rotate: 360 }}
-        onClick={playSound}
+      <Blob
+        src="images/Triangle.png"
+        style={{
+          position: 'absolute',
+          top: '-15%',
+          left: '-30%',
+          width: 320,
+          opacity: 0.4,
+          rotate: -10,
+          skewY: 2,
+        }}
+        transition={{
+          type: 'tween',
+          duration: 7,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
       />
-    </picture>
+    </div>
   )
 }
 
@@ -66,4 +102,8 @@ const MeImg = styled(motion.img)`
     margin-bottom: 0rem;
     max-width: 90%;
   }
+`
+
+const Blob = styled(motion.img)`
+  /* max-width: 40%; */
 `

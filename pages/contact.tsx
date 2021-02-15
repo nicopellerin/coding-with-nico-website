@@ -57,7 +57,7 @@ const Container = styled.div`
   }
 
   @media (min-width: 1800px) {
-    padding: 2rem 3rem 27rem;
+    padding: 6rem 3rem 27rem;
   }
 `
 
@@ -81,7 +81,7 @@ const Tagline = styled.h3`
 const Wave = styled(motion.svg)`
   position: absolute;
   width: 100vw;
-  top: -129px;
+  top: -150px;
   left: 0;
   filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
   pointer-events: none;
