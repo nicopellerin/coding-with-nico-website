@@ -41,7 +41,7 @@ const TipsTricksPage = () => {
               left: 380,
               width: 310,
               opacity: 0.5,
-              rotate: 15,
+              rotate: 5,
               skewY: 2,
             }}
             transition={{
