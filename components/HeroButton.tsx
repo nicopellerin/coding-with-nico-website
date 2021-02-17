@@ -52,8 +52,10 @@ const Button = styled(motion.button)`
   align-items: center;
   white-space: nowrap;
 
-  @media (max-width: 330px) {
+  @media (max-width: 375px) {
     font-size: 1.8rem;
+    width: 100%;
+    justify-content: center;
   }
 
   @media (min-width: 768px) {

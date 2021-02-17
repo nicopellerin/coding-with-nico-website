@@ -9,17 +9,6 @@ const AboutPage = () => {
   return (
     <LayoutPage title="About">
       <Wrapper>
-        <Wave
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="xMinYMin slice"
-          viewBox="0 0 1200 129"
-        >
-          <path
-            width="100%"
-            d="M 0 64 L 48 48 C 96 32 192 0 288 0 C 384 0 480 32 576 58.7 C 672 85 768 107 864 85.3 C 960 64 1056 0 1152 0 C 1248 0 1344 64 1392 96 L 1440 128 L 1440 192 L 0 192 Z"
-            fill="#001"
-          ></path>
-        </Wave>
         <Container>
           <Info>
             <Me />
@@ -96,11 +85,11 @@ const Container = styled.div`
   }
 
   @media (min-width: 1024px) {
-    padding: 4rem 3rem 22rem;
+    padding: 4rem 3rem 18rem;
   }
 
   @media (min-width: 1800px) {
-    padding: 8rem 3rem 27rem;
+    padding: 8rem 3rem 18rem;
   }
 `
 
@@ -126,29 +115,4 @@ const Welcome = styled(motion.h3)`
   color: #f4d7ff;
   display: flex;
   align-items: center;
-`
-
-const Wave = styled(motion.svg)`
-  position: absolute;
-  width: 100vw;
-  top: -150px;
-  left: 0;
-  filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
-  pointer-events: none;
-
-  /* @media (min-width: 768px) {
-    bottom: -1rem;
-  }
-
-  @media (min-width: 1024px) {
-    bottom: -2rem;
-  }
-
-  @media (min-width: 1800px) {
-    bottom: -5.2rem;
-  } */
-`
-
-const Blob = styled(motion.img)`
-  max-width: 40%;
 `

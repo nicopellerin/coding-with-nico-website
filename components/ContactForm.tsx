@@ -64,7 +64,17 @@ const ContactForm = () => {
   }, [errors])
 
   return (
-    <FormWrapper onSubmit={handleSubmit}>
+    <FormWrapper
+      onSubmit={handleSubmit}
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        type: 'spring',
+        damping: 18,
+        stiffness: 60,
+        delay: 0.3,
+      }}
+    >
       <input
         ref={hiddenRef}
         type="hidden"
@@ -191,7 +201,7 @@ const ContactForm = () => {
 export default ContactForm
 
 // Styles
-const FormWrapper = styled.form`
+const FormWrapper = styled(motion.form)`
   display: flex;
   flex-direction: column;
   justify-content: center;

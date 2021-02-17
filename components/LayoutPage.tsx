@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react'
 import Head from 'next/head'
 
 import PageHero from './PageHero'
+import Footer from './Footer'
 
 interface Props {
   children: ReactNode
@@ -24,6 +25,7 @@ const LayoutPage: React.FC<Props> = ({
     </Head>
     <PageHero title={title} bgColor={bgColor} img={img} />
     {children}
+    <Footer />
   </>
 )
 

@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, FC } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
@@ -6,19 +6,7 @@ import Wave from './Wave'
 import HeroButton from './HeroButton'
 import TechBar from './TechBar'
 
-// import dynamic from 'next/dynamic'
-
-// const DropdownMobile = dynamic(() => import('./DropdownMobile'), { ssr: false })
-
-interface Props {
-  toggleDropdown: boolean
-  setToggleDropdown: Dispatch<SetStateAction<boolean>>
-}
-
-const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
-  // TEMP - REMOVE
-  console.log(toggleDropdown, setToggleDropdown)
-
+const HeroBackground: FC = () => {
   return (
     <>
       <Wrapper>
@@ -58,10 +46,10 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
                 repeatType: 'reverse',
               }}
             />
-            <div style={{ display: 'flex', alignItems: 'center' }}>
+            <ButtonWrapper>
               <HeroButton />
               <TechBar />
-            </div>
+            </ButtonWrapper>
           </Info>
           <Character
             src="/images/character.png"
@@ -79,11 +67,9 @@ const HeroBackground: FC<Props> = ({ toggleDropdown, setToggleDropdown }) => {
         <Wave />
       </Wrapper>
       {/* <AnimatePresence>
-        {toggleDropdown && (
-          <DropdownMobile setToggleDropdown={setToggleDropdown} />
-        )}
-      </AnimatePresence>
-      <AnimatePresence>
+        {toggleDropdown && <DropdownMobile toggleDropdown={toggleDropdown} />}
+      </AnimatePresence> */}
+      {/* <AnimatePresence>
         {toggleDropdown && <Overlay setToggleDropdown={setToggleDropdown} />}
       </AnimatePresence> */}
     </>
@@ -144,6 +130,8 @@ const Info = styled(motion.div)`
   justify-content: center;
   align-items: start;
   position: relative;
+  top: -3rem;
+  left: 0;
 
   @media (min-width: 768px) {
     top: -5rem;
@@ -174,8 +162,7 @@ const Title = styled(motion.h1)`
   line-height: 1.05;
   max-width: 13ch;
 
-  @media (max-width: 330px) {
-    font-size: 5.2rem;
+  @media (max-width: 375px) {
     margin-bottom: 2.6rem;
   }
 
@@ -211,9 +198,9 @@ const Tagline = styled(motion.h2)`
     -webkit-text-fill-color: transparent;
   }
 
-  @media (max-width: 330px) {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+  @media (max-width: 375px) {
+    font-size: 2.2rem;
+    margin-bottom: 4rem;
   }
 
   @media (max-height: 667px) {
@@ -236,7 +223,11 @@ const Tagline = styled(motion.h2)`
 `
 
 const Character = styled(motion.img)`
+  position: absolute;
+  width: 24rem;
   max-width: 98%;
+  bottom: 0;
+  right: 95px;
 
   @media (min-width: 768px) {
     position: absolute;
@@ -267,4 +258,15 @@ const Character = styled(motion.img)`
 
 const Blob = styled(motion.img)`
   max-width: 100%;
+`
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `

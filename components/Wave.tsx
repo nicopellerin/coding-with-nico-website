@@ -22,7 +22,7 @@ const Wave = () => {
       viewBox="0 0 1900 320"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{ position: 'absolute', bottom: 0, width: '100%' }}
+      style={{ position: 'absolute', bottom: 0, width: '100%', zIndex: 10001 }}
       width="100%"
     >
       <path

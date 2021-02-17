@@ -27,18 +27,12 @@ const PageHero: React.FC<Props> = ({
       >
         {title}
       </Title>
-      <motion.img
+      <CloudOne
         drag
         dragConstraints={constraintsRef}
         src="/images/cloud1.png"
-        alt="rocket"
-        style={{
-          maxWidth: '5rem',
-          position: 'absolute',
-          top: '15rem',
-          left: '26vw',
-          cursor: 'grab',
-        }}
+        alt="Cloud 1"
+        style={{}}
         animate={{ y: [5, 0, 5] }}
         transition={{
           type: 'tween',
@@ -48,18 +42,11 @@ const PageHero: React.FC<Props> = ({
           delay: 0.2,
         }}
       />
-      <motion.img
+      <CloudTwo
         drag
         dragConstraints={constraintsRef}
         src="/images/cloud2.png"
-        alt="rocket"
-        style={{
-          maxWidth: '7rem',
-          position: 'absolute',
-          top: '5rem',
-          left: '36vw',
-          cursor: 'grab',
-        }}
+        alt="Cloud 2"
         animate={{ y: [5, 0, 5] }}
         transition={{
           type: 'tween',
@@ -69,19 +56,11 @@ const PageHero: React.FC<Props> = ({
           delay: 0.4,
         }}
       />
-      <motion.img
+      <CloudThree
         drag
         dragConstraints={constraintsRef}
         src="/images/cloud3.png"
-        alt="rocket"
-        style={{
-          maxWidth: '7rem',
-          position: 'absolute',
-          top: '11rem',
-          right: '36vw',
-          cursor: 'grab',
-          zIndex: 2,
-        }}
+        alt="Cloud 3"
         animate={{ y: [5, 0, 5] }}
         transition={{
           type: 'tween',
@@ -91,18 +70,11 @@ const PageHero: React.FC<Props> = ({
           delay: 0.3,
         }}
       />
-      <motion.img
+      <HeroImage
         drag
         dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
         src={img}
         alt="rocket"
-        style={{
-          maxWidth: '40rem',
-          position: 'absolute',
-          top: '10rem',
-          right: '22vw',
-          cursor: 'grab',
-        }}
         animate={{ y: [7, 0, 7], x: [2, 0, 2] }}
         transition={{
           type: 'tween',
@@ -112,6 +84,17 @@ const PageHero: React.FC<Props> = ({
           delay: 0.4,
         }}
       />
+      <Wave
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMinYMin slice"
+        viewBox="0 0 1200 129"
+      >
+        <path
+          width="100%"
+          d="M 0 64 L 48 48 C 96 32 192 0 288 0 C 384 0 480 32 576 58.7 C 672 85 768 107 864 85.3 C 960 64 1056 0 1152 0 C 1248 0 1344 64 1392 96 L 1440 128 L 1440 192 L 0 192 Z"
+          fill="#001"
+        ></path>
+      </Wave>
     </Wrapper>
   )
 }
@@ -143,6 +126,10 @@ const Title = styled(motion.h1)`
   line-height: 1;
   font-family: 'Space Grotesk', sans-serif;
 
+  @media (max-width: 375px) {
+    margin-bottom: -2rem;
+  }
+
   &::after {
     content: '';
     width: 100%;
@@ -151,5 +138,72 @@ const Title = styled(motion.h1)`
     position: absolute;
     left: 0;
     bottom: -3px;
+  }
+`
+
+const Wave = styled(motion.svg)`
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  left: 0;
+  filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
+  pointer-events: none;
+`
+
+const HeroImage = styled(motion.img)`
+  position: absolute;
+  cursor: grab;
+  max-width: 20rem;
+  bottom: 0rem;
+  right: 10vw;
+
+  @media (min-width: 768px) {
+    max-width: 40rem;
+    bottom: unset;
+    top: 10rem;
+    right: 22vw;
+  }
+`
+
+const CloudOne = styled(motion.img)`
+  position: absolute;
+  cursor: grab;
+  max-width: 5rem;
+  left: 7vw;
+  top: 12rem;
+
+  @media (min-width: 768px) {
+    max-width: 5rem;
+    top: 15rem;
+    left: 26vw;
+  }
+`
+
+const CloudTwo = styled(motion.img)`
+  position: absolute;
+  cursor: grab;
+  max-width: 7rem;
+  left: 45vw;
+  top: 9rem;
+
+  @media (min-width: 768px) {
+    max-width: 7rem;
+    top: 5rem;
+    left: 36vw;
+  }
+`
+
+const CloudThree = styled(motion.img)`
+  position: absolute;
+  cursor: grab;
+  max-width: 7rem;
+  right: 5vw;
+  top: 15rem;
+  z-index: 2;
+
+  @media (min-width: 768px) {
+    max-width: 7rem;
+    top: 11rem;
+    right: 36vw;
   }
 `

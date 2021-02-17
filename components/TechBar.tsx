@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 const techImages = [
-  { tech: 'react', logo: '/images/tech/react.png', width: 50 },
-  { tech: 'typescript', logo: '/images/tech/typescript.png', width: 50 },
-  { tech: 'graphql', logo: '/images/tech/graphql.png', width: 50 },
-  { tech: 'javascript', logo: '/images/tech/javascript.png', width: 50 },
-  { tech: 'rust', logo: '/images/tech/rustlang.png', width: 50 },
+  { tech: 'react', logo: '/images/tech/react.png' },
+  { tech: 'typescript', logo: '/images/tech/typescript.png' },
+  { tech: 'graphql', logo: '/images/tech/graphql.png' },
+  { tech: 'javascript', logo: '/images/tech/javascript.png' },
+  { tech: 'rust', logo: '/images/tech/rustlang.png' },
 ]
 
 const list = {
@@ -37,8 +37,8 @@ const item = {
 const TechBar = () => {
   return (
     <Wrapper variants={list} initial="hidden" animate="visible">
-      {techImages.map(({ tech, logo, width }) => (
-        <motion.img src={logo} alt={tech} width={width} variants={item} />
+      {techImages.map(({ tech, logo }) => (
+        <Logo src={logo} alt={tech} variants={item} />
       ))}
     </Wrapper>
   )
@@ -52,5 +52,21 @@ const Wrapper = styled(motion.div)`
   align-items: center;
   grid-template-columns: repeat(5, auto);
   gap: 3rem;
-  margin-left: 5rem;
+  margin-left: 0rem;
+  margin-bottom: 4rem;
+  order: -1;
+
+  @media (min-width: 768px) {
+    margin-left: 5rem;
+    margin-bottom: 0;
+    order: 0;
+  }
+`
+
+const Logo = styled(motion.img)`
+  width: 4rem;
+
+  @media (min-width: 768px) {
+    width: 5rem;
+  }
 `

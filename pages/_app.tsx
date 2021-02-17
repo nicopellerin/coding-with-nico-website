@@ -11,8 +11,8 @@ import '@fontsource/space-grotesk/500.css'
 
 import GlobalStyles from '../styles/GlobalStyles'
 import Navbar from '../components/Navbar'
-import { AnimateSharedLayout } from 'framer-motion'
-import Footer from '../components/Footer'
+import NavbarMobile from '../components/NavbarMobile'
+import DropdownMobile from '../components/DropdownMobile'
 
 interface Props {
   Component: any
@@ -30,10 +30,11 @@ const MyApp = ({ Component, pageProps }: Props) => {
       </Head>
       <RecoilRoot>
         <Navbar />
-        <AnimateSharedLayout>
-          <Component {...pageProps} />
-        </AnimateSharedLayout>
-        <Footer />
+        <NavbarMobile />
+        {/* <AnimateSharedLayout> */}
+        <Component {...pageProps} />
+        {/* </AnimateSharedLayout> */}
+        <DropdownMobile />
         <GlobalStyles />
       </RecoilRoot>
     </>
