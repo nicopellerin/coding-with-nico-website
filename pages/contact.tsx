@@ -53,11 +53,11 @@ const Container = styled.div`
   }
 
   @media (min-width: 1024px) {
-    padding: 2rem 3rem 22rem;
+    padding: 2rem 3rem 16rem;
   }
 
   @media (min-width: 1800px) {
-    padding: 6rem 3rem 27rem;
+    padding: 6rem 3rem 16rem;
   }
 `
 
