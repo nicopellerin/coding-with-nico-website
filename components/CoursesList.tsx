@@ -68,7 +68,7 @@ const CourseCard = styled(motion.li)`
   background: #000;
   overflow: hidden;
   border-radius: 0.5rem;
-  border: 1px solid #112;
+  border: 1px solid rgba(131, 82, 253, 0.3);
   filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.1));
   width: 100%;
 
@@ -79,7 +79,7 @@ const CourseCard = styled(motion.li)`
 
 const CourseCardInfo = styled.div`
   padding: 1rem 2rem 2rem;
-  border-top: 1px solid #112;
+  border-top: 1px solid rgba(131, 82, 253, 0.15);
 
   @media (min-width: 768px) {
     padding: 3rem 4rem 4rem;
@@ -131,13 +131,15 @@ const TechsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(30px, auto));
   gap: 2rem;
-  background: rgba(89, 86, 213, 0.1);
+  background: rgba(131, 82, 253, 0.15);
   justify-items: start;
   justify-content: start;
+  align-items: center;
   width: auto;
   padding: 1rem 1rem;
   margin: 1.4rem 0;
   border-radius: 0.5rem;
+  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.45));
 `
 
 const CourseCardImage = styled.img`
@@ -145,6 +147,7 @@ const CourseCardImage = styled.img`
   height: 25rem;
   object-fit: cover;
   object-position: center;
+  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.45));
 
   @media (min-width: 768px) {
     height: 30rem;
