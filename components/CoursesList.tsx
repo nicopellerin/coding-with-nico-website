@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { FaRocket } from 'react-icons/fa'
 
 const coursesData = [
   {
@@ -43,7 +44,9 @@ const CoursesList = () => {
             </TechsGrid>
             <CourseCardDesc>{desc}</CourseCardDesc>
             <a href={url} target="_blank" rel="noopener">
-              <Button whileHover={{ y: -1 }}>Learn more</Button>
+              <Button whileHover={{ y: -1 }}>
+                Learn more <FaRocket style={{ marginLeft: 7 }} />
+              </Button>
             </a>
           </CourseCardInfo>
         </CourseCard>

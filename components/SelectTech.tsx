@@ -241,6 +241,10 @@ const Container = styled.div`
     left: 50%;
     transform: translateX(-50%);
     filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.5));
+
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
 `
 
