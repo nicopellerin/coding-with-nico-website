@@ -60,7 +60,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;

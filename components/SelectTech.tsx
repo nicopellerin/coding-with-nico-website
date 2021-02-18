@@ -4,14 +4,12 @@ import styled from 'styled-components'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 
-const width = 80
-
 const techImages = [
-  { tech: 'React', logo: '/images/tech/react.png', width },
-  { tech: 'Typescript', logo: '/images/tech/typescript.png', width },
-  { tech: 'Graphql', logo: '/images/tech/graphql.png', width },
-  { tech: 'Javascript', logo: '/images/tech/javascript.png', width },
-  { tech: 'Rust', logo: '/images/tech/rustlang.png', width },
+  { tech: 'React', logo: '/images/tech/react.png' },
+  { tech: 'Typescript', logo: '/images/tech/typescript.png' },
+  { tech: 'Graphql', logo: '/images/tech/graphql.png' },
+  { tech: 'Javascript', logo: '/images/tech/javascript.png' },
+  { tech: 'Rust', logo: '/images/tech/rustlang.png' },
 ]
 
 const list = {
@@ -199,7 +197,7 @@ const SelectTech = () => {
             )}
           </AnimatePresence>
         </Terminal>
-        <motion.img
+        <PhpJoke
           src="/images/php.jpg"
           alt="php"
           style={{
@@ -260,13 +258,18 @@ const Title = styled(motion.pre)`
 const Grid = styled(motion.div)`
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(5, auto);
-  gap: 6rem;
+  grid-template-columns: repeat(3, minmax(4rem, auto));
+  gap: 3rem;
   border: 3px solid rgba(102, 51, 153, 0.1);
   padding: 5rem 4rem;
   border-radius: 0.5rem;
   position: relative;
   z-index: 3;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(5, auto);
+    gap: 6rem;
+  }
 `
 
 const Tech = styled(motion.div)`
@@ -281,6 +284,10 @@ const Name = styled(motion.span)`
   font-size: 1.6rem;
   font-weight: 500;
   color: #f4d7ff;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 `
 
 const LoadingWrapper = styled(motion.div)`
@@ -297,9 +304,19 @@ const LoadingText = styled(motion.pre)`
   color: lightgreen;
   display: flex;
   font-size: 3rem;
+
+  @media (max-width: 500px) {
+    font-size: 2rem;
+  }
 `
 
-const TechImage = styled(motion.img)``
+const TechImage = styled(motion.img)`
+  width: 6rem;
+
+  @media (min-width: 768px) {
+    width: 8rem;
+  }
+`
 
 const Terminal = styled(motion.div)`
   display: flex;
@@ -316,4 +333,17 @@ const TerminalImage = styled(motion.img)`
   top: 0;
   width: 100%;
   filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.05));
+
+  @media (max-width: 500px) {
+    height: 80rem;
+    object-fit: cover;
+  }
+`
+
+const PhpJoke = styled(motion.img)`
+  display: block;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 `

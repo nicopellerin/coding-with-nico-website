@@ -259,7 +259,7 @@ const CloudThree = styled(motion.img)`
   @media (min-width: 1024px) {
     max-width: 7rem;
     top: 12rem;
-    right: 26vw;
+    right: 32vw;
   }
 
   @media (min-width: 1440px) {
