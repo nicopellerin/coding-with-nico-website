@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { useRecoilValue } from 'recoil'
 import { FaCode } from 'react-icons/fa'
+import Link from 'next/link'
 
 import { audioOnState } from '../store/audio'
-import Link from 'next/link'
 
 const HeroButton = () => {
   const audioOn = useRecoilValue(audioOnState)
@@ -24,6 +24,9 @@ const HeroButton = () => {
         whileHover={{ y: -1 }}
         whileTap={{ scale: 0.98 }}
         onClick={playSound}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: 'spring', damping: 18, stiffness: 60 }}
       >
         Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
       </Button>

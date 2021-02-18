@@ -71,9 +71,13 @@ const Container = styled.div`
 `
 
 const Title = styled(motion.h2)`
-  font-size: 6.2rem;
+  font-size: 5.2rem;
   color: #f4d7ff;
   margin-bottom: 3.2rem;
+
+  @media (min-width: 768px) {
+    font-size: 6.2rem;
+  }
 `
 
 const Tagline = styled(motion.h3)`
@@ -85,5 +89,6 @@ const Tagline = styled(motion.h3)`
 
   @media (max-width: 500px) {
     line-height: 1.5em;
+    margin-bottom: 6rem;
   }
 `

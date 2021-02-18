@@ -153,13 +153,12 @@ const Wave = styled(motion.svg)`
 const HeroImage = styled(motion.img)`
   position: absolute;
   cursor: grab;
-  max-width: 20rem;
-  bottom: 0rem;
-  right: 10vw;
+  max-width: 22rem;
+  top: 27vh;
+  right: 5vw;
 
   @media (min-width: 768px) {
     max-width: 40rem;
-    bottom: unset;
     top: 10rem;
     right: 22vw;
   }
@@ -169,8 +168,8 @@ const CloudOne = styled(motion.img)`
   position: absolute;
   cursor: grab;
   max-width: 5rem;
-  left: 7vw;
-  top: 12rem;
+  left: 9vw;
+  top: 14rem;
 
   @media (min-width: 768px) {
     max-width: 5rem;

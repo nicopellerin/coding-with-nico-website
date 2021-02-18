@@ -8,53 +8,18 @@ import TechBar from './TechBar'
 
 const HeroBackground: FC = () => {
   return (
-    <>
-      <Wrapper>
-        <Container>
-          <Info>
-            <Title
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ type: 'spring', damping: 18, stiffness: 60 }}
-            >
-              Upgrade your coding skills
-            </Title>
-            <Tagline
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: 'spring',
-                damping: 18,
-                stiffness: 60,
-                delay: 0.2,
-              }}
-            >
-              Hi! I’m Nico Pellerin, a <strong>software developer</strong> from
-              Montreal, Canada. My goal is to help you learn new{' '}
-              <strong>life changing</strong> coding skills{' '}
-              <span style={{ color: 'unset' }}>&#128640;</span>
-            </Tagline>
-
-            <Blob
-              src="images/blob.svg"
-              style={{ position: 'absolute' }}
-              animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
-              transition={{
-                type: 'tween',
-                duration: 7,
-                repeat: Infinity,
-                repeatType: 'reverse',
-              }}
-            />
-            <ButtonWrapper>
-              <HeroButton />
-              <TechBar />
-            </ButtonWrapper>
-          </Info>
-          <Character
-            src="/images/character.png"
-            alt="Character"
-            initial={{ opacity: 0, y: 20, skewY: -2 }}
+    <Wrapper>
+      <Container>
+        <Info>
+          <Title
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ type: 'spring', damping: 18, stiffness: 60 }}
+          >
+            Upgrade your coding skills
+          </Title>
+          <Tagline
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               type: 'spring',
@@ -62,17 +27,44 @@ const HeroBackground: FC = () => {
               stiffness: 60,
               delay: 0.2,
             }}
+          >
+            Hi! I’m Nico Pellerin, a <strong>software developer</strong> from
+            Montreal, Canada. My goal is to help you learn new{' '}
+            <strong>life changing</strong> coding skills{' '}
+            <span style={{ color: 'unset' }}>&#128640;</span>
+          </Tagline>
+
+          <Blob
+            src="images/blob.svg"
+            style={{ position: 'absolute' }}
+            animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
+            transition={{
+              type: 'tween',
+              duration: 7,
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
           />
-        </Container>
-        <Wave />
-      </Wrapper>
-      {/* <AnimatePresence>
-        {toggleDropdown && <DropdownMobile toggleDropdown={toggleDropdown} />}
-      </AnimatePresence> */}
-      {/* <AnimatePresence>
-        {toggleDropdown && <Overlay setToggleDropdown={setToggleDropdown} />}
-      </AnimatePresence> */}
-    </>
+          <ButtonWrapper>
+            <HeroButton />
+            <TechBar />
+          </ButtonWrapper>
+        </Info>
+        <Character
+          src="/images/character.png"
+          alt="Character"
+          initial={{ opacity: 0, y: 20, skewY: -2 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            type: 'spring',
+            damping: 18,
+            stiffness: 60,
+            delay: 0.2,
+          }}
+        />
+      </Container>
+      <Wave />
+    </Wrapper>
   )
 }
 

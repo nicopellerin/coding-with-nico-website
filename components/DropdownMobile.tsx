@@ -59,79 +59,87 @@ const DropdownMobile: React.FC = () => {
     <>
       <AnimatePresence>
         {toggleDropdown && (
-          <DropdownWrapper
-            initial={{ y: 300, x: '-50%' }}
-            animate={{ y: 0 }}
-            exit={{ y: 300 }}
-            transition={{ type: 'spring', damping: 18 }}
-          >
-            <DropdownList
-              variants={listVariants}
-              initial="hidden"
-              animate="show"
-              exit="exit"
+          <>
+            <DropdownWrapper
+              initial={{ y: 300, x: '-50%' }}
+              animate={{ y: 0 }}
+              exit={{ y: 300 }}
+              transition={{ type: 'spring', damping: 18 }}
             >
-              <DropdownItem
-                onClick={() => setToggleDropdown(false)}
-                variants={itemVariants}
-                style={{
-                  borderBottom: '1px solid rgba(221,94,152, 0.2)',
-                  paddingBottom: '2rem',
-                  marginBottom: '2rem',
-                }}
+              <DropdownList
+                variants={listVariants}
+                initial="hidden"
+                animate="show"
+                exit="exit"
               >
-                <FaLaptopCode
-                  color="#dd5e98"
-                  size={24}
-                  style={{ marginRight: 15 }}
-                />
-                <LinkStyled href="#courses">Courses</LinkStyled>
-              </DropdownItem>
-              <DropdownItem variants={itemVariants}>
-                <LinkStyled
-                  href="https://github.com/nicopellerin"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <DropdownItem
+                  onClick={() => setToggleDropdown(false)}
+                  variants={itemVariants}
+                  style={{
+                    borderBottom: '1px solid rgba(221,94,152, 0.2)',
+                    paddingBottom: '2rem',
+                    marginBottom: '2rem',
+                  }}
                 >
-                  <FiGithub
+                  <FaLaptopCode
                     color="#dd5e98"
                     size={24}
                     style={{ marginRight: 15 }}
-                  />{' '}
-                  Github
-                </LinkStyled>
-              </DropdownItem>
-              <DropdownItem variants={itemVariants}>
-                <LinkStyled
-                  href="https://twitter.com/nicopellerin_io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FiTwitter
-                    color="#dd5e98"
-                    size={24}
-                    style={{ marginRight: 15 }}
-                  />{' '}
-                  Twitter
-                </LinkStyled>
-              </DropdownItem>
-              <DropdownItem variants={itemVariants}>
-                <LinkStyled
-                  href="https://twitter.com/nicopellerin_io"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FiInstagram
-                    color="#dd5e98"
-                    size={24}
-                    style={{ marginRight: 15 }}
-                  />{' '}
-                  Instagram
-                </LinkStyled>
-              </DropdownItem>
-            </DropdownList>
-            <Overlay />
-          </DropdownWrapper>
+                  />
+                  <LinkStyled href="#courses">Courses</LinkStyled>
+                </DropdownItem>
+                <DropdownItem variants={itemVariants}>
+                  <LinkStyled
+                    href="https://github.com/nicopellerin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiGithub
+                      color="#dd5e98"
+                      size={24}
+                      style={{ marginRight: 15 }}
+                    />{' '}
+                    Github
+                  </LinkStyled>
+                </DropdownItem>
+                <DropdownItem variants={itemVariants}>
+                  <LinkStyled
+                    href="https://twitter.com/nicopellerin_io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiTwitter
+                      color="#dd5e98"
+                      size={24}
+                      style={{ marginRight: 15 }}
+                    />{' '}
+                    Twitter
+                  </LinkStyled>
+                </DropdownItem>
+                <DropdownItem variants={itemVariants}>
+                  <LinkStyled
+                    href="https://twitter.com/nicopellerin_io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FiInstagram
+                      color="#dd5e98"
+                      size={24}
+                      style={{ marginRight: 15 }}
+                    />{' '}
+                    Instagram
+                  </LinkStyled>
+                </DropdownItem>
+              </DropdownList>
+            </DropdownWrapper>
+            <Overlay
+              onClick={() => setToggleDropdown(false)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ type: 'spring', damping: 18 }}
+            />
+          </>
         )}
       </AnimatePresence>
     </>
@@ -147,10 +155,8 @@ const Overlay = styled(motion.div)`
   top: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 1);
-  opacity: 0;
-  /* backdrop-filter: blur(10px); */
-  /* z-index: 998; */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
 `
 
 const DropdownWrapper = styled(motion.div)`

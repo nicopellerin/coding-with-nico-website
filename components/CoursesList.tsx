@@ -78,14 +78,22 @@ const CourseCard = styled(motion.li)`
 `
 
 const CourseCardInfo = styled.div`
-  padding: 3rem 4rem 4rem;
+  padding: 1rem 2rem 2rem;
   border-top: 1px solid #112;
+
+  @media (min-width: 768px) {
+    padding: 3rem 4rem 4rem;
+  }
 `
 
 const CourseCardTitle = styled.h2`
-  font-size: 4rem;
+  font-size: 3.2rem;
   color: #f4d7ff;
   margin-bottom: 0rem;
+
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
 `
 
 const CourseCardDesc = styled.p`
@@ -134,11 +142,11 @@ const TechsGrid = styled.div`
 
 const CourseCardImage = styled.img`
   width: 100%;
-  height: 30rem;
+  height: 25rem;
   object-fit: cover;
   object-position: center;
 
-  ${Button}:hover & {
-    transform: scale(2);
+  @media (min-width: 768px) {
+    height: 30rem;
   }
 `
