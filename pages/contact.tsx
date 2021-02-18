@@ -69,7 +69,7 @@ const Container = styled.div`
   padding: 2rem 2rem 10rem;
 
   @media (min-width: 768px) {
-    padding: 2rem 3rem 12rem;
+    padding: 2rem 3rem 10rem;
   }
 
   @media (min-width: 1800px) {

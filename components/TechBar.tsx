@@ -57,8 +57,16 @@ const Wrapper = styled(motion.div)`
   order: -1;
 
   @media (min-width: 768px) {
+    margin-left: 4rem;
+    margin-bottom: 0;
+    order: 0;
+    gap: 2.2rem;
+  }
+
+  @media (min-width: 1440px) {
     margin-left: 5rem;
     margin-bottom: 0;
+    gap: 3rem;
     order: 0;
   }
 `
@@ -67,6 +75,10 @@ const Logo = styled(motion.img)`
   width: 4rem;
 
   @media (min-width: 768px) {
+    width: 4.2rem;
+  }
+
+  @media (min-width: 1440px) {
     width: 5rem;
   }
 `

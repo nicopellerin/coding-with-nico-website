@@ -103,12 +103,20 @@ export default PageHero
 
 // Styles
 const Wrapper = styled.div`
-  height: 48vh;
+  height: 36vh;
   background: linear-gradient(45deg);
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 500px) {
+    height: 47vh;
+  }
+
+  @media (min-width: 769px) {
+    height: 48vh;
+  }
 `
 
 const Title = styled(motion.h1)`
@@ -144,7 +152,7 @@ const Title = styled(motion.h1)`
 const Wave = styled(motion.svg)`
   position: absolute;
   width: 100vw;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   filter: drop-shadow(-1px -2px 1px rgba(155, 81, 224, 0.5));
   pointer-events: none;
@@ -158,6 +166,24 @@ const HeroImage = styled(motion.img)`
   right: 5vw;
 
   @media (min-width: 768px) {
+    max-width: 34rem;
+    top: 18rem;
+    right: 10vw;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 34rem;
+    top: 16rem;
+    right: 14vw;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 35rem;
+    top: 15rem;
+    right: 20vw;
+  }
+
+  @media (min-width: 1600px) {
     max-width: 40rem;
     top: 10rem;
     right: 22vw;
@@ -167,11 +193,23 @@ const HeroImage = styled(motion.img)`
 const CloudOne = styled(motion.img)`
   position: absolute;
   cursor: grab;
-  max-width: 5rem;
+  max-width: 4rem;
   left: 9vw;
-  top: 14rem;
+  top: 15rem;
 
   @media (min-width: 768px) {
+    max-width: 5rem;
+    top: 15rem;
+    left: 20vw;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 5rem;
+    top: 15rem;
+    left: 18vw;
+  }
+
+  @media (min-width: 1440px) {
     max-width: 5rem;
     top: 15rem;
     left: 26vw;
@@ -181,11 +219,23 @@ const CloudOne = styled(motion.img)`
 const CloudTwo = styled(motion.img)`
   position: absolute;
   cursor: grab;
-  max-width: 7rem;
+  max-width: 6rem;
   left: 45vw;
-  top: 9rem;
+  top: 10rem;
 
   @media (min-width: 768px) {
+    max-width: 7rem;
+    top: 5rem;
+    left: 40vw;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 7rem;
+    top: 8rem;
+    left: 30vw;
+  }
+
+  @media (min-width: 1440px) {
     max-width: 7rem;
     top: 5rem;
     left: 36vw;
@@ -195,12 +245,24 @@ const CloudTwo = styled(motion.img)`
 const CloudThree = styled(motion.img)`
   position: absolute;
   cursor: grab;
-  max-width: 7rem;
+  max-width: 6rem;
   right: 5vw;
-  top: 15rem;
+  top: 16rem;
   z-index: 2;
 
   @media (min-width: 768px) {
+    max-width: 7rem;
+    top: 11rem;
+    right: 22vw;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 7rem;
+    top: 12rem;
+    right: 26vw;
+  }
+
+  @media (min-width: 1440px) {
     max-width: 7rem;
     top: 11rem;
     right: 36vw;

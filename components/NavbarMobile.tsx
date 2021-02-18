@@ -4,6 +4,7 @@ import { useSetRecoilState } from 'recoil'
 import styled from 'styled-components'
 
 import { mobileDropdownState } from '../store/navigation'
+import LogoAnim from './LogoAnim'
 
 const NavbarMobile: React.FC = () => {
   const setToggleDropdown = useSetRecoilState(mobileDropdownState)
@@ -13,7 +14,7 @@ const NavbarMobile: React.FC = () => {
       <Container>
         <Link href="/">
           <a>
-            <img src="/images/logo.svg" alt="logo" width={200} />
+            <LogoAnim />
           </a>
         </Link>
         <div
@@ -52,7 +53,7 @@ const Wrapper = styled.div`
   width: 100%;
   z-index: 10000;
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: none;
   }
 `

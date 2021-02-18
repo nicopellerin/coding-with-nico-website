@@ -86,6 +86,7 @@ const Tagline = styled(motion.h3)`
   line-height: 2em;
   margin-bottom: 8rem;
   color: #f4d7ff;
+  max-width: 70ch;
 
   @media (max-width: 500px) {
     line-height: 1.5em;

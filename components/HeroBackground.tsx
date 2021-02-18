@@ -122,7 +122,7 @@ const Info = styled(motion.div)`
   justify-content: center;
   align-items: start;
   position: relative;
-  top: -3rem;
+  top: -3.5rem;
   left: 0;
 
   @media (min-width: 768px) {
@@ -155,6 +155,7 @@ const Title = styled(motion.h1)`
   max-width: 13ch;
 
   @media (max-width: 375px) {
+    font-size: 6.8rem;
     margin-bottom: 2.6rem;
   }
 
@@ -180,7 +181,7 @@ const Tagline = styled(motion.h2)`
   letter-spacing: 1.1px;
   margin-bottom: 2.6rem;
   font-family: 'Inter';
-  line-height: 1.4;
+  line-height: 1.5;
   max-width: 37ch;
 
   strong {
@@ -230,14 +231,14 @@ const Character = styled(motion.img)`
 
   @media (min-width: 1024px) {
     position: absolute;
-    width: 60rem;
+    width: 58rem;
     right: 0rem;
     bottom: 8rem;
   }
 
   @media (min-width: 1366px) {
     position: absolute;
-    width: 80rem;
+    width: 78rem;
     right: 0rem;
     bottom: 10rem;
   }

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
-import { AnimateSharedLayout, motion, useAnimation } from 'framer-motion'
+import { AnimateSharedLayout, motion } from 'framer-motion'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
@@ -8,6 +8,7 @@ import { useRecoilValue } from 'recoil'
 import SoundControl from './SoundControl'
 
 import { audioOnState } from '../store/audio'
+import LogoAnim from './LogoAnim'
 
 const links: Link[] = [
   { text: 'About', link: '/about' },
@@ -23,51 +24,22 @@ interface Link {
 
 const Navbar = () => {
   const [index, setIndex] = useState<number | null>(null)
-  const [isHover, setIsHover] = useState(false)
 
   const audioOn = useRecoilValue(audioOnState)
 
-  const controls = useAnimation()
-
   let popSound: HTMLAudioElement
   let clickSound: HTMLAudioElement
-  let homeSound: HTMLAudioElement
 
   if (typeof Audio !== 'undefined') {
     popSound = new Audio('/sounds/pop_drip.mp3')
     clickSound = new Audio('/sounds/click_snip.mp3')
-    homeSound = new Audio('/sounds/click_natural.mp3')
   }
-
-  React.useEffect(() => {
-    if (isHover) {
-      controls.start({
-        y: [0, -20, 10, 0],
-        rotate: [0, 360],
-      })
-    }
-  }, [isHover])
 
   return (
     <Wrapper>
       <Link href="/">
         <a>
-          <div
-            style={{ position: 'relative' }}
-            onMouseOver={() => setIsHover(true)}
-            onMouseOut={() => setIsHover(false)}
-          >
-            <Logo
-              src="/images/logo.svg"
-              alt="Logo"
-              onClick={() => homeSound.play()}
-            />
-            <LogoCode
-              src="/images/logo-o.svg"
-              alt="Logo code"
-              animate={controls}
-            />
-          </div>
+          <LogoAnim />
         </a>
       </Link>
       <Menu>
@@ -130,7 +102,7 @@ export default React.memo(Navbar)
 const Wrapper = styled.div`
   display: none;
 
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -146,7 +118,11 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 1024px) {
-    padding: 4rem 0rem;
+    padding: 3.2rem 3rem;
+  }
+
+  @media (min-width: 1369px) {
+    padding: 3.2rem 0rem;
   }
 
   @media (min-width: 1700px) {
@@ -224,23 +200,7 @@ const Button = styled(motion.button)`
   }
 `
 
-const Logo = styled.img`
-  width: 33rem;
-  pointer-events: all;
-`
-
 const Controls = styled.div`
   display: flex;
   align-items: center;
-`
-
-const LogoCode = styled(motion.img)`
-  position: absolute;
-  left: 2.2rem;
-  top: 1.6rem;
-
-  @media (min-width: 1500px) {
-    left: 2.3rem;
-    top: 1.8rem;
-  }
 `

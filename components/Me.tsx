@@ -49,12 +49,6 @@ const Me = () => {
       </picture>
       <Blob
         src="images/blob.svg"
-        style={{
-          position: 'absolute',
-          top: '-80%',
-          left: '-70%',
-          width: '75rem',
-        }}
         animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
         transition={{
           type: 'tween',
@@ -63,23 +57,15 @@ const Me = () => {
           repeatType: 'reverse',
         }}
       />
-      <Blob
+      <Triangle
         src="images/Triangle.png"
-        style={{
-          position: 'absolute',
-          top: '-15%',
-          left: '-30%',
-          width: 320,
-          opacity: 0.4,
-          rotate: -10,
-          skewY: 2,
-        }}
         transition={{
           type: 'tween',
           duration: 7,
           repeat: Infinity,
           repeatType: 'reverse',
         }}
+        style={{ rotate: -10, skewY: 2 }}
       />
     </div>
   )
@@ -105,5 +91,41 @@ const MeImg = styled(motion.img)`
 `
 
 const Blob = styled(motion.img)`
-  /* max-width: 40%; */
+  position: absolute;
+  width: 40rem;
+  top: 0;
+  left: 0;
+
+  @media (min-width: 768px) {
+    top: -60%;
+    left: -50%;
+    width: 65rem;
+  }
+
+  @media (min-width: 1025px) {
+    top: -80%;
+    left: -70%;
+    width: 75rem;
+  }
+`
+
+const Triangle = styled(motion.img)`
+  position: absolute;
+  width: 25rem;
+  top: 0;
+  left: 0;
+
+  @media (min-width: 768px) {
+    top: -15%;
+    left: -10%;
+    width: 30rem;
+    opacity: 0.4;
+  }
+
+  @media (min-width: 1025px) {
+    top: -15%;
+    left: -30%;
+    width: 32rem;
+    opacity: 0.4;
+  }
 `
