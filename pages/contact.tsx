@@ -33,7 +33,18 @@ const ContactPage = () => {
             }}
           >
             Just wanna say hi, got a question or are interested in retaining my
-            services for a project? <br />
+            services for a project?
+          </Tagline>
+          <Tagline
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: 'spring',
+              damping: 18,
+              stiffness: 60,
+              delay: 0.1,
+            }}
+          >
             Hit me up using the form and I will get back to you asap.
           </Tagline>
           <ContactForm />
@@ -80,10 +91,11 @@ const Tagline = styled(motion.h3)`
   font-weight: 500;
   font-size: 2rem;
   line-height: 2em;
-  margin-bottom: 5rem;
+  margin-bottom: 0rem;
   color: #f4d7ff;
 
   @media (max-width: 500px) {
     line-height: 1.5em;
+    margin-bottom: 2rem;
   }
 `

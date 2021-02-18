@@ -207,6 +207,7 @@ const FormWrapper = styled(motion.form)`
   justify-content: center;
   align-items: flex-start;
   position: relative;
+  margin-top: 5rem;
 
   @media (max-width: 500px) {
     padding: 0;
