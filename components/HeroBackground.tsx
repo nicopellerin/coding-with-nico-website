@@ -98,13 +98,14 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
 
   @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
     margin-top: -5rem;
   }
 
-  @media (min-width: 1367px) {
-    grid-template-columns: 1fr 1fr;
+  @media (min-width: 900px) {
     max-width: 140rem;
   }
 
@@ -127,17 +128,17 @@ const Info = styled(motion.div)`
 
   @media (min-width: 768px) {
     top: -5rem;
-    left: -10rem;
+    /* left: -10rem; */
   }
 
   @media (min-width: 1024px) {
     top: 0rem;
-    left: -20rem;
+    /* left: -20rem; */
   }
 
   @media (min-width: 1366px) {
     top: -2rem;
-    left: -30rem;
+    left: 0rem;
   }
 
   @media (min-width: 1400px) {
@@ -216,36 +217,31 @@ const Tagline = styled(motion.h2)`
 `
 
 const Character = styled(motion.img)`
-  position: absolute;
+  position: fixed;
   width: 24rem;
   max-width: 98%;
   bottom: 0;
   right: 95px;
 
   @media (min-width: 768px) {
-    position: absolute;
-    width: 80rem;
+    width: 70rem;
     right: 0rem;
-    bottom: 8rem;
   }
 
   @media (min-width: 1024px) {
-    position: absolute;
-    width: 58rem;
+    width: 62rem;
     right: 0rem;
     bottom: 8rem;
   }
 
   @media (min-width: 1366px) {
-    position: absolute;
     width: 78rem;
     right: 0rem;
-    bottom: 10rem;
   }
 
-  @media (min-width: 1500px) {
+  @media (min-width: 1800px) {
     position: relative;
-    bottom: 0;
+    bottom: -1rem;
   }
 `
 

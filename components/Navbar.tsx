@@ -102,7 +102,7 @@ export default React.memo(Navbar)
 const Wrapper = styled.div`
   display: none;
 
-  @media (min-width: 769px) {
+  @media (min-width: 1024px) {
     display: flex;
     justify-content: space-between;
     align-items: center;

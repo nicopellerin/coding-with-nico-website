@@ -53,7 +53,7 @@ const Wrapper = styled.div`
   width: 100%;
   z-index: 10000;
 
-  @media (min-width: 769px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `
