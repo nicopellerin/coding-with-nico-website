@@ -175,7 +175,7 @@ const Title = styled(motion.h1)`
   }
 
   @media (min-width: 1366px) {
-    font-size: 9rem;
+    font-size: 9.2rem;
   }
 `
 

@@ -64,10 +64,7 @@ const Wrapper = styled(motion.div)`
   }
 
   @media (min-width: 1440px) {
-    margin-left: 5rem;
-    margin-bottom: 0;
     gap: 3rem;
-    order: 0;
   }
 `
 

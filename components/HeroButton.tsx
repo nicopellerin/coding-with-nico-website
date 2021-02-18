@@ -39,7 +39,7 @@ export default HeroButton
 // Styles
 const Button = styled(motion.button)`
   border: none;
-  padding: 1.4rem 2.6rem;
+  padding: 0.65em 1.2em;
   font-size: 2.2rem;
   border-radius: 0.5rem;
   font-weight: 700;

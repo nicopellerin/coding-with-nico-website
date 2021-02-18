@@ -145,7 +145,7 @@ const SelectTech = () => {
                   style={{ border: '2px solid rgba(144, 238, 144, 0.1)' }}
                 >
                   <AnimatePresence>
-                    {techImages.map(({ tech, logo, width }, i) => (
+                    {techImages.map(({ tech, logo }, i) => (
                       <Tech
                         key={tech}
                         onMouseOver={() => setIndex(i)}
@@ -158,7 +158,6 @@ const SelectTech = () => {
                               layoutId={tech.toLowerCase()}
                               src={logo}
                               alt={tech}
-                              width={width}
                               transition={{ type: 'tween', duration: 0.2 }}
                             />
                             {index === i && (

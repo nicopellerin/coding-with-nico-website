@@ -3,12 +3,13 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
 import LayoutPage from '../../../components/LayoutPage'
+import TemplateContainer from '../../../components/TemplateContainer'
 
 const ReactPage = () => {
   return (
     <LayoutPage title={'Tips & Tricks'} img="/images/tips.png">
       <Wrapper>
-        <Container>
+        <TemplateContainer>
           <TechLogo
             src="/images/tech/react.png"
             layoutId="react"
@@ -22,7 +23,7 @@ const ReactPage = () => {
           >
             Coming soon!
           </ComingSoon>
-        </Container>
+        </TemplateContainer>
       </Wrapper>
     </LayoutPage>
   )
@@ -35,26 +36,6 @@ const Wrapper = styled.div`
   position: relative;
   background: #001;
   z-index: 100;
-`
-
-const Container = styled.div`
-  max-width: 110rem;
-  margin: 0 auto;
-  padding: 2rem 2rem 10rem;
-  text-align: center;
-
-  @media (min-width: 768px) {
-    padding: 2rem 3rem 14rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 2rem 3rem 22rem;
-  }
-
-  @media (min-width: 1800px) {
-    padding: 2rem 3rem 27rem;
-  }padding: 6rem 3rem 27rem;
-  }
 `
 
 const Tech = styled(motion.h2)`
