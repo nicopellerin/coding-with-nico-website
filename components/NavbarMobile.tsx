@@ -20,6 +20,7 @@ const NavbarMobile: React.FC = () => {
         <div
           role="button"
           onClick={() => setToggleDropdown((prevState) => !prevState)}
+          style={{ marginTop: 3 }}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
             <path

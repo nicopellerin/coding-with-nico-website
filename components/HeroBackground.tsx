@@ -123,17 +123,15 @@ const Info = styled(motion.div)`
   justify-content: center;
   align-items: start;
   position: relative;
-  top: -3.5rem;
+  top: -5rem;
   left: 0;
 
   @media (min-width: 768px) {
     top: -5rem;
-    /* left: -10rem; */
   }
 
   @media (min-width: 1024px) {
     top: 0rem;
-    /* left: -20rem; */
   }
 
   @media (min-width: 1366px) {
@@ -143,6 +141,10 @@ const Info = styled(motion.div)`
 
   @media (min-width: 1400px) {
     position: static;
+  }
+
+  @media (max-height: 667px) {
+    top: 0;
   }
 `
 
@@ -159,9 +161,9 @@ const Title = styled(motion.h1)`
   line-height: 1.05;
   max-width: 13ch;
 
-  @media (max-width: 375px) {
-    font-size: 6.8rem;
-    margin-bottom: 2.6rem;
+  @media (max-width: 500px) {
+    font-size: 6.2rem;
+    margin-bottom: 2rem;
   }
 
   @media (max-height: 667px) {
@@ -190,21 +192,22 @@ const Tagline = styled(motion.h2)`
   max-width: 37ch;
 
   strong {
-    background: -webkit-linear-gradient(45deg, #f6deff 1%, #9b51e0 123.31%);
+    /* background: -webkit-linear-gradient(45deg, #f6deff 1%, #9b51e0 123.31%);
     -webkit-background-clip: text;
     background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: #f6deff;
   }
 
   @media (max-width: 500px) {
     font-size: 2rem;
-    margin-bottom: 3.6rem;
+    margin-bottom: 3rem;
   }
 
-  @media (max-height: 667px) {
+  /* @media (max-height: 667px) {
     font-size: 1.9rem;
     margin-bottom: 2rem;
-  }
+  } */
 
   @media (min-width: 768px) {
     font-size: 2.4rem;
@@ -224,7 +227,7 @@ const Character = styled(motion.img)`
   position: fixed;
   width: 24rem;
   max-width: 98%;
-  bottom: 0;
+  bottom: -10px;
   right: 95px;
 
   @media (min-width: 768px) {
@@ -246,6 +249,10 @@ const Character = styled(motion.img)`
   @media (min-width: 1800px) {
     position: relative;
     bottom: -1rem;
+  }
+
+  @media (max-height: 667px) {
+    display: none;
   }
 `
 

@@ -34,11 +34,11 @@ const LogoAnim = () => {
       onMouseOut={() => setIsHover(false)}
     >
       <Logo
-        src="/images/logo.svg"
+        src="/images/logo.png"
         alt="Logo"
         onClick={() => audioOn && homeSound.play()}
       />
-      <LogoCode src="/images/logo-o.svg" alt="Logo code" animate={controls} />
+      <LogoCode src="/images/logo-o.png" alt="Logo code" animate={controls} />
     </div>
   )
 }
@@ -46,7 +46,7 @@ const LogoAnim = () => {
 export default LogoAnim
 
 // Styles
-const Logo = styled.img`
+const Logo = styled(motion.img)`
   width: 30rem;
   pointer-events: all;
 
@@ -68,7 +68,6 @@ const LogoCode = styled(motion.img)`
   }
 
   @media (min-width: 1369px) {
-    width: auto;
     left: 2.3rem;
     top: 1.8rem;
   }
