@@ -1,4 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
 // TODO
-export default (req: NextApiRequest, res: NextpApiResponse) => {}
+export default (_req: NextApiRequest, _res: NextApiResponse) => {
+
+}
