@@ -2,8 +2,7 @@ import * as React from 'react'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiGithub, FiTwitter, FiInstagram } from 'react-icons/fi'
-import { FaChevronRight, FaLaptopCode } from 'react-icons/fa'
+import { FaChevronRight } from 'react-icons/fa'
 import { useRecoilState } from 'recoil'
 
 import { mobileDropdownState } from '../store/navigation'
@@ -62,8 +61,6 @@ const DropdownMobile: React.FC = () => {
     } else {
       document.body.style.overflow = 'unset'
     }
-
-    return () => (document.body.style.overflow = 'unset')
   }, [toggleDropdown])
 
   return (
