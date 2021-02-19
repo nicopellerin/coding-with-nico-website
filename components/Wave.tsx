@@ -29,6 +29,7 @@ const Wave = () => {
         zIndex: 10001,
         left: '-3%',
         right: '-3%',
+        pointerEvents: 'none',
       }}
     >
       <path
