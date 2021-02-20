@@ -16,7 +16,7 @@ const ContactForm = () => {
   const [errors, setErrors] = useState('')
 
   const isDesktop = useMedia({
-    minWidth: 500,
+    minWidth: 768,
   })
 
   const hiddenRef = useRef() as React.MutableRefObject<HTMLInputElement>
@@ -217,13 +217,14 @@ const FormWrapper = styled(motion.form)`
 
 const InputRow = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 3rem;
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
 
-  @media (max-width: 500px) {
-    grid-template-columns: 1fr;
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2rem;
   }
 `
 
@@ -249,8 +250,14 @@ const InputField = styled.input`
   border-radius: 5px;
   width: 100%;
   min-width: 30rem;
-  margin-right: 1rem;
+  margin-right: 0rem;
+  margin-bottom: 2rem;
   outline: transparent;
+
+  @media (min-width: 768px) {
+    margin-right: 1rem;
+    margin-bottom: unset;
+  }
 `
 
 const TextareaField = styled.textarea`

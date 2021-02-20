@@ -110,6 +110,10 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media (max-width: 600px) {
+    height: 42vh;
+  }
+
   @media (max-width: 500px) {
     height: 47vh;
   }
@@ -198,8 +202,14 @@ const HeroImage = styled(motion.img)`
   }
 
   @media (min-width: 1600px) {
-    max-width: 40rem;
+    max-width: 36rem;
     top: 10rem;
+    right: 22vw;
+  }
+
+  @media (min-width: 2000px) {
+    max-width: 40rem;
+    top: 14em;
     right: 22vw;
   }
 `

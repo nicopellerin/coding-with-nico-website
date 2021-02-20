@@ -75,7 +75,7 @@ export default memo(Me)
 
 // Styles
 const MeImg = styled(motion.img)`
-  max-width: 45%;
+  max-width: 47%;
   border-radius: 50%;
   border: 5px solid #f4f4f4;
   margin: 0 auto;
