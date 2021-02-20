@@ -53,7 +53,6 @@ const ContactForm = () => {
       setErrors('An error occurred. Please try again.')
     } finally {
       setIsSending(false)
-      setTimeout(() => setIsSent(false), 3000)
     }
   }
 
@@ -85,6 +84,7 @@ const ContactForm = () => {
       <AnimatePresence>
         {isSent ? (
           <SuccessMsgWrapper>
+            <SuccessEmoji>🎉</SuccessEmoji>
             <SuccessTitle
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -306,6 +306,7 @@ const SuccessMsgWrapper = styled(motion.div)`
   align-items: center;
   justify-content: center;
   text-align: center;
+  width: 100%;
 `
 
 const SuccessTitle = styled(motion.h3)`
@@ -319,4 +320,11 @@ const SuccessMsg = styled(motion.h5)`
   font-size: 1.8rem;
   font-weight: 400;
   margin-top: 2.6rem;
+  color: #f4d7ff;
+`
+
+const SuccessEmoji = styled.span`
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 2rem;
 `

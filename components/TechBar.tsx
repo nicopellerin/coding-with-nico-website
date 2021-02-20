@@ -38,7 +38,7 @@ const TechBar = () => {
   return (
     <Wrapper variants={list} initial="hidden" animate="visible">
       {techImages.map(({ tech, logo }) => (
-        <Logo src={logo} alt={tech} variants={item} />
+        <Logo key={tech} src={logo} alt={tech} variants={item} />
       ))}
     </Wrapper>
   )
