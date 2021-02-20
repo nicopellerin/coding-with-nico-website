@@ -161,23 +161,21 @@ const Title = styled(motion.h1)`
   line-height: 1.05;
   max-width: 13ch;
 
-  @media (max-width: 500px) {
-    font-size: 6.2rem;
-    margin-bottom: 2rem;
-  }
-
-  @media (max-height: 667px) {
-    font-size: 5rem;
-    margin-bottom: 2rem;
-  }
-
   @media (min-width: 768px) {
     font-size: 8rem;
     margin-bottom: 3.2rem;
   }
 
   @media (min-width: 1366px) {
+    font-size: 8.2rem;
+  }
+
+  @media (min-width: 1600px) {
     font-size: 9.2rem;
+  }
+
+  @media (min-width: 2200px) {
+    font-size: 10.2rem;
   }
 `
 
@@ -204,11 +202,6 @@ const Tagline = styled(motion.h2)`
     margin-bottom: 3rem;
   }
 
-  /* @media (max-height: 667px) {
-    font-size: 1.9rem;
-    margin-bottom: 2rem;
-  } */
-
   @media (min-width: 768px) {
     font-size: 2.4rem;
     margin-bottom: 3rem;
@@ -230,6 +223,11 @@ const Character = styled(motion.img)`
   bottom: -10px;
   right: 95px;
 
+  @media (min-width: 600px) {
+    width: 34rem;
+    right: 165px;
+  }
+
   @media (min-width: 768px) {
     width: 70rem;
     right: 0rem;
@@ -242,13 +240,20 @@ const Character = styled(motion.img)`
   }
 
   @media (min-width: 1366px) {
-    width: 78rem;
-    right: 0rem;
+    width: 70rem;
+    right: 5rem;
   }
 
   @media (min-width: 1800px) {
     position: relative;
+    width: 77rem;
     bottom: -1rem;
+  }
+
+  @media (min-width: 2200px) {
+    width: 120%;
+    max-width: unset;
+    bottom: -3rem;
   }
 
   @media (max-height: 667px) {

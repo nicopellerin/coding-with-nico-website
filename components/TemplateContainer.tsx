@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const TemplateContainer = styled.div`
   max-width: 110rem;
   margin: 0 auto;
-  padding: 2rem 2rem 10rem;
+  padding: 4rem 2rem 10rem;
   text-align: center;
 
   @media (min-width: 768px) {

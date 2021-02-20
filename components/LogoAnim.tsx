@@ -47,7 +47,7 @@ export default LogoAnim
 
 // Styles
 const Logo = styled(motion.img)`
-  width: 30rem;
+  width: 28rem;
   pointer-events: all;
 
   @media (min-width: 768px) {
@@ -57,9 +57,9 @@ const Logo = styled(motion.img)`
 
 const LogoCode = styled(motion.img)`
   position: absolute;
-  left: 2.1rem;
-  top: 1.5rem;
-  width: 3.7rem;
+  left: 2rem;
+  top: 1.4rem;
+  width: 3.2rem;
 
   @media (min-width: 768px) {
     left: 2.2rem;

@@ -39,7 +39,7 @@ export default HeroButton
 // Styles
 const Button = styled(motion.button)`
   border: none;
-  padding: 0.65em 1.2em;
+  padding: 0.75em 1.2em;
   font-size: 2.2rem;
   border-radius: 0.5rem;
   font-weight: 700;
@@ -54,19 +54,15 @@ const Button = styled(motion.button)`
   display: flex;
   align-items: center;
   white-space: nowrap;
-
-  @media (max-width: 375px) {
-    font-size: 2rem;
-    width: 100%;
-    justify-content: center;
-    padding: 0.75em 1.2em;
-  }
+  width: 100%;
+  justify-content: center;
 
   @media (min-width: 768px) {
     font-size: 2.2rem;
+    width: auto;
   }
 
-  @media (min-width: 1366px) {
-    /* font-size: 2.4rem; */
+  @media (min-width: 2200px) {
+    font-size: 2.4rem;
   }
 `

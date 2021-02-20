@@ -117,6 +117,14 @@ const Wrapper = styled.div`
   @media (min-width: 769px) {
     height: 48vh;
   }
+
+  @media (min-width: 1369px) {
+    height: 50vh;
+  }
+
+  @media (min-width: 1800px) {
+    height: 48vh;
+  }
 `
 
 const Title = styled(motion.h1)`
@@ -135,7 +143,8 @@ const Title = styled(motion.h1)`
   font-family: 'Space Grotesk', sans-serif;
 
   @media (max-width: 375px) {
-    margin-bottom: -2rem;
+    margin-bottom: -0.5rem;
+    font-size: 3.2rem;
   }
 
   &::after {
@@ -165,9 +174,14 @@ const HeroImage = styled(motion.img)`
   top: 27vh;
   right: 5vw;
 
-  @media (min-width: 768px) {
-    max-width: 34rem;
+  @media (min-width: 600px) {
     top: 18rem;
+    max-width: 28rem;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 40rem;
+    top: 32rem;
     right: 10vw;
   }
 
@@ -196,10 +210,12 @@ const CloudOne = styled(motion.img)`
   max-width: 4rem;
   left: 9vw;
   top: 15rem;
+  display: none;
 
   @media (min-width: 768px) {
+    display: block;
     max-width: 5rem;
-    top: 15rem;
+    top: 18rem;
     left: 20vw;
   }
 
@@ -222,10 +238,12 @@ const CloudTwo = styled(motion.img)`
   max-width: 6rem;
   left: 45vw;
   top: 10rem;
+  display: none;
 
   @media (min-width: 768px) {
+    display: block;
     max-width: 7rem;
-    top: 5rem;
+    top: 10rem;
     left: 40vw;
   }
 
@@ -249,10 +267,12 @@ const CloudThree = styled(motion.img)`
   right: 5vw;
   top: 16rem;
   z-index: 2;
+  display: none;
 
   @media (min-width: 768px) {
+    display: block;
     max-width: 7rem;
-    top: 11rem;
+    top: 16rem;
     right: 22vw;
   }
 
@@ -263,6 +283,12 @@ const CloudThree = styled(motion.img)`
   }
 
   @media (min-width: 1440px) {
+    max-width: 7rem;
+    top: 11rem;
+    right: 34vw;
+  }
+
+  @media (min-width: 1800px) {
     max-width: 7rem;
     top: 11rem;
     right: 36vw;

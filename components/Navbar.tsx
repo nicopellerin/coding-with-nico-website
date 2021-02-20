@@ -152,7 +152,21 @@ const MenuListItem = styled.li`
   cursor: pointer;
   position: relative;
 
-  &:not(:last-child, :nth-child(4)) {
+  &:not(:last-child) {
+    margin-right: 5rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 110%;
+      width: 2px;
+      background: rgba(227, 154, 255, 0.2);
+      right: -2.5rem;
+      top: 0;
+    }
+  }
+
+  &:not(:nth-child(4)) {
     margin-right: 5rem;
 
     &::after {
