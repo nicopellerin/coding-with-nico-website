@@ -75,7 +75,7 @@ export default memo(Me)
 
 // Styles
 const MeImg = styled(motion.img)`
-  max-width: 80%;
+  max-width: 45%;
   border-radius: 50%;
   border: 5px solid #f4f4f4;
   margin: 0 auto;
@@ -83,6 +83,7 @@ const MeImg = styled(motion.img)`
   position: relative;
   z-index: 200;
   cursor: pointer;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     margin-bottom: 0rem;
@@ -95,6 +96,16 @@ const Blob = styled(motion.img)`
   width: 40rem;
   top: 0;
   left: 0;
+
+  @media (max-width: 500px) {
+    top: -4rem;
+    width: 37rem;
+  }
+
+  @media (max-width: 400px) {
+    top: -5rem;
+    width: 36rem;
+  }
 
   @media (min-width: 768px) {
     top: -60%;
@@ -114,6 +125,16 @@ const Triangle = styled(motion.img)`
   width: 25rem;
   top: 0;
   left: 0;
+
+  @media (max-width: 500px) {
+    top: -1rem;
+    width: 19rem;
+  }
+
+  @media (max-width: 400px) {
+    top: -1rem;
+    width: 17rem;
+  }
 
   @media (min-width: 768px) {
     top: -15%;

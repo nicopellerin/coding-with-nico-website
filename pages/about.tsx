@@ -12,7 +12,7 @@ const AboutPage = () => {
         <Container>
           <Info>
             <Me />
-            <div>
+            <RightDiv>
               <Welcome
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ const AboutPage = () => {
                 design stuff. I also recently took an interest in creating audio
                 VST plugins.
               </Text>
-            </div>
+            </RightDiv>
           </Info>
         </Container>
       </Wrapper>
@@ -115,4 +115,12 @@ const Welcome = styled(motion.h3)`
   color: #f4d7ff;
   display: flex;
   align-items: center;
+`
+
+const RightDiv = styled.div`
+  @media (max-width: 500px) {
+    margin-top: 3rem;
+  }
+
+  margin-top: unset;
 `
