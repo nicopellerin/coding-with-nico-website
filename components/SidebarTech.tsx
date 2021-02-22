@@ -59,7 +59,7 @@ const Wrapper = styled(motion.ul)`
   list-style: none;
   display: grid;
   gap: 2.5em;
-  background: #102;
+  background: rgba(131, 82, 253, 0.08);
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border: 1px solid rgba(131, 82, 253, 0.15);
@@ -73,7 +73,7 @@ const Tech = styled(motion.img)`
 `
 
 const Bar = styled.div`
-  background: #002;
+  background: rgba(131, 82, 253, 0.1);
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border: 1px solid rgba(131, 82, 253, 0.15);
