@@ -1,8 +1,10 @@
 import * as React from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 
 const techImages = [
   { tech: 'React', logo: '/images/tech/react.png' },
@@ -15,12 +17,21 @@ const techImages = [
 const SidebarTech = () => {
   const { pathname } = useRouter()
 
+  const [open, setOpen] = useState(false)
+
   return (
     <Wrapper
-      initial={{ y: '-50%', x: 100 }}
-      animate={{ x: 0 }}
-      transition={{ type: 'spring', damping: 18, delay: 1.2 }}
+      initial={{ x: 100 }}
+      animate={{ x: open ? 0 : '7rem' }}
+      transition={{ type: 'spring', damping: 18 }}
     >
+      <Bar onClick={() => setOpen((prevState) => !prevState)}>
+        {open ? (
+          <FaChevronRight style={{ fontSize: '1.4rem', color: '#eef' }} />
+        ) : (
+          <FaChevronLeft style={{ fontSize: '1.4rem', color: '#eef' }} />
+        )}
+      </Bar>
       {techImages
         .filter(({ tech }) => !pathname.includes(tech.toLowerCase()))
         .map(({ tech, logo }) => (
@@ -42,9 +53,9 @@ export default SidebarTech
 const Wrapper = styled(motion.ul)`
   padding: 2em 1.6em;
   margin: 0;
-  position: absolute;
+  position: fixed;
   right: 0;
-  top: 50%;
+  bottom: 3rem;
   list-style: none;
   display: grid;
   gap: 2.5em;
@@ -59,4 +70,23 @@ const Wrapper = styled(motion.ul)`
 const Tech = styled(motion.img)`
   width: 5rem;
   border-radius: 10%;
+`
+
+const Bar = styled.div`
+  background: #112;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border: 1px solid rgba(131, 82, 253, 0.15);
+  border-right: none;
+  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.1));
+  position: absolute;
+  left: -22px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 `

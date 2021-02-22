@@ -60,8 +60,6 @@ body {
   color: #f4f4f4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
   overflow-x: hidden;
   background: #001;
 }
