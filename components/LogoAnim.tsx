@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
 import { useRecoilValue } from 'recoil'
+
 import { audioOnState } from '../store/audio'
 
 const LogoAnim = () => {

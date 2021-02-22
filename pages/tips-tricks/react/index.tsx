@@ -5,6 +5,8 @@ import { motion } from 'framer-motion'
 import LayoutPage from '../../../components/LayoutPage'
 import TemplateContainer from '../../../components/TemplateContainer'
 
+// import reactPosts from '../../../data/react'
+
 const ReactPage = () => {
   return (
     <LayoutPage title={'Tips & Tricks'} img="/images/tips.png">

@@ -315,6 +315,7 @@ const LoadingText = styled(motion.pre)`
 
 const TechImage = styled(motion.img)`
   width: 6rem;
+  border-radius: 10%;
 
   @media (min-width: 768px) {
     width: 8rem;

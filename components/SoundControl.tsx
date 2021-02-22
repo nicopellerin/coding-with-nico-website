@@ -1,13 +1,21 @@
 import * as React from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
 import { FiVolume2, FiVolumeX } from 'react-icons/fi'
 import { useRecoilState } from 'recoil'
 
 import { audioOnState } from '../store/audio'
 import { motion } from 'framer-motion'
+import useLocalStorage from '../hooks/useLocalStorage'
 
 const SoundControl = () => {
   const [audioOn, setAudioOn] = useRecoilState(audioOnState)
+
+  const [storage, setStorage] = useLocalStorage('audioOnState', audioOn)
+
+  useEffect(() => {
+    setAudioOn(storage)
+  }, [storage])
 
   let tocSound: HTMLAudioElement
 
@@ -18,15 +26,15 @@ const SoundControl = () => {
 
   return (
     <>
-      {audioOn ? (
+      {storage ? (
         <motion.span whileTap={{ scale: 0.98 }}>
-          <VolumeOnIcon onClick={() => setAudioOn(false)} />
+          <VolumeOnIcon onClick={() => setStorage(false)} />
         </motion.span>
       ) : (
         <motion.span whileTap={{ scale: 0.98 }}>
           <VolumeOffIcon
             onClick={() => {
-              setAudioOn(true)
+              setStorage(true)
               tocSound.play()
             }}
           />
