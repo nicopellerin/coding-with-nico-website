@@ -117,23 +117,36 @@ const Container = styled(motion.div)`
     width: 90vw;
     margin: 0 auto;
     filter: none;
-    padding: 4rem 5rem;
+    padding: 4rem 2rem;
   }
 `
 
 const Title = styled(motion.h3)`
   margin: 0 0 4rem 0;
-  font-size: 5rem;
+  font-size: 4.2rem;
   color: var(--tertiaryColor);
+  text-align: center;
+
+  @media (min-width: 600px) {
+    font-size: 5rem;
+  }
 `
 
 const FormStyled = styled(motion.form)`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6em;
   align-items: center;
   background: linear-gradient(-45deg, #1a0d2b 50%, #4d2f72);
   padding: 1.7rem;
   border-radius: 5px;
   position: relative;
+  width: 100%;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 1fr auto;
+    gap: 0;
+  }
 `
 
 const Input = styled.input`
@@ -144,9 +157,13 @@ const Input = styled.input`
   font-size: 2rem;
   border-radius: 5px;
   width: 100%;
-  min-width: 30rem;
+  min-width: 20rem;
   margin-right: 1rem;
   outline: transparent;
+
+  @media (min-width: 600px) {
+    min-width: 30rem;
+  }
 `
 
 const Button = styled(motion.button)`

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaChevronRight } from 'react-icons/fa'
 import { useRecoilState } from 'recoil'
+import { useRouter } from 'next/router'
 
 import { mobileDropdownState } from '../store/navigation'
 
@@ -50,7 +51,14 @@ const itemVariants = {
   },
 }
 
+interface StyledProps {
+  isRootOrLogin?: boolean
+}
+
 const DropdownMobile: React.FC = () => {
+  const { pathname } = useRouter()
+  const isRootOrLogin = pathname === '/' || pathname.includes('login')
+
   const [toggleDropdown, setToggleDropdown] = useRecoilState(
     mobileDropdownState
   )
@@ -73,6 +81,7 @@ const DropdownMobile: React.FC = () => {
               animate={{ y: 0 }}
               exit={{ y: 400 }}
               transition={{ type: 'spring', damping: 18 }}
+              isRootOrLogin={isRootOrLogin}
             >
               <DropdownList
                 variants={listVariants}
@@ -182,7 +191,7 @@ const Overlay = styled(motion.div)`
 
 const DropdownWrapper = styled(motion.div)`
   position: absolute;
-  height: 44rem;
+  height: ${(props: StyledProps) => (props.isRootOrLogin ? '44rem' : '40rem')};
   width: 100%;
   background: #112;
   bottom: 0;
