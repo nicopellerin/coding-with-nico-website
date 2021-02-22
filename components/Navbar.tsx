@@ -114,12 +114,12 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    z-index: 100;
+    z-index: 10000;
     padding: 3rem 0rem;
     max-width: 140rem;
     pointer-events: none;

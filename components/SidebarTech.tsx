@@ -1,10 +1,12 @@
 import * as React from 'react'
-import { useState } from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { useRecoilState } from 'recoil'
+
+import { techSidebarOpenState } from '../store/tech-sidebar'
 
 const techImages = [
   { tech: 'React', logo: '/images/tech/react.png' },
@@ -17,7 +19,7 @@ const techImages = [
 const SidebarTech = () => {
   const { pathname } = useRouter()
 
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useRecoilState(techSidebarOpenState)
 
   return (
     <Wrapper

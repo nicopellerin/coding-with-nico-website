@@ -7,17 +7,19 @@ const TemplateContainerStyled = styled.div`
   margin: 0 auto;
   padding: 4rem 2rem 10rem;
   text-align: center;
+  position: relative;
+  z-index: 100;
 
   @media (min-width: 768px) {
     padding: 2rem 3rem 14rem;
   }
 
   @media (min-width: 1024px) {
-    padding: 2rem 3rem 14rem;
+    /* padding: 2rem 3rem 14rem; */
   }
 
   @media (min-width: 1800px) {
-    padding: 2rem 3rem 14rem;
+    /* padding: 2rem 3rem 14rem; */
   }
 `
 
