@@ -22,14 +22,14 @@ const SidebarTech = () => {
   return (
     <Wrapper
       initial={{ x: 100 }}
-      animate={{ x: open ? 0 : '7rem' }}
+      animate={{ x: open ? 0 : '6.8rem' }}
       transition={{ type: 'spring', damping: 18 }}
     >
       <Bar onClick={() => setOpen((prevState) => !prevState)}>
         {open ? (
-          <FaChevronRight style={{ fontSize: '1.4rem', color: '#eef' }} />
+          <FaChevronRight style={{ fontSize: '1.4rem', color: 'pink' }} />
         ) : (
-          <FaChevronLeft style={{ fontSize: '1.4rem', color: '#eef' }} />
+          <FaChevronLeft style={{ fontSize: '1.4rem', color: 'pink' }} />
         )}
       </Bar>
       {techImages
@@ -59,7 +59,7 @@ const Wrapper = styled(motion.ul)`
   list-style: none;
   display: grid;
   gap: 2.5em;
-  background: #112;
+  background: #102;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border: 1px solid rgba(131, 82, 253, 0.15);
@@ -73,18 +73,18 @@ const Tech = styled(motion.img)`
 `
 
 const Bar = styled.div`
-  background: #112;
+  background: #002;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border: 1px solid rgba(131, 82, 253, 0.15);
   border-right: none;
   filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.1));
   position: absolute;
-  left: -22px;
+  left: -18px;
   top: 50%;
   transform: translateY(-50%);
-  height: 100px;
-  width: 20px;
+  height: 120px;
+  width: 17px;
   display: flex;
   align-items: center;
   justify-content: center;
