@@ -4,6 +4,7 @@ import { AnimateSharedLayout, motion } from 'framer-motion'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { useRecoilValue } from 'recoil'
+import { useRouter } from 'next/router'
 
 import SoundControl from './SoundControl'
 
@@ -22,7 +23,13 @@ interface Link {
   link: string
 }
 
+interface StyledProps {
+  active?: boolean
+}
+
 const Navbar = () => {
+  const { pathname } = useRouter()
+
   const [index, setIndex] = useState<number | null>(null)
 
   const audioOn = useRecoilValue(audioOnState)
@@ -52,6 +59,7 @@ const Navbar = () => {
                   setIndex(i)
                 }}
                 onClick={() => audioOn && popSound.play()}
+                active={pathname.includes(link)}
               >
                 <Link href={link}>
                   <StyledLink>
@@ -151,6 +159,17 @@ const MenuListItem = styled.li`
   color: #f4d7ff;
   cursor: pointer;
   position: relative;
+
+  &::before {
+    display: ${(props: StyledProps) => (props.active ? 'block' : 'none')};
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 0.3rem;
+    background: #f6deff;
+    bottom: -1.1rem;
+    border-radius: 0.5rem;
+  }
 
   &:not(:last-child) {
     margin-right: 5rem;

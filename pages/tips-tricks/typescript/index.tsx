@@ -45,6 +45,7 @@ const Tech = styled(motion.h2)`
 
 const TechLogo = styled(motion.img)`
   margin-bottom: 1rem;
+  border-radius: 10%;
 `
 
 const ComingSoon = styled(motion.h3)`
