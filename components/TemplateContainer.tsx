@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
+
 import SidebarTech from './SidebarTech'
 
 const TemplateContainerStyled = styled.div`

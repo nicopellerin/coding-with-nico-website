@@ -239,8 +239,8 @@ const Character = styled(motion.img)`
     bottom: 8rem;
   }
 
-  @media (min-width: 1366px) {
-    width: 70rem;
+  @media (min-width: 1200px) {
+    width: 73rem;
     right: 5rem;
   }
 
