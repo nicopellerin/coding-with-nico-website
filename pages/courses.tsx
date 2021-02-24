@@ -20,9 +20,9 @@ const CoursesPage = () => {
               delay: 0.1,
             }}
           >
-            Learn
+            Learn new skills <span role="icon">&#128640;</span>
           </Title>
-          <Tagline
+          {/* <Tagline
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -32,10 +32,8 @@ const CoursesPage = () => {
               delay: 0.1,
             }}
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id tempore
-            enim dolorem error, possimus sit veritatis voluptates cupiditate
-            doloremque facere!
-          </Tagline>
+            Here you will find courses I offer to help improve your knowledge
+          </Tagline> */}
           <CoursesList />
         </Container>
       </Wrapper>
@@ -71,12 +69,15 @@ const Container = styled.div`
 `
 
 const Title = styled(motion.h2)`
-  font-size: 5.2rem;
+  font-size: 5.4rem;
   color: #f4d7ff;
-  margin-bottom: 3.2rem;
+  /* margin-bottom: 3.2rem; */
+  margin-bottom: 5rem;
+  text-align: center;
 
   @media (min-width: 768px) {
     font-size: 6.2rem;
+    margin-bottom: 8rem;
   }
 `
 

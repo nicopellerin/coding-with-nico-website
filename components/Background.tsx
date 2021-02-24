@@ -19,7 +19,7 @@ const Background: React.FC<Props> = ({ bgColor }) => {
       colorManagement
       // concurrent
       camera={{
-        position: [10, -50, 30],
+        position: [10, -50, 10],
       }}
       style={{
         position: 'absolute',
@@ -49,7 +49,7 @@ const Background: React.FC<Props> = ({ bgColor }) => {
           bokehScale={2}
           height={480}
         />
-        <Bloom luminanceThreshold={20} luminanceSmoothing={0.9} height={300} />
+        <Bloom luminanceThreshold={20} luminanceSmoothing={0.9} height={400} />
         <Vignette eskil={false} offset={0.1} darkness={1} />
       </EffectComposer>
       {/* </React.Suspense> */}
