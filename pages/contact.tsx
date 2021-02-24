@@ -20,7 +20,7 @@ const ContactPage = () => {
               delay: 0.1,
             }}
           >
-            Say hi &mdash;
+            Say hi &#128400; &mdash;
           </Title>
           <Tagline
             initial={{ opacity: 0, y: -10 }}
