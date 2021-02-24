@@ -81,16 +81,16 @@ const Title = styled(motion.h2)`
   }
 `
 
-const Tagline = styled(motion.h3)`
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2em;
-  margin-bottom: 8rem;
-  color: #f4d7ff;
-  max-width: 70ch;
+// const Tagline = styled(motion.h3)`
+//   font-weight: 500;
+//   font-size: 2rem;
+//   line-height: 2em;
+//   margin-bottom: 8rem;
+//   color: #f4d7ff;
+//   max-width: 70ch;
 
-  @media (max-width: 500px) {
-    line-height: 1.5em;
-    margin-bottom: 6rem;
-  }
-`
+//   @media (max-width: 500px) {
+//     line-height: 1.5em;
+//     margin-bottom: 6rem;
+//   }
+// `
