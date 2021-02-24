@@ -20,7 +20,7 @@ const CoursesPage = () => {
               delay: 0.1,
             }}
           >
-            Learn new skills <span role="icon">&#128640;</span>
+            Learn new coding skills <span role="icon">&#128640;</span>
           </Title>
           {/* <Tagline
             initial={{ opacity: 0, y: -10 }}
