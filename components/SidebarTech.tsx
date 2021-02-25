@@ -67,6 +67,10 @@ const Wrapper = styled(motion.ul)`
   border: 1px solid rgba(131, 82, 253, 0.15);
   border-right: none;
   filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.1));
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 `
 
 const Tech = styled(motion.img)`

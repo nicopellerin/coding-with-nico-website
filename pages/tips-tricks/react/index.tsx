@@ -4,27 +4,29 @@ import { motion } from 'framer-motion'
 
 import LayoutPage from '../../../components/LayoutPage'
 import TemplateContainer from '../../../components/TemplateContainer'
+import Card from '../../../components/Card'
+import CardList from '../../../components/CardList'
 
-// import reactPosts from '../../../data/react'
+import reactPosts from '../../../data/react'
 
 const ReactPage = () => {
   return (
     <LayoutPage title={'Tips & Tricks'} img="/images/tips.png">
       <Wrapper>
         <TemplateContainer>
-          <TechLogo
-            src="/images/tech/react.png"
-            layoutId="react"
-            width="100rem"
-          />
+          <TechWrapper>
+            <TechLogo
+              src="/images/tech/react.png"
+              layoutId="react"
+              width="100rem"
+            />
+          </TechWrapper>
           <Tech>React</Tech>
-          <ComingSoon
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: 'spring', damping: 18, delay: 0.6 }}
-          >
-            Coming soon!
-          </ComingSoon>
+          <CardList>
+            {reactPosts.map((post) => (
+              <Card {...post} />
+            ))}
+          </CardList>
         </TemplateContainer>
       </Wrapper>
     </LayoutPage>
@@ -43,14 +45,23 @@ const Wrapper = styled.div`
 const Tech = styled(motion.h2)`
   color: #f4d7ff;
   font-size: 2.4rem;
+  margin-bottom: 0;
 `
 
-const TechLogo = styled(motion.img)`
-  margin-bottom: 1.6rem;
-`
+const TechLogo = styled(motion.img)``
 
-const ComingSoon = styled(motion.h3)`
-  font-size: 4rem;
-  margin-top: 8rem;
-  color: #61dafb;
+const TechWrapper = styled.div`
+  background: rgba(131, 82, 253, 0.1);
+  width: min-content;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.55));
+  border: 1px solid rgba(131, 82, 253, 0.3);
+  margin-bottom: 1.2rem;
 `

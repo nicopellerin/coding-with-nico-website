@@ -83,6 +83,26 @@ p {
 a {
   text-decoration: none;
 }
+
+.language-jsx {
+  background-color: #112!important;
+  display: block;
+  margin: 2rem 0;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding: 1.5em 0;
+  padding-right: 1em;
+  padding-left: 2em;
+  border-left: 0.25em solid #f99;
+  font-size: 1.8rem !important;
+
+  @media (max-width: 500px) {
+    max-width: 100%;
+    margin: 0;
+    overflow: auto;
+    padding-top: 6rem;
+  }
+}
 `
 
 export default GlobalStyles

@@ -1,5 +1,32 @@
+import LayoutPage from '../../../components/LayoutPage'
 export const meta = {}
 
-export default ({ children }) => <div>{children}</div>
+export default ({ children }) => (
+  <LayoutPage title="React" metaTitle="Custom Toggle Hook">
+    {children}
+  </LayoutPage>
+)
 
-# This is a test
+# Custom Toggle Hook
+
+```jsx
+// useToggle hook
+const useToggle = (initialValue) => {
+  const [isToggled, setToggle] = useState(initialValue)
+  const toggle = () => setToggle((prevState) => !prevState)
+
+  return [isToggled, toggle]
+}
+
+// Using the hook in a component
+const Toggle = () => {
+  const [isToggled, toggle] = useToggle(false)
+
+  return (
+    <>
+      <button onClick={toggle}>{isToggled ? 'Hide' : 'Show'}</button>
+      {isToggled && <span>Hiiii</span>}
+    </>
+  )
+}
+```

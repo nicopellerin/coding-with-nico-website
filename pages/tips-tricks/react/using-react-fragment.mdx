@@ -2,6 +2,43 @@ import LayoutPage from '../../../components/LayoutPage'
 
 export const meta = {}
 
-export default ({ children }) => <LayoutPage>{children}</LayoutPage>
+export default ({ children }) => (
+  <LayoutPage title="React" metaTitle="Using React Fragment">
+    {children}
+  </LayoutPage>
+)
 
-# This is a test
+# Using React Fragment
+
+```jsx
+// Without React.Fragment
+const App = () => {
+  return (
+    <div>
+      <Component1 />
+      <Component2 />
+    </div>
+  )
+}
+
+// First example adds an extra (and unnecessary in this case)
+// node to the DOM. React.Fragment fixes this.
+const App = () => {
+  return (
+    <React.Fragment>
+      <Component1 />
+      <Component2 />
+    </React.Fragment>
+  )
+}
+
+// or using the short syntax
+const App = () => {
+  return (
+    <>
+      <Component1 />
+      <Component2 />
+    </>
+  )
+}
+```

@@ -10,6 +10,11 @@
           "displayName": true,
           "preprocess": false
         }
-      ]
+      ],
+      ["prismjs", {
+        "languages": ["javascript", "css", "html", "jsx", "tsx"],
+        "plugins": ["line-numbers", "show-language"],
+        "css": true
+      }]
     ]
   }

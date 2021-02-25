@@ -1,7 +1,6 @@
 import React from 'react'
 import { RecoilRoot } from 'recoil'
 import Head from 'next/head'
-// import { MDXProvider } from '@mdx-js/react'
 
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
@@ -15,12 +14,7 @@ import Navbar from '../components/Navbar'
 import NavbarMobile from '../components/NavbarMobile'
 import DropdownMobile from '../components/DropdownMobile'
 
-interface Props {
-  Component: any
-  pageProps: any
-}
-
-const MyApp = ({ Component, pageProps }: Props) => {
+const MyApp = ({ Component, pageProps }: any) => {
   return (
     <>
       <Head>
@@ -30,7 +24,6 @@ const MyApp = ({ Component, pageProps }: Props) => {
         />
       </Head>
       <RecoilRoot>
-        {/* <MDXProvider> */}
         <Navbar />
         <NavbarMobile />
         {/* <AnimateSharedLayout> */}
@@ -38,7 +31,6 @@ const MyApp = ({ Component, pageProps }: Props) => {
         {/* </AnimateSharedLayout> */}
         <DropdownMobile />
         <GlobalStyles />
-        {/* </MDXProvider> */}
       </RecoilRoot>
     </>
   )

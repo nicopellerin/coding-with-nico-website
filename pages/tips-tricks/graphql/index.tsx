@@ -10,11 +10,13 @@ const GraphqlPage = () => {
     <LayoutPage title={'Tips & Tricks'} img="/images/tips.png">
       <Wrapper>
         <TemplateContainer>
-          <TechLogo
-            src="/images/tech/graphql.png"
-            layoutId="graphql"
-            width="100rem"
-          />
+          <TechWrapper>
+            <TechLogo
+              src="/images/tech/graphql.png"
+              layoutId="graphql"
+              width="100rem"
+            />
+          </TechWrapper>
           <Tech>GraphQL</Tech>
           <ComingSoon
             initial={{ opacity: 0, y: 20 }}
@@ -37,16 +39,32 @@ const Wrapper = styled.div`
   background: #001;
   z-index: 100;
 `
-
 const Tech = styled(motion.h2)`
   color: #f4d7ff;
   font-size: 2.4rem;
+  margin-bottom: 0;
 `
 
 const TechLogo = styled(motion.img)`
-  margin-bottom: 1.6rem;
+  border-radius: 10%;
+  width: 9rem;
 `
 
+const TechWrapper = styled.div`
+  background: rgba(131, 82, 253, 0.1);
+  width: min-content;
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.55));
+  border: 1px solid rgba(131, 82, 253, 0.3);
+  margin-bottom: 1.2rem;
+`
 const ComingSoon = styled(motion.h3)`
   font-size: 4rem;
   margin-top: 8rem;
