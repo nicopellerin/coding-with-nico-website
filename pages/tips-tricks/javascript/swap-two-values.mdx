@@ -1,0 +1,24 @@
+import LayoutPage from '../../../components/LayoutPage'
+export const meta = {}
+
+export default ({ children }) => (
+  <LayoutPage title="Javascript" metaTitle="Swap two values in Javascript">
+    {children}
+  </LayoutPage>
+)
+
+# Swap two values in Javascript
+
+```jsx
+let dog = "Max"
+let cat = "Nini"
+
+let temp = cat
+cat = dog
+dog = temp
+
+// Using array destructuring
+[dog, cat] = [cat, dog]
+
+// Result -> dog = "Nini", cat = "Max"
+```

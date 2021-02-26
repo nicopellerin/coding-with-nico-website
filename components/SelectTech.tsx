@@ -242,7 +242,7 @@ const Container = styled.div`
     transform: translateX(-50%);
     filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.5));
 
-    @media (max-width: 500px) {
+    @media (max-width: 1024px) {
       display: none;
     }
   }
@@ -336,6 +336,7 @@ const TerminalImage = styled(motion.img)`
   left: 0;
   top: 0;
   width: 100%;
+  height: 100%;
   filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.05));
 
   @media (max-width: 500px) {
@@ -347,7 +348,7 @@ const TerminalImage = styled(motion.img)`
 const PhpJoke = styled(motion.img)`
   display: block;
 
-  @media (max-width: 500px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `

@@ -86,9 +86,8 @@ a {
 .language-jsx {
   background-color: #112!important;
   display: block;
-  margin: 2rem 0;
+  margin: 2rem auto;
   margin-right: -1em;
-  margin-left: -1em;
   padding: 1.5em 0;
   padding-right: 1em;
   padding-left: 2em;

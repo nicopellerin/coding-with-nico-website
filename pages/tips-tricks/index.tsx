@@ -28,17 +28,17 @@ const Wrapper = styled.div`
 const Container = styled.div`
   max-width: 110rem;
   margin: 0 auto;
-  padding: 6rem 2rem 10rem;
+  padding: 2rem 2rem 3rem;
 
   @media (min-width: 768px) {
-    padding: 5rem 3rem 12rem;
+    padding: 5rem 3rem 2rem;
   }
 
   @media (min-width: 1024px) {
-    padding: 2rem 3rem 12rem;
+    padding: 2rem 3rem 2rem;
   }
 
   @media (min-width: 1800px) {
-    padding: 2rem 3rem 12rem;
+    padding: 2rem 3rem 2rem;
   }
 `
