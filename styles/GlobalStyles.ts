@@ -94,6 +94,7 @@ a {
   padding-left: 2em;
   border-left: 0.25em solid #f99;
   font-size: 1.8rem !important;
+  line-height: 1.3;
 
   @media (max-width: 500px) {
     max-width: 100%;
