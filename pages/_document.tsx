@@ -60,7 +60,7 @@ export default class MyDocument extends Document {
           /> */}
           <meta name="msapplication-TileColor" content="#3D28C3" />
           {/* <link rel="manifest" href="/manifest.json" /> */}
-          {/* <script
+          <script
             dangerouslySetInnerHTML={{
               __html: `
           (function(a,b,c){var d=a.history,e=document,f=navigator||{},g=localStorage,
@@ -80,10 +80,10 @@ export default class MyDocument extends Document {
             d.onpushstate({state:r}),setTimeout(n,c.delay||10),i.apply(d,arguments)},n(),
             a.ma={trackEvent:function o(r,s,t,u){return n("event",r,s,t,u)},
             trackException:function q(r,s){return n("exception",null,null,null,null,r,s)}}})
-            (window,"UA-188046354-1",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true})
+            (window,"UA-190729088-1",{anonymizeIp:true,colorDepth:true,characterSet:true,screenSize:true,language:true})
           `,
             }}
-          /> */}
+          />
         </Head>
         <body>
           <Main />
