@@ -1,0 +1,24 @@
+import LayoutPage from '../../../components/LayoutPage'
+export const meta = {}
+
+export default ({ children }) => (
+  <LayoutPage title="Javascript" metaTitle="Ternary operator control flow">
+    {children}
+  </LayoutPage>
+)
+
+# Ternary operator control flow
+
+```jsx
+const isDev = true
+
+// Normal if/else control flow
+if (isDev) {
+  console.log('I am a dev')
+} else {
+  console.log('Not a dev')
+}
+
+// Using ternary operator
+isDev ? console.log('I am a dev') : console.log('Not a dev')
+```

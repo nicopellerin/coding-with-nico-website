@@ -1,0 +1,34 @@
+import LayoutPage from '../../../components/LayoutPage'
+export const meta = {}
+
+export default ({ children }) => (
+  <LayoutPage
+    title="Javascript"
+    metaTitle="Looping over an array in Javascript"
+  >
+    {children}
+  </LayoutPage>
+)
+
+# Looping over an array in Javascript
+
+```jsx
+// Array of 4 elements
+const animals = ['tiger', 'dog', 'bear', 'cat']
+
+// Using a `for loop`
+for (let i = 0; i < animals.length; i++) {
+  console.log(animals[i])
+}
+
+// Using `.forEach()`
+animals.forEach((animal) => {
+  console.log(animal)
+})
+
+// Using `.map()` - Returns a new array
+const animalsUppercase = animals.map((animal) => {
+  return `${animal.toUpperCase()}`
+})
+console.log(animalsUppercase) // ["TIGER", "DOG", "BEAR", "CAT"]
+```

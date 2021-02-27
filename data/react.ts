@@ -11,6 +11,6 @@ export default [
         slug: 'react/using-react-fragment',
         title: 'Using React.Fragment',
         tech: 'react',
-        image: '/images/card1.png'
+        image: '/images/card2.png'
     }
 ]

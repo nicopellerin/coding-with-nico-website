@@ -1,0 +1,28 @@
+import LayoutPage from '../../../components/LayoutPage'
+export const meta = {}
+
+export default ({ children }) => (
+  <LayoutPage title="Javascript" metaTitle="Using Object.entries()">
+    {children}
+  </LayoutPage>
+)
+
+# Using Object.entries()
+
+```jsx
+const cat = {
+  name: 'Nini',
+  age: 2,
+  isFriendly: true,
+}
+
+// Looping over cat object, we have access to [key, value] pairs of each property
+for (let [key, value] of Object.entries(cat)) {
+  console.log(`${key}: ${value}`)
+}
+
+// Output from loop
+// "name: Nini"
+// "age: 2"
+// "isFriendly: true"
+```
