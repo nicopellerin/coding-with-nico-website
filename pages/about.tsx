@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import { FaTwitter } from 'react-icons/fa'
 
 import Me from '../components/Me'
 import LayoutPage from '../components/LayoutPage'
@@ -57,6 +58,21 @@ const AboutPage = () => {
                 When not coding, I love to produce electronic music, as well as
                 design stuff. I also recently took an interest in creating audio
                 VST plugins.
+              </Text>
+              <Text>
+                You can also find me on{' '}
+                <Twit>
+                  Twitter{' '}
+                  <FaTwitter style={{ marginLeft: 5, fontSize: '2rem' }} />
+                </Twit>
+                @{' '}
+                <StyledA
+                  href="https://twitter.com/nicopellerin_io"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <strong>nicopellerin_io</strong>
+                </StyledA>
               </Text>
             </RightDiv>
           </Info>
@@ -123,4 +139,19 @@ const RightDiv = styled.div`
   }
 
   margin-top: unset;
+`
+
+const StyledA = styled.a`
+  color: #1da1f2;
+`
+
+const Twit = styled.span`
+  color: #1da1f2;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  background: rgba(10, 161, 240, 0.1);
+  padding: 0.45rem 0.75rem;
+  border-radius: 0.5rem;
+  line-height: 1;
 `
