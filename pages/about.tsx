@@ -94,7 +94,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   max-width: 110rem;
   margin: 0 auto;
-  padding: 6rem 2rem 6rem;
+  padding: 6rem 2rem 2rem;
 
   @media (min-width: 768px) {
     padding: 5rem 3rem 10rem;
@@ -135,7 +135,7 @@ const Welcome = styled(motion.h3)`
 
 const RightDiv = styled.div`
   @media (max-width: 500px) {
-    margin-top: 3rem;
+    margin-top: 4rem;
   }
 
   margin-top: unset;
