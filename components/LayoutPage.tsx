@@ -39,6 +39,19 @@ const LayoutPage: React.FC<Props> = ({
         <title>{metaTitle || title} | Coding With Nico</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="og:title"
+          content={`${metaTitle || title} | Coding With Nico`}
+        />
+        <meta name="og:url" content="https://codingwithnico.com" />
+        {/* <meta
+          name="description"
+          content="Learn new life changing coding skills"
+        />
+        <meta
+          name="og:description"
+          content="Learn new life changing coding skills"
+        /> */}
       </Head>
       <PageHero title={title} bgColor={bgColor} img={img} />
       <Main>
