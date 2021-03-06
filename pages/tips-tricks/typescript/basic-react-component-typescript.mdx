@@ -1,0 +1,35 @@
+import LayoutPage from '../../../components/LayoutPage'
+export const meta = {}
+
+export default ({ children }) => (
+  <LayoutPage title="React" metaTitle="Basic React component with Typescript">
+    {children}
+  </LayoutPage>
+)
+
+# Basic React component with Typescript
+
+```jsx
+interface Props {
+  name: string
+  isDev: boolean
+  favLanguage: string
+}
+
+const Dev: React.FC<Props> = ({ name, isDev, favLanguage }) => {
+  return (
+    <div>
+      <h1>{name}</h1>
+      {isDev && (
+        <h4>Favorite programming language</h4>
+        <span>{favLanguage}</span>
+      )}
+    </div>
+  )
+}
+
+export default Dev
+
+// Using component
+<Dev name="Nico Pellerin" isDev={true} favLanguage="Rust" />
+```

@@ -4,6 +4,10 @@ import { motion } from 'framer-motion'
 
 import LayoutPage from '../../../components/LayoutPage'
 import TemplateContainer from '../../../components/TemplateContainer'
+import CardList from '../../../components/CardList'
+import Card from '../../../components/Card'
+
+import reactPosts from '../../../data/typescript'
 
 const TypescriptPage = () => {
   return (
@@ -18,13 +22,11 @@ const TypescriptPage = () => {
             />
           </TechWrapper>
           <Tech>Typescript</Tech>
-          <ComingSoon
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: 'spring', damping: 18, delay: 0.6 }}
-          >
-            Coming soon!
-          </ComingSoon>
+          <CardList>
+            {reactPosts.map((post) => (
+              <Card {...post} />
+            ))}
+          </CardList>
         </TemplateContainer>
       </Wrapper>
     </LayoutPage>
@@ -65,10 +67,4 @@ const TechWrapper = styled.div`
   filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.55));
   border: 1px solid rgba(131, 82, 253, 0.3);
   margin-bottom: 1.2rem;
-`
-
-const ComingSoon = styled(motion.h3)`
-  font-size: 4rem;
-  margin-top: 8rem;
-  color: #61dafb;
 `
