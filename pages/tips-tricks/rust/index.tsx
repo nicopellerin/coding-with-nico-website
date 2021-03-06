@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import LayoutPost from '../../../components/LayoutPost'
+import LayoutTipsTricks from '../../../components/LayoutTipsTricks'
 import TemplateContainer from '../../../components/TemplateContainer'
 import CardList from '../../../components/CardList'
 import Card from '../../../components/Card'
@@ -11,7 +11,7 @@ import rustPosts from '../../../data/rust'
 
 const RustPage = () => {
   return (
-    <LayoutPost title={'Tips & Tricks'} img="/images/tips.png">
+    <LayoutTipsTricks title={'Tips & Tricks'} img="/images/tips.png">
       <Wrapper>
         <TemplateContainer>
           <TechWrapper>
@@ -29,7 +29,7 @@ const RustPage = () => {
           </CardList>
         </TemplateContainer>
       </Wrapper>
-    </LayoutPost>
+    </LayoutTipsTricks>
   )
 }
 
