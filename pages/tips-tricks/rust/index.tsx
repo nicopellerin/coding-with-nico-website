@@ -2,12 +2,16 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import LayoutPage from '../../../components/LayoutPage'
+import LayoutPost from '../../../components/LayoutPost'
 import TemplateContainer from '../../../components/TemplateContainer'
+import CardList from '../../../components/CardList'
+import Card from '../../../components/Card'
+
+import rustPosts from '../../../data/rust'
 
 const RustPage = () => {
   return (
-    <LayoutPage title={'Tips & Tricks'} img="/images/tips.png">
+    <LayoutPost title={'Tips & Tricks'} img="/images/tips.png">
       <Wrapper>
         <TemplateContainer>
           <TechWrapper>
@@ -18,16 +22,14 @@ const RustPage = () => {
             />
           </TechWrapper>
           <Tech>Rust</Tech>
-          <ComingSoon
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ type: 'spring', damping: 18, delay: 0.6 }}
-          >
-            Coming soon!
-          </ComingSoon>
+          <CardList>
+            {rustPosts.map((post) => (
+              <Card {...post} />
+            ))}
+          </CardList>
         </TemplateContainer>
       </Wrapper>
-    </LayoutPage>
+    </LayoutPost>
   )
 }
 
@@ -65,10 +67,4 @@ const TechWrapper = styled.div`
   filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.55));
   border: 1px solid rgba(131, 82, 253, 0.3);
   margin-bottom: 1.2rem;
-`
-
-const ComingSoon = styled(motion.h3)`
-  font-size: 4rem;
-  margin-top: 8rem;
-  color: #61dafb;
 `

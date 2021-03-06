@@ -34,30 +34,20 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-          <meta name="og:title" content="Coding With Nico" />
-          <meta name="og:url" content="https://codingwithnico.com" />
+          <meta property="og:title" content="Coding With Nico" />
+          <meta property="og:url" content="https://codingwithnico.com" />
           <meta
             name="description"
             content="Learn new life changing coding skills"
           />
           <meta
-            name="og:description"
+            property="og:description"
             content="Learn new life changing coding skills"
           />
-          <meta name="og:image" content="/og-image.jpg" />
+          <meta property="og:image" content="/og-image.jpg" />
           <meta name="theme-color" content="#3D28C3" />
           <link rel="icon" type="image/png" href="/favicon.png" />
           <meta name="theme-color" content="#3D28C3" />
-          {/* <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/icons/apple-touch-icon.png"
-          />
-          <link
-            rel="mask-icon"
-            href="/icons/safari-pinned-tab.svg"
-            color="#603cba"
-          /> */}
           <meta name="msapplication-TileColor" content="#3D28C3" />
           {/* <link rel="manifest" href="/manifest.json" /> */}
           <script

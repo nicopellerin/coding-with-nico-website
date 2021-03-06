@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import LayoutPage from '../../../components/LayoutPage'
+import LayoutPost from '../../../components/LayoutPost'
 import TemplateContainer from '../../../components/TemplateContainer'
 import CardList from '../../../components/CardList'
 import Card from '../../../components/Card'
@@ -11,7 +11,7 @@ import javascriptPosts from '../../../data/javascript'
 
 const JavascriptPage = () => {
   return (
-    <LayoutPage title={'Tips & Tricks'} img="/images/tips.png">
+    <LayoutPost title={'Tips & Tricks'} img="/images/tips.png">
       <Wrapper>
         <TemplateContainer>
           <TechWrapper>
@@ -29,7 +29,7 @@ const JavascriptPage = () => {
           </CardList>
         </TemplateContainer>
       </Wrapper>
-    </LayoutPage>
+    </LayoutPost>
   )
 }
 
