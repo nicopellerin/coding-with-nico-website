@@ -12,5 +12,12 @@ export default [
         title: 'Using React.Fragment',
         tech: 'react',
         image: '/images/card2.png'
+    },
+    {
+        date: 'February 20, 2021',
+        slug: 'react/use-click-outside-hook',
+        title: 'useClickOutside Hook',
+        tech: 'react',
+        image: '/images/card1.png'
     }
 ]
