@@ -16,6 +16,8 @@ interface Props {
   callback: () => void
 }
 
+// Callback example -> () => setToggle(false)
+
 const useClickOutside = ({ callback }: Props) => {
   const node = useRef() as React.MutableRefObject<HTMLDivElement>
 
