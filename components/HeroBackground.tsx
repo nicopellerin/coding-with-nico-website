@@ -79,12 +79,12 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: url('/images/back.png');
+  background: url('/images/gradient1.png');
   background-size: cover;
   background-position-y: center;
 
   @media (min-width: 768px) {
-    background: url('/images/back.png');
+    background: url('/images/gradient1.png');
     background-size: cover;
     background-position-y: center;
     padding: 0 4rem;
