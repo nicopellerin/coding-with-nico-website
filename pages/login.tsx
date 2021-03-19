@@ -35,11 +35,6 @@ const LoginPage = () => {
         animate={{ opacity: 1, y: '-3rem' }}
         transition={{ type: 'spring', damping: 18 }}
       >
-        {/* <img
-          src="/images/icon-books.png"
-          style={{ width: '10rem', marginBottom: '1rem' }}
-          alt="Books"
-        /> */}
         <Title
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,7 +83,7 @@ export default LoginPage
 
 // Styles
 const Wrapper = styled.div`
-  background: url('/images/back.png');
+  background: url('/images/gradient1.png');
   background-size: cover;
   display: flex;
   align-items: center;
@@ -102,16 +97,13 @@ const Container = styled(motion.div)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(
-    -45deg,
-    rgba(155, 81, 224, 0.1) 50%,
-    rgba(131, 82, 253, 0.1)
-  );
+  background: hsl(257 58% 10% / 0.7);
   padding: 6rem 4rem;
-  border-radius: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid hsl(257 58% 80% / 0.1);
   border-bottom: 7px solid var(--primaryColor);
   min-width: 42rem;
-  box-shadow: 0 0.4rem 5rem rgba(131, 82, 253, 0.05);
+  box-shadow: 0 0.4rem 5rem rgba(131, 82, 253, 0.1);
 
   @media (max-width: 500px) {
     width: 90vw;
