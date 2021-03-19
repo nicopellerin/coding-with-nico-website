@@ -97,7 +97,7 @@ const Container = styled(motion.div)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: hsl(257 58% 10% / 0.7);
+  background: hsl(257 58% 10% / 0.3);
   padding: 6rem 4rem;
   border-radius: 10px;
   border: 1px solid hsl(257 58% 80% / 0.1);
