@@ -246,15 +246,15 @@ const Character = styled(motion.img)`
   }
 
   @media (min-width: 1600px) {
-    width: 75rem;
+    width: 78rem;
     right: 5rem;
   }
 
   @media (min-width: 1700px) {
     position: relative;
-    width: 77rem;
+    width: 80rem;
     right: 0rem;
-    bottom: -3.2rem;
+    bottom: -6.2rem;
   }
 
   @media (min-width: 2200px) {
