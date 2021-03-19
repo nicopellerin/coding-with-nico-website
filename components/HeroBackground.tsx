@@ -236,12 +236,13 @@ const Character = styled(motion.img)`
   @media (min-width: 1024px) {
     width: 62rem;
     right: 0rem;
-    bottom: 8rem;
+    bottom: 6rem;
   }
 
   @media (min-width: 1200px) {
-    width: 73rem;
+    width: 78rem;
     right: 5rem;
+    bottom: 7rem;
   }
 
   @media (min-width: 1600px) {

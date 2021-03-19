@@ -120,13 +120,9 @@ const Wrapper = styled.div`
     transform: translateX(-50%);
     width: 100%;
     z-index: 10000;
-    padding: 3rem 0rem;
+    padding: 2rem 3rem;
     max-width: 140rem;
     pointer-events: none;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 3.2rem 3rem;
   }
 
   @media (min-width: 1369px) {

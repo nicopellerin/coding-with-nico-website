@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
+import styled from 'styled-components'
 
 const Wave = () => {
   const controls = useAnimation()
@@ -18,19 +19,10 @@ const Wave = () => {
   }, [])
 
   return (
-    <motion.svg
+    <WaveStyled
       viewBox="0 0 1900 320"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      style={{
-        position: 'absolute',
-        bottom: 0,
-        width: '103%',
-        zIndex: 10001,
-        left: '-3%',
-        right: '-3%',
-        pointerEvents: 'none',
-      }}
     >
       <path
         fillRule="evenodd"
@@ -57,8 +49,27 @@ const Wave = () => {
           <stop offset="1" stopColor="#5F0DAB" />
         </motion.linearGradient>
       </defs>
-    </motion.svg>
+    </WaveStyled>
   )
 }
 
 export default Wave
+
+// Styles
+const WaveStyled = styled(motion.svg)`
+  position: fixed;
+  bottom: 0;
+  width: 103%;
+  z-index: 10001;
+  left: -3%;
+  right: -3%;
+  pointer-events: none;
+
+  @media (min-width: 1024px) {
+    bottom: -10px;
+  }
+
+  @media (min-width: 1440px) {
+    bottom: -30px;
+  }
+`
