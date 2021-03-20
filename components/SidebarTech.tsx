@@ -38,7 +38,7 @@ const SidebarTech = () => {
         .filter(({ tech }) => !pathname.includes(tech.toLowerCase()))
         .map(({ tech, logo }) => (
           <li key={tech}>
-            <Link href={tech.toLowerCase()}>
+            <Link href={`/tips-tricks/${tech.toLowerCase()}`}>
               <a>
                 <Tech src={logo} alt={tech} whileHover={{ scale: 1.03 }} />
               </a>
