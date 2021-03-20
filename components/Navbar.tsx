@@ -126,11 +126,10 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 1369px) {
-    padding: 3.2rem 0rem;
+    padding: 2.4rem 0rem;
   }
 
   @media (min-width: 1700px) {
-    padding: 3rem 0rem;
     max-width: 160rem;
   }
 `
