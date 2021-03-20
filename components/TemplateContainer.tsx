@@ -1,8 +1,6 @@
 import { FC } from 'react'
 import styled from 'styled-components'
 
-// import SidebarTech from './SidebarTech'
-
 const TemplateContainerStyled = styled.div`
   max-width: 110rem;
   margin: 0 auto;
@@ -25,10 +23,7 @@ const TemplateContainerStyled = styled.div`
 `
 
 const TemplateContainer: FC = ({ children }) => (
-  <TemplateContainerStyled>
-    {children}
-    {/* <SidebarTech /> */}
-  </TemplateContainerStyled>
+  <TemplateContainerStyled>{children}</TemplateContainerStyled>
 )
 
 export default TemplateContainer
