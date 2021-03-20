@@ -51,10 +51,10 @@ const Main = styled.main`
 `
 
 const Container = styled.div`
-  padding: 4rem 2rem 6rem;
+  padding: 4rem 2rem 4rem;
   color: #f4f4f4;
 
   @media (min-width: 768px) {
-    padding: 0rem 0 6rem;
+    padding: 0rem 0 4rem;
   }
 `
