@@ -1,8 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import dynamic from 'next/dynamic'
 
-import Background from './Background'
+const Background = dynamic(() => import('./Background'), { ssr: false })
 
 interface Props {
   title?: string
@@ -105,6 +106,7 @@ export default PageHero
 const Wrapper = styled.div`
   height: 36vh;
   background: linear-gradient(45deg);
+  /* background: hsl(257, 58%, 11%); */
   position: relative;
   display: flex;
   justify-content: center;
