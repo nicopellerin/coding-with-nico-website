@@ -14,7 +14,7 @@ const Card: React.FC<Props> = ({ title, slug }) => {
   return (
     <Link href={slug}>
       <Wrapper
-        whileHover={{ y: -5 }}
+        whileHover={{ x: -5 }}
         transition={{ type: 'spring', damping: 18 }}
       >
         <Content>
@@ -31,24 +31,19 @@ export default Card
 
 // Styles
 const Wrapper = styled(motion.li)`
-  /* background: hsl(257, 58%, 11%); */
+  background: hsl(257, 58%, 10%);
   box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  max-width: 800px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   margin: 0 auto;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
   will-change: transform;
   position: relative;
   cursor: pointer;
-  border-bottom: 2px solid var(--primaryColorLight);
-  /* filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.1)); */
+  border-bottom: 2px solid var(--primaryColorDark2);
 
   @media (max-width: 339px) {
     max-width: 300px;
@@ -63,7 +58,7 @@ const Content = styled.div`
 `
 
 const Title = styled(motion.h2)`
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   color: var(--primaryColorLight2);
   max-width: 80%;
   margin: 0;

@@ -10,7 +10,7 @@ const TemplateContainerStyled = styled.div`
   z-index: 100;
 
   @media (min-width: 768px) {
-    padding: 2rem 3rem 14rem;
+    padding: 2rem 3rem 10rem;
   }
 
   @media (min-width: 1024px) {
