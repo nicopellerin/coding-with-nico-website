@@ -3,15 +3,18 @@ import { createGlobalStyle } from "styled-components"
 const GlobalStyles = createGlobalStyle`
 
 :root {
-  --primaryColor: #8352FD;
-  --primaryColorDark: #4823c9;
-  --primaryColorLight: #b981ff;
+  --primaryColor: hsl(257, 98%, 76%);
+  --primaryColorDark: hsl(257, 98%, 46%);
+  --primaryColorDark2: hsl(257, 58%, 56%);
+  --primaryColorLight: hsl(257, 98%, 86%);
+  --primaryColorLight2: hsl(257, 98%, 92%);
 
   --secondaryColor: #f020d8;
 
   --tertiaryColor: #00e5ff;
 
   --textColor: #E3E8FF;
+  --pinkTextColor: hsl(284, 100%, 90%);
 
   --successColor: #69f0ae;
 

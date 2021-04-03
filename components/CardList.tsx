@@ -1,13 +1,15 @@
 import styled from 'styled-components'
 
-const CardList = styled.div`
+const CardList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: 3rem;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  margin: 0;
   margin-top: 6rem;
+  padding: 0;
 
-  @media (max-width: 500px) {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  & > li:nth-child(odd) {
+    border-bottom: 2px solid var(--primaryColor);
   }
 `
 
