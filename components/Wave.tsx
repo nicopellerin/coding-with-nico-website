@@ -1,23 +1,8 @@
 import * as React from 'react'
-import { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
 import styled from 'styled-components'
 
 const Wave = () => {
-  const controls = useAnimation()
-
-  useEffect(() => {
-    controls.start({
-      x1: [336, -1000],
-      transition: {
-        type: 'tween',
-        duration: 10,
-        repeat: Infinity,
-        repeatType: 'mirror',
-      },
-    })
-  }, [])
-
   return (
     <WaveStyled
       viewBox="0 0 1900 320"
@@ -32,21 +17,19 @@ const Wave = () => {
       />
       <path
         d="M0.933899 229.782H80.2727C159.617 229.782 318.012 229.777 476.35 204.962C524.422 197.229 572.349 187.301 620.377 177.352C651.606 170.882 682.877 164.404 714.258 158.515C793.694 143.609 873.37 132.584 953.146 135.545H953.154L953.162 135.546C1021.37 138.359 1089.59 151.527 1157.47 164.629C1168.9 166.837 1180.34 169.042 1191.75 171.196C1271.07 186.163 1349.95 198.663 1428.72 192.491C1586.42 179.48 1744.38 92.2463 1823.82 48.3397L1903.16 4.49219"
-        stroke="#9B51E0"
+        stroke="hsl(257, 98%, 78%)"
         strokeOpacity="0.75"
         strokeWidth="8"
       />
       <defs>
         <motion.linearGradient
           id="paint0_linear"
-          animate={controls}
           y1="8.00038"
           x2="1655.46"
           y2="109.764"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#e8b1fc" />
-          <stop offset="1" stopColor="#5F0DAB" />
+          <stop stopColor="hsl(257, 98%, 80%)" />
         </motion.linearGradient>
       </defs>
     </WaveStyled>
