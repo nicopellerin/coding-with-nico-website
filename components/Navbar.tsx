@@ -62,7 +62,7 @@ const Navbar = () => {
                 active={pathname.includes(link)}
               >
                 <Link href={link}>
-                  <StyledLink>
+                  <a>
                     {text}
                     {index === i && (
                       <motion.div
@@ -79,7 +79,7 @@ const Navbar = () => {
                         }}
                       />
                     )}
-                  </StyledLink>
+                  </a>
                 </Link>
               </MenuListItem>
             ))}
@@ -193,12 +193,13 @@ const MenuListItem = styled.li`
       top: 0;
     }
   }
-`
 
-const StyledLink = styled.a`
-  position: relative;
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 500;
+  & > a {
+    position: relative;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    color: #f4d7ff;
+  }
 `
 
 // const Button = styled(motion.button)`

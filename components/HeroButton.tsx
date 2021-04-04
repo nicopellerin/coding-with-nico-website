@@ -20,16 +20,18 @@ const HeroButton = () => {
 
   return (
     <Link href="/courses">
-      <Button
-        whileHover={{ y: -1 }}
-        whileTap={{ scale: 0.98 }}
-        onClick={playSound}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ type: 'spring', damping: 18, stiffness: 60 }}
-      >
-        Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
-      </Button>
+      <a>
+        <Button
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          onClick={playSound}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ type: 'spring', damping: 18, stiffness: 60 }}
+        >
+          Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
+        </Button>
+      </a>
     </Link>
   )
 }
