@@ -13,6 +13,7 @@ import { H1, H2 } from './Typography/Heading'
 import Text from './Typography/Text'
 import Code from './Typography/Code'
 import { motion } from 'framer-motion'
+import { useMedia } from 'react-use-media'
 
 const components = {
   h1: H1,
@@ -37,6 +38,10 @@ const LayoutPost: React.FC<Props> = ({
   metaTitle,
 }: Props) => {
   const router = useRouter()
+
+  const isDesktop = useMedia({
+    minWidth: 768,
+  })
 
   return (
     <>
@@ -65,8 +70,7 @@ const LayoutPost: React.FC<Props> = ({
               <FaChevronLeft style={{ marginRight: 7 }} /> Back
             </BackButton>
           </Container>
-
-          <SidebarTech />
+          {isDesktop && <SidebarTech />}
         </Main>
         <Footer />
       </MDXProvider>
