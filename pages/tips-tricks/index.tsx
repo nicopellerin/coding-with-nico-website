@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 const Container = styled.div`
   max-width: 110rem;
   margin: 0 auto;
-  padding: 2rem 2rem 3rem;
+  padding: 2rem 0rem 2rem;
 
   @media (min-width: 768px) {
     padding: 5rem 3rem 2rem;

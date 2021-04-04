@@ -152,14 +152,14 @@ const DropdownMobile: React.FC = () => {
                   />
                   <LinkStyled href="/contact">Contact</LinkStyled>
                 </DropdownItem>
-                <LinkStyled href="/login">
+                {/* <LinkStyled href="/login">
                   <Button
                     onClick={() => setToggleDropdown(false)}
                     variants={itemVariants}
                   >
                     Login
                   </Button>
-                </LinkStyled>
+                </LinkStyled> */}
               </DropdownList>
             </DropdownWrapper>
             <Overlay
@@ -191,7 +191,7 @@ const Overlay = styled(motion.div)`
 
 const DropdownWrapper = styled(motion.div)`
   position: absolute;
-  height: ${(props: StyledProps) => (props.isRootOrLogin ? '44rem' : '40rem')};
+  height: ${(props: StyledProps) => (props.isRootOrLogin ? '300px' : '260px')};
   width: 100%;
   background: #112;
   bottom: 0;
@@ -225,17 +225,17 @@ const LinkStyled = styled.a`
   letter-spacing: 1.2px;
 `
 
-const Button = styled(motion.button)`
-  border: none;
-  padding: 0.65em 2.6em;
-  font-size: 2.2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  background: linear-gradient(95.66deg, #61dafb 30.07%, #bb6bd9 104.98%);
-  color: #333;
-  cursor: pointer;
-  position: relative;
-  z-index: 900;
-  outline: none;
-  width: 100%;
-`
+// const Button = styled(motion.button)`
+//   border: none;
+//   padding: 0.65em 2.6em;
+//   font-size: 2.2rem;
+//   border-radius: 0.5rem;
+//   font-weight: 600;
+//   background: linear-gradient(95.66deg, #61dafb 30.07%, #bb6bd9 104.98%);
+//   color: #333;
+//   cursor: pointer;
+//   position: relative;
+//   z-index: 900;
+//   outline: none;
+//   width: 100%;
+// `

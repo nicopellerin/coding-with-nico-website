@@ -35,11 +35,11 @@ const Navbar = () => {
   const audioOn = useRecoilValue(audioOnState)
 
   let popSound: HTMLAudioElement
-  let clickSound: HTMLAudioElement
+  // let clickSound: HTMLAudioElement
 
   if (typeof Audio !== 'undefined') {
     popSound = new Audio('/sounds/pop_drip.mp3')
-    clickSound = new Audio('/sounds/click_snip.mp3')
+    // clickSound = new Audio('/sounds/click_snip.mp3')
   }
 
   return (
@@ -86,7 +86,7 @@ const Navbar = () => {
           </AnimateSharedLayout>
         </MenuList>
         <Controls>
-          <Link href="/login">
+          {/* <Link href="/login">
             <a>
               <Button
                 whileHover={{ y: -1 }}
@@ -96,7 +96,7 @@ const Navbar = () => {
                 Login
               </Button>
             </a>
-          </Link>
+          </Link> */}
           <SoundControl />
         </Controls>
       </Menu>
@@ -201,32 +201,32 @@ const StyledLink = styled.a`
   font-weight: 500;
 `
 
-const Button = styled(motion.button)`
-  border: none;
-  padding: 1rem 2.6rem;
-  font-size: 2.2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  background: linear-gradient(95.66deg, #61dafb 30.07%, #bb6bd9 104.98%);
-  color: #333;
-  cursor: pointer;
-  position: relative;
-  z-index: 900;
-  outline: none;
-  margin-left: 4rem;
+// const Button = styled(motion.button)`
+//   border: none;
+//   padding: 1rem 2.6rem;
+//   font-size: 2.2rem;
+//   border-radius: 0.5rem;
+//   font-weight: 600;
+//   background: linear-gradient(95.66deg, #61dafb 30.07%, #bb6bd9 104.98%);
+//   color: #333;
+//   cursor: pointer;
+//   position: relative;
+//   z-index: 900;
+//   outline: none;
+//   margin-left: 4rem;
 
-  @media (max-width: 330px) {
-    font-size: 1.8rem;
-  }
+//   @media (max-width: 330px) {
+//     font-size: 1.8rem;
+//   }
 
-  @media (min-width: 768px) {
-    font-size: 2.2rem;
-  }
+//   @media (min-width: 768px) {
+//     font-size: 2.2rem;
+//   }
 
-  @media (min-width: 1366px) {
-    /* font-size: 2.4rem; */
-  }
-`
+//   @media (min-width: 1366px) {
+//     /* font-size: 2.4rem; */
+//   }
+// `
 
 const Controls = styled.div`
   display: flex;

@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 import { FaChevronLeft } from 'react-icons/fa'
 import { useRouter } from 'next/router'
+import { useMedia } from 'react-use-media'
+import { motion } from 'framer-motion'
 
 import PageHero from './PageHero'
 import Footer from './Footer'
@@ -12,8 +14,6 @@ import SidebarTech from './SidebarTech'
 import { H1, H2 } from './Typography/Heading'
 import Text from './Typography/Text'
 import Code from './Typography/Code'
-import { motion } from 'framer-motion'
-import { useMedia } from 'react-use-media'
 
 const components = {
   h1: H1,
