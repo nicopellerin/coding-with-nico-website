@@ -55,14 +55,17 @@ const LayoutPost: React.FC<Props> = ({
         </Head>
         <PageHero title={title} bgColor={bgColor} img={img} />
         <Main>
-          <Container>{children}</Container>
-          <BackButton
-            onClick={() => router.back()}
-            whileHover={{ y: -1 }}
-            whileTap={{ y: 1 }}
-          >
-            <FaChevronLeft style={{ marginRight: 7 }} /> Back
-          </BackButton>
+          <Container>
+            {children}
+            <BackButton
+              onClick={() => router.back()}
+              whileHover={{ y: -1 }}
+              whileTap={{ y: 1 }}
+            >
+              <FaChevronLeft style={{ marginRight: 7 }} /> Back
+            </BackButton>
+          </Container>
+
           <SidebarTech />
         </Main>
         <Footer />
@@ -104,6 +107,7 @@ const BackButton = styled(motion.button)`
   will-change: transform;
   filter: drop-shadow(0 0 0.75rem rgba(204, 75, 194, 0.5));
   line-height: 1;
+  margin-top: 50px;
 
   @media (max-width: 500px) {
     width: 100%;

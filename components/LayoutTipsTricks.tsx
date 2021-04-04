@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
+import { useMedia } from 'react-use-media'
 
 import PageHero from './PageHero'
 import Footer from './Footer'
@@ -20,25 +21,31 @@ const LayoutTipsTricks: React.FC<Props> = ({
   bgColor = '#001',
   img,
   metaTitle,
-}: Props) => (
-  <>
-    <Head>
-      <title>{metaTitle || title} | Coding With Nico</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <meta
-        property="og:title"
-        content={`${metaTitle || title} | Coding With Nico`}
-      />
-    </Head>
-    <PageHero title={title} bgColor={bgColor} img={img} />
-    <Main>
-      <Container>{children}</Container>
-      <SidebarTech />
-    </Main>
-    <Footer />
-  </>
-)
+}: Props) => {
+  const isDesktop = useMedia({
+    minWidth: 768,
+  })
+
+  return (
+    <>
+      <Head>
+        <title>{metaTitle || title} | Coding With Nico</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          property="og:title"
+          content={`${metaTitle || title} | Coding With Nico`}
+        />
+      </Head>
+      <PageHero title={title} bgColor={bgColor} img={img} />
+      <Main>
+        <Container>{children}</Container>
+        {isDesktop && <SidebarTech />}
+      </Main>
+      <Footer />
+    </>
+  )
+}
 
 export default LayoutTipsTricks
 

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const TemplateContainerStyled = styled.div`
   max-width: 110rem;
   margin: 0 auto;
-  padding: 3rem 2rem 4rem;
+  padding: 3rem 0rem 4rem;
   text-align: center;
   position: relative;
   z-index: 100;

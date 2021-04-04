@@ -56,7 +56,8 @@ const Wrapper = styled(motion.ul)`
   right: 0;
   bottom: 3rem;
   list-style: none;
-  display: grid;
+  display: none;
+
   gap: 2.5em;
   background: rgba(131, 82, 253, 0.08);
   border-top-left-radius: 0.5rem;
@@ -65,8 +66,8 @@ const Wrapper = styled(motion.ul)`
   border-right: none;
   filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.1));
 
-  @media (max-width: 500px) {
-    display: none;
+  @media (min-width: 500px) {
+    display: grid;
   }
 `
 

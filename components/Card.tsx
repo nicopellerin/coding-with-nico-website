@@ -45,8 +45,8 @@ const Wrapper = styled(motion.li)`
   cursor: pointer;
   border-bottom: 2px solid var(--primaryColorDark2);
 
-  @media (max-width: 339px) {
-    max-width: 300px;
+  @media (max-width: 375px) {
+    /* max-width: 350px; */
   }
 `
 
@@ -60,7 +60,7 @@ const Content = styled.div`
 const Title = styled(motion.h2)`
   font-size: 2.2rem;
   color: var(--primaryColorLight2);
-  max-width: 80%;
+  /* max-width: 80%; */
   margin: 0;
   text-align: left;
   transition: color 150ms;
