@@ -148,11 +148,11 @@ const Info = styled(motion.div)`
 
 const Title = styled(motion.h1)`
   font-size: 6.2rem;
-  color: #f4d7ff;
-  /* background: -webkit-linear-gradient(45deg, #f6deff 1%, #9b51e0 123.31%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent; */
+  /* color: #f4d7ff; */
+  background: -webkit-linear-gradient(45deg, #f6deff 1%, #9b51e0 123.31%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 2.6rem;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
