@@ -2,9 +2,14 @@ import * as React from 'react'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaChevronRight } from 'react-icons/fa'
+import { FaChevronRight, FaTimes } from 'react-icons/fa'
 import { useRecoilState } from 'recoil'
 import { useRouter } from 'next/router'
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+  clearAllBodyScrollLocks,
+} from 'body-scroll-lock'
 
 import { mobileDropdownState } from '../store/navigation'
 
@@ -63,11 +68,17 @@ const DropdownMobile: React.FC = () => {
     mobileDropdownState
   )
 
+  const wrapperRef = React.useRef<HTMLDivElement | null>(null)
+
   useEffect(() => {
     if (toggleDropdown) {
-      document.body.style.overflow = 'hidden'
+      disableBodyScroll(wrapperRef)
     } else {
-      document.body.style.overflow = 'unset'
+      enableBodyScroll(wrapperRef)
+    }
+
+    return () => {
+      clearAllBodyScrollLocks()
     }
   }, [toggleDropdown])
 
@@ -82,6 +93,7 @@ const DropdownMobile: React.FC = () => {
               exit={{ y: 400 }}
               transition={{ type: 'spring', damping: 18 }}
               isRootOrLogin={isRootOrLogin}
+              ref={wrapperRef}
             >
               <DropdownList
                 variants={listVariants}
@@ -99,7 +111,7 @@ const DropdownMobile: React.FC = () => {
                   }}
                 >
                   <FaChevronRight
-                    color="#dd5e98"
+                    color="var(--primaryColorLight)"
                     size={18}
                     style={{ marginRight: 15 }}
                   />
@@ -115,7 +127,7 @@ const DropdownMobile: React.FC = () => {
                   }}
                 >
                   <FaChevronRight
-                    color="#dd5e98"
+                    color="var(--primaryColorLight)"
                     size={18}
                     style={{ marginRight: 15 }}
                   />
@@ -131,7 +143,7 @@ const DropdownMobile: React.FC = () => {
                   }}
                 >
                   <FaChevronRight
-                    color="#dd5e98"
+                    color="var(--primaryColorLight)"
                     size={18}
                     style={{ marginRight: 15 }}
                   />
@@ -146,7 +158,7 @@ const DropdownMobile: React.FC = () => {
                   }}
                 >
                   <FaChevronRight
-                    color="#dd5e98"
+                    color="var(--primaryColorLight)"
                     size={18}
                     style={{ marginRight: 15 }}
                   />
@@ -162,6 +174,17 @@ const DropdownMobile: React.FC = () => {
                 </LinkStyled> */}
               </DropdownList>
             </DropdownWrapper>
+            <CloseWrapper
+              initial={{ x: '-50%', y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+              transition={{ type: 'spring', damping: 18, delay: 0.1 }}
+              onClick={() => setToggleDropdown(false)}
+            >
+              <FaTimes
+                style={{ fontSize: '3rem', color: 'var(--primaryColorLight)' }}
+              />
+            </CloseWrapper>
             <Overlay
               onClick={() => setToggleDropdown(false)}
               initial={{ opacity: 0 }}
@@ -190,8 +213,8 @@ const Overlay = styled(motion.div)`
 `
 
 const DropdownWrapper = styled(motion.div)`
-  position: absolute;
-  height: ${(props: StyledProps) => (props.isRootOrLogin ? '300px' : '260px')};
+  position: fixed;
+  height: ${(props: StyledProps) => (props.isRootOrLogin ? '280px' : '260px')};
   width: 100%;
   background: #112;
   bottom: 0;
@@ -217,7 +240,7 @@ const DropdownItem = styled(motion.li)`
 `
 
 const LinkStyled = styled.a`
-  color: #dd5e98;
+  color: var(--primaryColor);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,3 +262,20 @@ const LinkStyled = styled.a`
 //   outline: none;
 //   width: 100%;
 // `
+
+const CloseWrapper = styled(motion.div)`
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  background: #010101;
+  position: absolute;
+  bottom: 36rem;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 0 10px 5px rgba(89, 86, 213, 0.2);
+  border: 2px solid var(--primaryColor);
+  cursor: pointer;
+`
