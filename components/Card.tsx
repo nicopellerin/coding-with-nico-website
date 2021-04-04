@@ -13,16 +13,16 @@ interface Props {
 const Card: React.FC<Props> = ({ title, slug }) => {
   return (
     <Link href={slug}>
-      <Wrapper
-        whileHover={{ x: -5 }}
-        transition={{ type: 'spring', damping: 18 }}
-      >
-        <Content>
-          <Title>{title}</Title>
-        </Content>
-
-        {/* <CardImage src={image} alt={tech} /> */}
-      </Wrapper>
+      <a>
+        <Wrapper
+          whileHover={{ x: -3 }}
+          transition={{ type: 'spring', damping: 18 }}
+        >
+          <Content>
+            <Title>{title}</Title>
+          </Content>
+        </Wrapper>
+      </a>
     </Link>
   )
 }
@@ -60,7 +60,6 @@ const Content = styled.div`
 const Title = styled(motion.h2)`
   font-size: 2.2rem;
   color: var(--primaryColorLight2);
-  /* max-width: 80%; */
   margin: 0;
   text-align: left;
   transition: color 150ms;
