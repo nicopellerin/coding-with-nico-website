@@ -10,7 +10,6 @@ const GlobalStyles = createGlobalStyle`
   --primaryColorLight2: hsl(257, 98%, 92%);
 
   --secondaryColor: #f020d8;
-
   --tertiaryColor: #00e5ff;
 
   --textColor: #E3E8FF;
@@ -63,7 +62,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background: #001;
+  background: hsl(257, 58%, 4%);
 }
 
 
@@ -97,12 +96,17 @@ a {
   border-left: 0.25em solid #f99;
   font-size: 1.8rem !important;
   line-height: 1.3;
+  /* max-width: 800px; */
 
   @media (max-width: 500px) {
     max-width: 100%;
     margin: 0;
     overflow: auto;
     padding-top: 6rem;
+  }
+
+  @media (min-width: 768px) {
+
   }
 }
 `

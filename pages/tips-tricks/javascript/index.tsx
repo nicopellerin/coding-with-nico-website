@@ -38,7 +38,7 @@ export default JavascriptPage
 // Styles
 const Wrapper = styled.div`
   position: relative;
-  background: #001;
+  background: hsl(257, 58%, 4%);
   z-index: 100;
 `
 

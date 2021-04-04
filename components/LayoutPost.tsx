@@ -92,7 +92,7 @@ const Container = styled.div`
   padding: 4rem 2rem 4rem;
   color: #f4f4f4;
 
-  @media (min-width: 768px) {
+  @media (min-width: 1280px) {
     padding: 0rem 0 4rem;
   }
 `

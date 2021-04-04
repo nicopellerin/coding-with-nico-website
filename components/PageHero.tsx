@@ -93,7 +93,7 @@ const PageHero: React.FC<Props> = ({
         <path
           width="100%"
           d="M 0 64 L 48 48 C 96 32 192 0 288 0 C 384 0 480 32 576 58.7 C 672 85 768 107 864 85.3 C 960 64 1056 0 1152 0 C 1248 0 1344 64 1392 96 L 1440 128 L 1440 192 L 0 192 Z"
-          // fill="#001"
+          fill="hsl(257, 58%, 4%)"
         ></path>
       </Wave>
     </Wrapper>
@@ -169,7 +169,7 @@ const Wave = styled(motion.svg)`
   width: 100vw;
   bottom: -1px;
   left: 0;
-  fill: #001;
+  fill: hsl(257, 58%, 4%);
   /* filter: drop-shadow(-100px -10px 1px rgba(155, 81, 224, 0.00001)); */
   pointer-events: none;
 `

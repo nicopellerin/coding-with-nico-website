@@ -59,12 +59,12 @@ const Wrapper = styled(motion.ul)`
   display: none;
 
   gap: 2.5em;
-  background: rgba(131, 82, 253, 0.08);
+  background: hsl(257, 58%, 13%);
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border: 1px solid rgba(131, 82, 253, 0.15);
   border-right: none;
-  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.1));
+  filter: drop-shadow(0 0.05rem 2rem hsl(257 58% 16% / 0.2));
 
   @media (min-width: 500px) {
     display: grid;
@@ -77,12 +77,12 @@ const Tech = styled(motion.img)`
 `
 
 const Bar = styled.div`
-  background: rgba(131, 82, 253, 0.1);
+  background: hsl(257, 58%, 12%);
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
   border: 1px solid rgba(131, 82, 253, 0.15);
   border-right: none;
-  filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.1));
+  filter: drop-shadow(0 0.05rem 2rem hsl(257 58% 16% / 0.2));
   position: absolute;
   left: -18px;
   top: 50%;

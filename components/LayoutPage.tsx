@@ -45,7 +45,7 @@ const Main = styled.main`
   max-width: 110rem;
   margin: 0 auto;
   position: relative;
-  background: #001;
+  background: hsl(257, 58%, 4%);
 `
 
 const Container = styled.div`
