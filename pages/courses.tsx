@@ -53,25 +53,16 @@ const Wrapper = styled.div`
 const Container = styled.div`
   max-width: 110rem;
   margin: 0 auto;
-  padding: 2rem 2rem 10rem;
-
-  /* @media (min-width: 768px) {
-    padding: 5rem 3rem 14rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 4rem 3rem 22rem;
-  } */
+  padding: 2rem 2rem 4rem;
 
   @media (min-width: 1800px) {
-    padding: 2rem 3rem 12rem;
+    padding: 2rem 3rem 4rem;
   }
 `
 
 const Title = styled(motion.h2)`
   font-size: 5.4rem;
   color: #f4d7ff;
-  /* margin-bottom: 3.2rem; */
   margin-bottom: 5rem;
   text-align: center;
 

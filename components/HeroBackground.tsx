@@ -140,15 +140,10 @@ const Info = styled(motion.div)`
   @media (min-width: 1400px) {
     position: static;
   }
-
-  /* @media (max-width: 667px) {
-    top: 0;
-  } */
 `
 
 const Title = styled(motion.h1)`
   font-size: 6.2rem;
-  /* color: #f4d7ff; */
   background: -webkit-linear-gradient(45deg, #f6deff 1%, #9b51e0 123.31%);
   -webkit-background-clip: text;
   background-clip: text;

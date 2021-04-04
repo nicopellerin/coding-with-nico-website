@@ -59,7 +59,16 @@ const AboutPage = () => {
                 design stuff. I also recently took an interest in creating audio
                 VST plugins.
               </Text>
-              <Text>
+              <Text
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: 'spring',
+                  damping: 18,
+                  stiffness: 60,
+                  delay: 0.1,
+                }}
+              >
                 You can also find me on{' '}
                 <Twit>
                   Twitter{' '}
