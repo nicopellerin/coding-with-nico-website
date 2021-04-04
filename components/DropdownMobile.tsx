@@ -93,6 +93,7 @@ const DropdownMobile: React.FC = () => {
               exit={{ y: 400 }}
               transition={{ type: 'spring', damping: 18 }}
               isRootOrLogin={isRootOrLogin}
+              // @ts-ignore
               ref={wrapperRef}
             >
               <DropdownList
