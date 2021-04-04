@@ -28,12 +28,10 @@ const HeroBackground: FC = () => {
               delay: 0.2,
             }}
           >
-            Hi! I’m Nico Pellerin, a <strong>software developer</strong> from
-            Montreal, Canada. My goal is to help you learn new{' '}
+            Hi! I’m Nico Pellerin. My goal is to help you learn new{' '}
             <strong>life changing</strong> coding skills{' '}
             <span style={{ color: 'unset' }}>&#128640;</span>
           </Tagline>
-
           <Blob
             src="images/blob.svg"
             style={{ position: 'absolute' }}
@@ -123,7 +121,7 @@ const Info = styled(motion.div)`
   justify-content: center;
   align-items: start;
   position: relative;
-  top: -5rem;
+  top: 0;
   left: 0;
 
   @media (min-width: 768px) {
@@ -143,9 +141,9 @@ const Info = styled(motion.div)`
     position: static;
   }
 
-  @media (max-height: 667px) {
+  /* @media (max-width: 667px) {
     top: 0;
-  }
+  } */
 `
 
 const Title = styled(motion.h1)`
@@ -263,7 +261,7 @@ const Character = styled(motion.img)`
     bottom: -3rem;
   }
 
-  @media (max-height: 667px) {
+  @media (max-width: 667px) {
     display: none;
   }
 `
@@ -274,11 +272,12 @@ const Blob = styled(motion.img)`
 
 const ButtonWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   width: 100%;
 
   @media (min-width: 768px) {
     flex-direction: row;
+    align-items: center;
   }
 `

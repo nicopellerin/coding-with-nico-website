@@ -222,7 +222,7 @@ const DropdownWrapper = styled(motion.div)`
   left: 50%;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  border-top: 5px solid #dd5e98;
+  border-top: 5px solid hsl(284, 80%, 70%);
   z-index: 10000;
 `
 
@@ -241,7 +241,7 @@ const DropdownItem = styled(motion.li)`
 `
 
 const LinkStyled = styled.a`
-  color: var(--primaryColor);
+  color: hsl(284, 80%, 70%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,6 +277,6 @@ const CloseWrapper = styled(motion.div)`
   align-items: center;
   z-index: 9999;
   box-shadow: 0 0 10px 5px rgba(89, 86, 213, 0.2);
-  border: 2px solid var(--primaryColor);
+  border: 2px solid hsl(284, 80%, 70%);
   cursor: pointer;
 `
