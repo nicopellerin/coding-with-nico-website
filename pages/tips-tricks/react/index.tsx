@@ -2,10 +2,9 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import LayoutTipsTricks from '../../../components/LayoutTipsTricks'
-import TemplateContainer from '../../../components/TemplateContainer'
-import Card from '../../../components/Card'
-import CardList from '../../../components/CardList'
+import LayoutTipsTricks from '../../../components/Layout/LayoutTipsTricks'
+import TemplateContainer from '../../../components/Layout/TemplateContainer'
+import { Card, CardList } from '../../../components/Card'
 
 import reactPosts from '../../../data/react'
 

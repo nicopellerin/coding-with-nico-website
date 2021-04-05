@@ -11,7 +11,7 @@ import {
   clearAllBodyScrollLocks,
 } from 'body-scroll-lock'
 
-import { mobileDropdownState } from '../store/navigation'
+import { mobileDropdownState } from '../../store/navigation'
 
 const listVariants = {
   hidden: {

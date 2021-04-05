@@ -1,5 +1,5 @@
-import HeroBackground from '../components/HeroBackground'
-import Layout from '../components/Layout'
+import { HeroBackground } from '../components/Hero'
+import Layout from '../components/Layout/Layout'
 
 const IndexPage = () => {
   return (

@@ -3,10 +3,10 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 // import dynamic from 'next/dynamic'
 
-import Wave from './Wave'
+import Wave from '../Wave'
 import HeroButton from './HeroButton'
-import TechBar from './TechBar'
-import Background from './Background'
+import TechBar from '../TechBar'
+import Background from '../Background'
 // const ThreeDee = dynamic(() => import('./ThreeDee/ThreeDee'), { ssr: false})
 
 const HeroBackground: FC = () => {

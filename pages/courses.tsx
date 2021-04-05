@@ -2,8 +2,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import LayoutPage from '../components/LayoutPage'
-import CoursesList from '../components/CoursesList'
+import LayoutPage from '../components/Layout/LayoutPage'
+import CoursesList from '../components/Courses/CoursesList'
 
 const CoursesPage = () => {
   return (

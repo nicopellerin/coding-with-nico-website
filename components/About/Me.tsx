@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
 import { useRecoilValue } from 'recoil'
 
-import { audioOnState } from '../store/audio'
 import AboutBackground from './AboutBackground'
+
+import { audioOnState } from '../../store/audio'
 
 const Me = () => {
   const [flip, setFlip] = useState(false)

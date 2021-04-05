@@ -5,7 +5,7 @@ import { useRecoilValue } from 'recoil'
 import { FaCode } from 'react-icons/fa'
 import Link from 'next/link'
 
-import { audioOnState } from '../store/audio'
+import { audioOnState } from '../../store/audio'
 
 const HeroButton = () => {
   const audioOn = useRecoilValue(audioOnState)

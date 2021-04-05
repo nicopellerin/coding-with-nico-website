@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { motion } from 'framer-motion'
 import { FaTwitter } from 'react-icons/fa'
 
-import Me from '../components/Me'
-import LayoutPage from '../components/LayoutPage'
+import { Me } from '../components/About'
+import LayoutPage from '../components/Layout/LayoutPage'
 
 const AboutPage = () => {
   return (

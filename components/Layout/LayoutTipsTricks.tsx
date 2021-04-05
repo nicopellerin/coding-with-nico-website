@@ -3,9 +3,9 @@ import Head from 'next/head'
 import styled from 'styled-components'
 import { useMedia } from 'react-use-media'
 
-import PageHero from './PageHero'
-import Footer from './Footer'
-import SidebarTech from './SidebarTech'
+import PageHero from '../PageHero'
+import Footer from '../Navigation/Footer'
+import SidebarTech from '../SidebarTech'
 
 interface Props {
   children: ReactNode

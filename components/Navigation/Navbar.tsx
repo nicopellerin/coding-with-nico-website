@@ -7,9 +7,9 @@ import { useRecoilValue } from 'recoil'
 import { useRouter } from 'next/router'
 
 import SoundControl from './SoundControl'
-
-import { audioOnState } from '../store/audio'
 import LogoAnim from './LogoAnim'
+
+import { audioOnState } from '../../store/audio'
 
 const links: Link[] = [
   { text: 'About', link: '/about' },

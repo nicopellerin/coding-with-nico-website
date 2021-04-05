@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import LayoutPage from '../../components/LayoutPage'
+import LayoutPage from '../../components/Layout/LayoutPage'
 import SelectTech from '../../components/SelectTech'
 
 const TipsTricksPage = () => {

@@ -9,10 +9,11 @@ import '@fontsource/space-grotesk/700.css'
 import '@fontsource/space-grotesk/600.css'
 import '@fontsource/space-grotesk/500.css'
 
+import Navbar from '../components/Navigation/Navbar'
+import NavbarMobile from '../components/Navigation/NavbarMobile'
+import DropdownMobile from '../components/Navigation/DropdownMobile'
+
 import GlobalStyles from '../styles/GlobalStyles'
-import Navbar from '../components/Navbar'
-import NavbarMobile from '../components/NavbarMobile'
-import DropdownMobile from '../components/DropdownMobile'
 
 const MyApp = ({ Component, pageProps }: any) => {
   return (

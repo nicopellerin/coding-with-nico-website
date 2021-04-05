@@ -3,7 +3,7 @@ import * as React from 'react'
 import { useSetRecoilState } from 'recoil'
 import styled from 'styled-components'
 
-import { mobileDropdownState } from '../store/navigation'
+import { mobileDropdownState } from '../../store/navigation'
 import LogoAnim from './LogoAnim'
 
 const NavbarMobile: React.FC = () => {

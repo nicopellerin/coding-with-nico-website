@@ -2,10 +2,10 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import LayoutTipsTricks from '../../../components/LayoutTipsTricks'
-import TemplateContainer from '../../../components/TemplateContainer'
-import CardList from '../../../components/CardList'
-import Card from '../../../components/Card'
+import LayoutTipsTricks from '../../../components/Layout/LayoutTipsTricks'
+import TemplateContainer from '../../../components/Layout/TemplateContainer'
+import CardList from '../../../components/Card/CardList'
+import Card from '../../../components/Card/Card'
 
 import javascriptPosts from '../../../data/javascript'
 

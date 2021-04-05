@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { motion, useAnimation } from 'framer-motion'
 import { useRecoilValue } from 'recoil'
 
-import { audioOnState } from '../store/audio'
+import { audioOnState } from '../../store/audio'
 
 const LogoAnim = () => {
   const [isHover, setIsHover] = useState(false)

@@ -2,8 +2,8 @@ import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
 
-import LayoutPage from '../components/LayoutPage'
-import ContactForm from '../components/ContactForm'
+import LayoutPage from '../components/Layout/LayoutPage'
+import ContactForm from '../components/Contact/ContactForm'
 
 const ContactPage = () => {
   return (

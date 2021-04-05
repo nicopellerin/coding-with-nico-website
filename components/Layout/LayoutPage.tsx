@@ -2,8 +2,8 @@ import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 
-import PageHero from './PageHero'
-import Footer from './Footer'
+import PageHero from '../PageHero'
+import Footer from '../Navigation/Footer'
 
 interface Props {
   children: ReactNode
