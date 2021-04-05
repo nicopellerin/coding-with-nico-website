@@ -70,7 +70,7 @@ export async function getStaticProps() {
 const Wrapper = styled.div`
   max-width: 110ch;
   margin: 0 auto;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 `
 
 const Title = styled.h2`
