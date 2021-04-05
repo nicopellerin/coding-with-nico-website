@@ -38,7 +38,7 @@ export default TypescriptPage
 // Styles
 const Wrapper = styled.div`
   position: relative;
-  background: hsl(257, 58%, 4%);
+  background: #001;
   z-index: 100;
 `
 

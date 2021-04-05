@@ -74,7 +74,7 @@ const Wrapper = styled.div`
 `
 
 const Title = styled.h2`
-  font-size: 3.6rem;
+  font-size: 4rem;
   color: var(--pinkTextColor);
   margin-bottom: 20px;
 `
@@ -111,7 +111,7 @@ const PostDate = styled.span`
 `
 
 const Excerpt = styled.p`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   color: var(--pinkTextColor);
   line-height: 1.6;
   margin-bottom: 40px;

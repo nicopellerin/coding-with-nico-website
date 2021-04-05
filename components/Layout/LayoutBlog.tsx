@@ -73,7 +73,7 @@ export default LayoutBlog
 // Styles
 const Main = styled.main`
   position: relative;
-  background: hsl(257, 58%, 4%);
+  background: #001;
 `
 
 const Container = styled.div`
