@@ -9,6 +9,7 @@ const H1 = styled.h1`
 const H2 = styled.h2`
   font-size: 3rem;
   color: #f4d7ff;
+  margin-top: 40px;
 `
 
 export { H1, H2 }

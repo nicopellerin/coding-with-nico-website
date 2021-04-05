@@ -2,6 +2,7 @@ import React from 'react'
 import { RecoilRoot } from 'recoil'
 import Head from 'next/head'
 
+import '@fontsource/lora'
 import '@fontsource/inter/400.css'
 import '@fontsource/inter/500.css'
 import '@fontsource/inter/600.css'

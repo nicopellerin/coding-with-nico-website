@@ -13,6 +13,7 @@ import { audioOnState } from '../../store/audio'
 
 const links: Link[] = [
   { text: 'About', link: '/about' },
+  { text: 'Blog', link: '/blog' },
   { text: 'Tips & Tricks', link: '/tips-tricks' },
   { text: 'Courses', link: '/courses' },
   { text: 'Contact', link: '/contact' },
@@ -180,7 +181,7 @@ const MenuListItem = styled.li`
     }
   }
 
-  &:not(:nth-child(4)) {
+  &:not(:nth-child(5)) {
     margin-right: 5rem;
 
     &::after {

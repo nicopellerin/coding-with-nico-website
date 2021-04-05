@@ -49,14 +49,16 @@ export default React.memo(SoundControl)
 // Styles
 const VolumeOnIcon = styled(FiVolume2)`
   font-size: 2rem;
-  margin-left: 3.6rem;
+  margin-left: 40px;
   color: #bb6bd9;
   cursor: pointer;
+  margin-top: 4px;
 `
 
 const VolumeOffIcon = styled(FiVolumeX)`
   font-size: 2rem;
-  margin-left: 3.6rem;
+  margin-left: 40px;
   color: #bb6bd9;
   cursor: pointer;
+  margin-top: 4px;
 `
