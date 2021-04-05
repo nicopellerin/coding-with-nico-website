@@ -132,6 +132,22 @@ const DropdownMobile: React.FC = () => {
                     size={18}
                     style={{ marginRight: 15 }}
                   />
+                  <LinkStyled href="/blog">Blog</LinkStyled>
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() => setToggleDropdown(false)}
+                  variants={itemVariants}
+                  style={{
+                    borderBottom: '1px solid rgba(221,94,152, 0.2)',
+                    paddingBottom: '2rem',
+                    marginBottom: '2rem',
+                  }}
+                >
+                  <FaChevronRight
+                    color="var(--primaryColorLight)"
+                    size={18}
+                    style={{ marginRight: 15 }}
+                  />
                   <LinkStyled href="/tips-tricks">{'Tips & Tricks'}</LinkStyled>
                 </DropdownItem>
                 <DropdownItem
@@ -176,6 +192,7 @@ const DropdownMobile: React.FC = () => {
               </DropdownList>
             </DropdownWrapper>
             <CloseWrapper
+              isRootOrLogin={isRootOrLogin}
               initial={{ x: '-50%', y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 100, opacity: 0 }}
@@ -215,7 +232,7 @@ const Overlay = styled(motion.div)`
 
 const DropdownWrapper = styled(motion.div)`
   position: fixed;
-  height: ${(props: StyledProps) => (props.isRootOrLogin ? '280px' : '260px')};
+  height: ${(props: StyledProps) => (props.isRootOrLogin ? '340px' : '310px')};
   width: 100%;
   background: #112;
   bottom: 0;
@@ -270,7 +287,7 @@ const CloseWrapper = styled(motion.div)`
   border-radius: 50%;
   background: #010101;
   position: absolute;
-  bottom: 36rem;
+  bottom: ${(props: StyledProps) => (props.isRootOrLogin ? '44rem' : '40rem')};
   left: 50%;
   display: flex;
   justify-content: center;
