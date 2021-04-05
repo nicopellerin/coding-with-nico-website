@@ -16,8 +16,6 @@ interface Props {
 const Background: React.FC<Props> = ({ bgColor }) => {
   return (
     <Canvas
-      // colorManagement
-      // concurrent
       camera={{
         position: [10, -70, 10],
       }}

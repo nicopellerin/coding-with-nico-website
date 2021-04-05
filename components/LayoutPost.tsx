@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
-import { FaChevronLeft } from 'react-icons/fa'
+import { FaAngleLeft } from 'react-icons/fa'
 import { useRouter } from 'next/router'
 import { useMedia } from 'react-use-media'
 import { motion } from 'framer-motion'
@@ -67,7 +67,8 @@ const LayoutPost: React.FC<Props> = ({
               whileHover={{ y: -1 }}
               whileTap={{ y: 1 }}
             >
-              <FaChevronLeft style={{ marginRight: 7 }} /> Back
+              <FaAngleLeft style={{ marginRight: 5, fontSize: '2rem' }} />
+              Back
             </BackButton>
           </Container>
           {isDesktop && <SidebarTech />}
@@ -99,17 +100,16 @@ const Container = styled.div`
 
 const BackButton = styled(motion.button)`
   border: none;
-  padding: 0.8em 1em;
+  padding: 0.8em 1.8em;
   font-size: 1.8rem;
   border-radius: 5px;
-  background: #cc4bc2;
-  color: #f4f4f4;
+  background: hsl(284, 80%, 60%);
+  color: var(--primaryColorLight2);
   font-weight: 600;
   display: flex;
   align-items: center;
   cursor: pointer;
   will-change: transform;
-  filter: drop-shadow(0 0 0.75rem rgba(204, 75, 194, 0.5));
   line-height: 1;
   margin-top: 50px;
 
