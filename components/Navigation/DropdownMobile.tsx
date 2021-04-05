@@ -192,7 +192,6 @@ const DropdownMobile: React.FC = () => {
               </DropdownList>
             </DropdownWrapper>
             <CloseWrapper
-              isRootOrLogin={isRootOrLogin}
               initial={{ x: '-50%', y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 100, opacity: 0 }}
@@ -232,7 +231,8 @@ const Overlay = styled(motion.div)`
 
 const DropdownWrapper = styled(motion.div)`
   position: fixed;
-  height: ${(props: StyledProps) => (props.isRootOrLogin ? '340px' : '310px')};
+  /* height: ${(props: StyledProps) =>
+    props.isRootOrLogin ? '340px' : '310px'}; */
   width: 100%;
   background: #112;
   bottom: 0;
@@ -287,7 +287,7 @@ const CloseWrapper = styled(motion.div)`
   border-radius: 50%;
   background: #010101;
   position: absolute;
-  bottom: ${(props: StyledProps) => (props.isRootOrLogin ? '44rem' : '40rem')};
+  bottom: 44rem;
   left: 50%;
   display: flex;
   justify-content: center;
