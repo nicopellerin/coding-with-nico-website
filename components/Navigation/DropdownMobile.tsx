@@ -170,8 +170,8 @@ const DropdownMobile: React.FC = () => {
                   onClick={() => setToggleDropdown(false)}
                   variants={itemVariants}
                   style={{
-                    paddingBottom: '2rem',
-                    marginBottom: '2rem',
+                    paddingBottom: pathname === '/' ? '2rem' : 0,
+                    marginBottom: pathname === '/' ? '2rem' : 0,
                   }}
                 >
                   <FaChevronRight
@@ -190,18 +190,21 @@ const DropdownMobile: React.FC = () => {
                   </Button>
                 </LinkStyled> */}
               </DropdownList>
+              <CloseWrapper
+                initial={{ x: '-50%', y: 100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 100, opacity: 0 }}
+                transition={{ type: 'spring', damping: 18, delay: 0.1 }}
+                onClick={() => setToggleDropdown(false)}
+              >
+                <FaTimes
+                  style={{
+                    fontSize: '3rem',
+                    color: 'var(--primaryColorLight)',
+                  }}
+                />
+              </CloseWrapper>
             </DropdownWrapper>
-            <CloseWrapper
-              initial={{ x: '-50%', y: 100, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: 100, opacity: 0 }}
-              transition={{ type: 'spring', damping: 18, delay: 0.1 }}
-              onClick={() => setToggleDropdown(false)}
-            >
-              <FaTimes
-                style={{ fontSize: '3rem', color: 'var(--primaryColorLight)' }}
-              />
-            </CloseWrapper>
             <Overlay
               onClick={() => setToggleDropdown(false)}
               initial={{ opacity: 0 }}
@@ -287,7 +290,7 @@ const CloseWrapper = styled(motion.div)`
   border-radius: 50%;
   background: #010101;
   position: absolute;
-  bottom: 44rem;
+  top: -10rem;
   left: 50%;
   display: flex;
   justify-content: center;
