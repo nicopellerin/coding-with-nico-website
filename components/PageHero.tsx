@@ -1,9 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
-import dynamic from 'next/dynamic'
-
-const Background = dynamic(() => import('./Background'), { ssr: false })
 
 interface Props {
   title?: string
@@ -14,13 +11,11 @@ interface Props {
 const PageHero: React.FC<Props> = ({
   title = 'Some page',
   img = '/images/rocket.png',
-  bgColor = '#001',
 }) => {
   const constraintsRef = React.useRef(null)
 
   return (
     <Wrapper ref={constraintsRef}>
-      <Background bgColor={bgColor} />
       <Title
         initial={{ opacity: 0, y: 200 }}
         animate={{ opacity: 1, y: 0 }}

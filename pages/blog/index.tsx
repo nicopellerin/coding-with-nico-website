@@ -19,7 +19,7 @@ const IndexBlogPage: FC<Props> = ({ posts }) => {
       {posts &&
         posts.map((post) => {
           return (
-            <Wrapper>
+            <Wrapper key={post.slug}>
               <Link href={`/blog/${post.slug}`} passHref>
                 <a>
                   <Title>{post.title}</Title>

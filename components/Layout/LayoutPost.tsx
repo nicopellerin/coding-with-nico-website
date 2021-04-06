@@ -103,7 +103,8 @@ const BackButton = styled(motion.button)`
   padding: 0.8em 1.8em;
   font-size: 1.8rem;
   border-radius: 5px;
-  background: hsl(284, 80%, 60%);
+  /* background: hsl(284, 80%, 60%); */
+  background: #cc4bc2;
   color: var(--primaryColorLight2);
   font-weight: 600;
   display: flex;
