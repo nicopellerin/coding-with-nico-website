@@ -62,26 +62,22 @@ const Navbar = () => {
                 onClick={() => audioOn && popSound.play()}
                 active={pathname.includes(link)}
               >
-                <Link href={link}>
-                  <a>
-                    {text}
-                    {index === i && (
-                      <motion.div
-                        layoutId="menuItem"
-                        initial={{ y: 1 }}
-                        animate={{ y: 0 }}
-                        style={{
-                          position: 'absolute',
-                          width: '100%',
-                          height: '0.3rem',
-                          background: '#F6DEFF',
-                          bottom: '-1.1rem',
-                          borderRadius: '0.5rem',
-                        }}
-                      />
-                    )}
-                  </a>
+                <Link href={link} prefetch={false}>
+                  <a>{text}</a>
                 </Link>
+                {index === i && (
+                  <motion.div
+                    layoutId="menuItem"
+                    style={{
+                      position: 'absolute',
+                      width: '100%',
+                      height: '0.3rem',
+                      background: '#F6DEFF',
+                      bottom: '-1.1rem',
+                      borderRadius: '0.5rem',
+                    }}
+                  />
+                )}
               </MenuListItem>
             ))}
           </AnimateSharedLayout>

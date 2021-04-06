@@ -23,7 +23,8 @@ import GlobalStyles from '../styles/GlobalStyles'
 
 const MyApp = ({ Component, pageProps }: any) => {
   const router = useRouter()
-  return router.pathname === '/' ? (
+
+  return (
     <>
       <Head>
         <meta
@@ -34,23 +35,7 @@ const MyApp = ({ Component, pageProps }: any) => {
       <RecoilRoot>
         <Navbar />
         <NavbarMobile />
-        <Component {...pageProps} />
-        <DropdownMobile />
-        <GlobalStyles />
-      </RecoilRoot>
-    </>
-  ) : (
-    <>
-      <Head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover"
-        />
-      </Head>
-      <RecoilRoot>
-        <Navbar />
-        <NavbarMobile />
-        <Background bgColor="#001" />
+        {router.pathname !== '/' && <Background bgColor="#001" />}
         <Component {...pageProps} />
         <DropdownMobile />
         <GlobalStyles />

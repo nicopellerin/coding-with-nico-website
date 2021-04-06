@@ -168,7 +168,7 @@ const Grid = styled(motion.div)`
   grid-template-columns: repeat(3, minmax(4rem, auto));
   gap: 3rem;
   border: 3px solid rgba(102, 51, 153, 0.1);
-  padding: 5rem 4rem;
+  padding: 5rem 5rem;
   border-radius: 0.5rem;
   position: relative;
   z-index: 3;
@@ -176,6 +176,7 @@ const Grid = styled(motion.div)`
   @media (min-width: 768px) {
     grid-template-columns: repeat(5, auto);
     gap: 6rem;
+    padding: 5rem 4rem;
   }
 `
 
