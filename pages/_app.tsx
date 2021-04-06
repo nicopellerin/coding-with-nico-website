@@ -15,7 +15,7 @@ import '@fontsource/space-grotesk/500.css'
 import Navbar from '../components/Navigation/Navbar'
 import NavbarMobile from '../components/Navigation/NavbarMobile'
 import DropdownMobile from '../components/Navigation/DropdownMobile'
-const Background = dynamic(() => import('../components/Background'), {
+const Background = dynamic(() => import('../components/ThreeDee/Background'), {
   ssr: false,
 })
 
@@ -23,7 +23,6 @@ import GlobalStyles from '../styles/GlobalStyles'
 
 const MyApp = ({ Component, pageProps }: any) => {
   const router = useRouter()
-
   return (
     <>
       <Head>

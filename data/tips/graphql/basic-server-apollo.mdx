@@ -1,0 +1,39 @@
+import LayoutPost from '../../../components/Layout/LayoutPost'
+export const meta = {}
+
+export default ({ children }) => (
+  <LayoutPost title="Graphql" metaTitle="Basic Server with Apollo">
+    {children}
+  </LayoutPost>
+)
+
+# Basic Server with Apollo
+
+```jsx
+const { ApolloServer, gql } = require('apollo-server')
+
+// Graphql schema
+const typeDefs = gql`
+  type Query {
+    hello: String
+  }
+`
+
+// Resolvers
+const resolvers = {
+  Query: {
+    hello: () => 'functionsnstuff',
+  },
+}
+
+// Create server
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+})
+
+// Listen to server
+server.listen().then(({ url }) => {
+  console.log(`Server listening at ${url}`)
+})
+```

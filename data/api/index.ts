@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { join } from 'path'
 import matter from 'gray-matter'
+import { getTipsSlugs } from './tips'
 
 export interface Post {
     title: string
@@ -48,8 +49,13 @@ export const getPostBySlug = (slug: string, fields: any = []) => {
     return items
 }
 
+const tipsDirectory = join(process.cwd(), "data/tips")
+
+
 export const getAllPosts = (fields: any[] = []) => {
     const slugs = getPostSlugs()
+    getTipsSlugs(tipsDirectory).then(f => console.log('SLUGS---------', f))
+    
     const posts: Post[] = slugs.map((slug) => getPostBySlug(slug, fields)).sort((post1, post2) => post1.date > post2.date ? -1 : 1)
 
     return posts
