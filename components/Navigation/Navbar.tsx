@@ -62,7 +62,7 @@ const Navbar = () => {
                 onClick={() => audioOn && popSound.play()}
                 active={pathname.includes(link)}
               >
-                <Link href={link}>
+                <Link href={link} prefetch={false}>
                   <a>
                     {text}
                     {index === i && (
