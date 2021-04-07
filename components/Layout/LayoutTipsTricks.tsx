@@ -36,6 +36,14 @@ const LayoutTipsTricks: React.FC<Props> = ({
           property="og:title"
           content={`${metaTitle || title} | Coding With Nico`}
         />
+        <meta
+          name="description"
+          content="Learn new life changing coding skills"
+        />
+        <meta
+          property="og:description"
+          content="Learn new life changing coding skills"
+        />
       </Head>
       <PageHero title={title} bgColor={bgColor} img={img} />
       <Main>
