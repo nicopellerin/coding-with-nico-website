@@ -46,7 +46,15 @@ const TechBar = () => {
                 srcSet={logo.replace('.png', '.webp')}
                 type="image/webp"
               />
-              <Logo key={tech} src={logo} alt={tech} variants={item} />
+              <Logo
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: 'spring', damping: 18 }}
+                key={tech}
+                src={logo}
+                alt={tech}
+                variants={item}
+              />
             </picture>
           </a>
         </Link>
