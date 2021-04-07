@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { format } from 'date-fns'
 import Link from 'next/link'
 import { FaCalendar } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 import LayoutBlog from '../../components/Layout/LayoutBlog'
 
@@ -19,7 +20,16 @@ const IndexBlogPage: FC<Props> = ({ posts }) => {
       {posts &&
         posts.map((post) => {
           return (
-            <Wrapper key={post.slug}>
+            <Wrapper
+              key={post.slug}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: 'spring',
+                damping: 18,
+                delay: 0.1,
+              }}
+            >
               <Link href={`/blog/${post.slug}`} passHref>
                 <a>
                   <Title>{post.title}</Title>
@@ -67,7 +77,7 @@ export async function getStaticProps() {
 }
 
 // Styles
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   max-width: 110ch;
   margin: 0 auto;
   margin-bottom: 20px;
