@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const techImages = [
   { tech: 'react', logo: '/images/tech/react.png' },
@@ -38,10 +39,17 @@ const TechBar = () => {
   return (
     <Wrapper variants={list} initial="hidden" animate="visible">
       {techImages.map(({ tech, logo }) => (
-        <picture>
-          <source srcSet={logo.replace('.png', '.webp')} type="image/webp" />
-          <Logo key={tech} src={logo} alt={tech} variants={item} />
-        </picture>
+        <Link href={`/tips-tricks/${tech}`}>
+          <a>
+            <picture>
+              <source
+                srcSet={logo.replace('.png', '.webp')}
+                type="image/webp"
+              />
+              <Logo key={tech} src={logo} alt={tech} variants={item} />
+            </picture>
+          </a>
+        </Link>
       ))}
     </Wrapper>
   )
@@ -58,6 +66,7 @@ const Wrapper = styled(motion.div)`
   margin-left: 0rem;
   margin-bottom: 4rem;
   order: -1;
+  z-index: 1000;
 
   @media (min-width: 768px) {
     margin-left: 4rem;

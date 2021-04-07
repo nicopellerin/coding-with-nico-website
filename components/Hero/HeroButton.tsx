@@ -27,7 +27,7 @@ const HeroButton = () => {
           onClick={playSound}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ type: 'spring', damping: 18, stiffness: 60 }}
+          transition={{ type: 'spring', damping: 18 }}
         >
           Start learning <FaCode style={{ marginLeft: 7, marginTop: 2 }} />
         </Button>
@@ -58,10 +58,12 @@ const Button = styled(motion.button)`
   white-space: nowrap;
   width: 100%;
   justify-content: center;
+  height: 48px;
 
   @media (min-width: 768px) {
     font-size: 2.2rem;
     width: auto;
+    height: 58px;
   }
 
   @media (min-width: 2200px) {

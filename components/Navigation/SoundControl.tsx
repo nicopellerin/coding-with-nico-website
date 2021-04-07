@@ -37,11 +37,17 @@ const SoundControl = () => {
   return (
     <>
       {storage ? (
-        <motion.span whileTap={{ scale: 0.98, height: '2rem' }}>
+        <motion.span
+          whileTap={{ scale: 0.98, height: '2rem' }}
+          title="Toggle audio on/off"
+        >
           <VolumeOnIcon onClick={() => setStorage(false)} />
         </motion.span>
       ) : (
-        <motion.span whileTap={{ scale: 0.98, height: '2rem' }}>
+        <motion.span
+          whileTap={{ scale: 0.98, height: '2rem' }}
+          title="Toggle audio on/off"
+        >
           <VolumeOffIcon
             onClick={() => {
               setStorage(true)
