@@ -3,19 +3,29 @@ import { useEffect } from 'react'
 import styled from 'styled-components'
 import { FiVolume2, FiVolumeX } from 'react-icons/fi'
 import { useRecoilState } from 'recoil'
+import { motion } from 'framer-motion'
+
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 import { audioOnState } from '../../store/audio'
-import { motion } from 'framer-motion'
-import useLocalStorage from '../../hooks/useLocalStorage'
+import { useMedia } from 'react-use-media'
 
 const SoundControl = () => {
   const [audioOn, setAudioOn] = useRecoilState(audioOnState)
 
   const [storage, setStorage] = useLocalStorage('audioOnState', audioOn)
 
+  const isMobile = useMedia({ maxWidth: 768 })
+
   useEffect(() => {
     setAudioOn(storage)
   }, [storage])
+
+  useEffect(() => {
+    if (isMobile) {
+      setAudioOn(false)
+    }
+  }, [isMobile])
 
   let tocSound: HTMLAudioElement
 
