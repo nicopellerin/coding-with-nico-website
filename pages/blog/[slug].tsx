@@ -4,8 +4,10 @@ import MDX from '@mdx-js/runtime'
 import styled from 'styled-components'
 import { FaCalendar } from 'react-icons/fa'
 import { format } from 'date-fns'
+import Head from 'next/head'
 
 import LayoutBlog from '../../components/Layout/LayoutBlog'
+import { Share } from '../../components/Share'
 
 import { getAllPosts, getPostBySlug, Post } from '../../data/api'
 
@@ -15,29 +17,43 @@ interface Props {
 
 const BlogPost: FC<Props> = ({ post }) => {
   return (
-    <LayoutBlog
-      title={'Blog'}
-      metaTitle={post.title}
-      description={post.excerpt}
-      img="/images/tips.png"
-    >
-      <Title>{post.title}</Title>
-      <Info>
-        <picture>
-          <source
-            srcSet={post.author.picture.replace('.jpg', '.webp')}
-            type="image/webp"
-          />
-          <AuthorImage src={post.author.picture} alt={post.author.name} />
-        </picture>
-        <AuthorName>{post.author.name}</AuthorName>
-        <PostDate>
-          <FaCalendar style={{ marginRight: 7 }} />{' '}
-          {format(post.date, 'MMMM d, yyyy')}
-        </PostDate>
-      </Info>
-      <MDX>{post.content}</MDX>
-    </LayoutBlog>
+    <>
+      <Head>
+        <title>{post.title} | Coding With Nico</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          property="og:title"
+          content={`${post.title} | Coding With Nico`}
+        />
+        <meta property="og:description" content={`${post.excerpt}`} />
+        <meta name="description" content={`${post.excerpt}`} />
+      </Head>
+      <LayoutBlog
+        title={'Blog'}
+        metaTitle={post.title}
+        description={post.excerpt}
+        img="/images/tips.png"
+      >
+        <Title>{post.title}</Title>
+        <Info>
+          <picture>
+            <source
+              srcSet={post.author.picture.replace('.jpg', '.webp')}
+              type="image/webp"
+            />
+            <AuthorImage src={post.author.picture} alt={post.author.name} />
+          </picture>
+          <AuthorName>{post.author.name}</AuthorName>
+          <PostDate>
+            <FaCalendar style={{ marginRight: 7 }} />{' '}
+            {format(post.date, 'MMMM d, yyyy')}
+          </PostDate>
+        </Info>
+        <MDX>{post.content}</MDX>
+        <Share url={`https://codingwithnico.com/blog/${post.slug}`} />
+      </LayoutBlog>
+    </>
   )
 }
 

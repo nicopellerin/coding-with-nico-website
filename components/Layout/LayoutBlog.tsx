@@ -44,7 +44,7 @@ const LayoutBlog: React.FC<Props> = ({
   return (
     <>
       <MDXProvider components={components}>
-        <Head>
+        {/* <Head>
           <title>{metaTitle || title} | Coding With Nico</title>
           <meta charSet="utf-8" />
           <meta
@@ -57,7 +57,7 @@ const LayoutBlog: React.FC<Props> = ({
           />
           <meta property="og:description" content={`${description}`} />
           <meta name="description" content={`${description}`} />
-        </Head>
+        </Head> */}
         <PageHero title={title} bgColor={bgColor} img={img} />
         <Main>
           <Container>{children}</Container>

@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import Link from 'next/link'
 import { FaCalendar } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import Head from 'next/head'
 
 import LayoutBlog from '../../components/Layout/LayoutBlog'
 
@@ -16,53 +17,61 @@ interface Props {
 
 const IndexBlogPage: FC<Props> = ({ posts }) => {
   return (
-    <LayoutBlog>
-      {posts &&
-        posts.map((post) => {
-          return (
-            <Wrapper
-              key={post.slug}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: 'spring',
-                damping: 18,
-                stiffness: 60,
-                delay: 0.1,
-              }}
-            >
-              <Link href={`/blog/${post.slug}`} passHref>
-                <a>
-                  <Title>{post.title}</Title>
-                </a>
-              </Link>
-              <Info>
-                <picture>
-                  <source
-                    srcSet={post.author.picture.replace('.jpg', '.webp')}
-                    type="image/webp"
-                  />
-                  <AuthorImage
-                    src={post.author.picture}
-                    alt={post.author.name}
-                  />
-                </picture>
-                <AuthorName>{post.author.name}</AuthorName>
-                <PostDate>
-                  <FaCalendar style={{ marginRight: 7 }} />{' '}
-                  {format(post.date, 'MMMM d, yyyy')}
-                </PostDate>
-              </Info>
-              <Excerpt>{post.excerpt}</Excerpt>
-              <ReadMoreWrapper>
+    <>
+      <Head>
+        <title>Blog | Coding With Nico</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta property="og:title" content="Blog | Coding With Nico" />
+      </Head>
+      <LayoutBlog>
+        {posts &&
+          posts.map((post) => {
+            return (
+              <Wrapper
+                key={post.slug}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  type: 'spring',
+                  damping: 18,
+                  stiffness: 60,
+                  delay: 0.1,
+                }}
+              >
                 <Link href={`/blog/${post.slug}`} passHref>
-                  <a>Read more...</a>
+                  <a>
+                    <Title>{post.title}</Title>
+                  </a>
                 </Link>
-              </ReadMoreWrapper>
-            </Wrapper>
-          )
-        })}
-    </LayoutBlog>
+                <Info>
+                  <picture>
+                    <source
+                      srcSet={post.author.picture.replace('.jpg', '.webp')}
+                      type="image/webp"
+                    />
+                    <AuthorImage
+                      src={post.author.picture}
+                      alt={post.author.name}
+                    />
+                  </picture>
+                  <AuthorName>{post.author.name}</AuthorName>
+                  <PostDate>
+                    <FaCalendar style={{ marginRight: 7 }} />{' '}
+                    {format(post.date, 'MMMM d, yyyy')}
+                  </PostDate>
+                </Info>
+                <Excerpt>{post.excerpt}</Excerpt>
+                <ReadMoreWrapper>
+                  <Link href={`/blog/${post.slug}`} passHref>
+                    <a>Read more...</a>
+                  </Link>
+                </ReadMoreWrapper>
+              </Wrapper>
+            )
+          })}
+      </LayoutBlog>
+    </>
   )
 }
 
