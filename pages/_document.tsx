@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-          <meta property="og:title" content="Coding With Nico" />
+          {/* <meta property="og:title" content="Coding With Nico" />
           <meta property="og:url" content="https://codingwithnico.com" />
           <meta
             name="description"
@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
           <meta
             property="og:description"
             content="Learn new life changing coding skills"
-          />
+          /> */}
           <meta property="og:image" content="/og-image.jpg" />
           <meta name="theme-color" content="#3D28C3" />
           <link rel="icon" type="image/png" href="/favicon.png" />
