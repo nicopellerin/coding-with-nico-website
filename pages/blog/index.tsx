@@ -23,6 +23,7 @@ const IndexBlogPage: FC<Props> = ({ posts }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta property="og:title" content="Blog | Coding With Nico" />
+        <meta property="og:url" content={`https://codingwithnico.com/blog`} />
       </Head>
       <LayoutBlog>
         {posts &&

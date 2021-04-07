@@ -28,6 +28,10 @@ const BlogPost: FC<Props> = ({ post }) => {
         />
         <meta property="og:description" content={`${post.excerpt}`} />
         <meta name="description" content={`${post.excerpt}`} />
+        <meta
+          property="og:url"
+          content={`https://codingwithnico.com/blog/${post.slug}`}
+        />
       </Head>
       <LayoutBlog
         title={'Blog'}
