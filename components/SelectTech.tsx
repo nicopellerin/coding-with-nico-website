@@ -20,9 +20,9 @@ const SelectTech = () => {
     <Wrapper>
       <Container>
         <Terminal
-          initial={{ y: 100 }}
-          animate={{ y: minimizeTerminal ? 375 : 0 }}
-          transition={{ type: 'spring', damping: 16 }}
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: minimizeTerminal ? 375 : 0, opacity: 1 }}
+          transition={{ type: 'spring', damping: 16, delay: 0.2 }}
         >
           <TerminalImage src="/images/terminal.png" alt="Terminal" />
           <button
@@ -114,7 +114,7 @@ const SelectTech = () => {
           }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
+          transition={{ delay: 0.8 }}
         />
       </Container>
     </Wrapper>
@@ -139,12 +139,12 @@ const Container = styled.div`
     content: '';
     width: 120%;
     height: 5px;
-    background: rgba(131, 82, 253, 0.1);
+    background: hsl(257, 58%, 8%);
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.5));
+    filter: drop-shadow(0 0.05rem 2rem rgba(131, 82, 253, 0.2));
 
     @media (max-width: 1024px) {
       display: none;

@@ -3,7 +3,7 @@ import * as React from 'react'
 // import { motion } from 'framer-motion'
 // import path from 'path'
 
-import LayoutTipsTricks from '../../components/Layout/LayoutTipsTricks'
+import LayoutTipsTricks from '../../../components/Layout/LayoutTipsTricks'
 // import TemplateContainer from '../../components/Layout/TemplateContainer'
 // import CardList from '../../components/CardList'
 // import Card from '../../components/Card/Card'
