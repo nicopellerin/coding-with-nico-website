@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import Head from 'next/head'
+// import Head from 'next/head'
 import styled from 'styled-components'
 import { MDXProvider } from '@mdx-js/react'
 
