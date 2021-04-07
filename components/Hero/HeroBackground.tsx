@@ -48,18 +48,21 @@ const HeroBackground: FC = () => {
             <TechBar />
           </ButtonWrapper>
         </Info>
-        <Character
-          src="/images/character.png"
-          alt="Character"
-          initial={{ opacity: 0, y: 20, skewY: -2 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            type: 'spring',
-            damping: 18,
-            stiffness: 60,
-            delay: 0.2,
-          }}
-        />
+        <picture>
+          <source srcSet="/images/character.webp" type="image/webp" />
+          <Character
+            src="/images/character.png"
+            alt="Character"
+            initial={{ opacity: 0, y: 20, skewY: -2 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              type: 'spring',
+              damping: 18,
+              stiffness: 60,
+              delay: 0.2,
+            }}
+          />
+        </picture>
       </Container>
       <Wave />
     </Wrapper>

@@ -37,7 +37,16 @@ const IndexBlogPage: FC<Props> = ({ posts }) => {
                 </a>
               </Link>
               <Info>
-                <AuthorImage src={post.author.picture} alt={post.author.name} />
+                <picture>
+                  <source
+                    srcSet={post.author.picture.replace('.jpg', '.webp')}
+                    type="image/webp"
+                  />
+                  <AuthorImage
+                    src={post.author.picture}
+                    alt={post.author.name}
+                  />
+                </picture>
                 <AuthorName>{post.author.name}</AuthorName>
                 <PostDate>
                   <FaCalendar style={{ marginRight: 7 }} />{' '}

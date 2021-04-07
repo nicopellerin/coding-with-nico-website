@@ -80,11 +80,17 @@ const SelectTech = () => {
                 >
                   <Link href={`/tips-tricks/${tech.toLowerCase()}`}>
                     <a>
-                      <TechImage
-                        layoutId={tech.toLowerCase()}
-                        src={logo}
-                        alt={tech}
-                      />
+                      <picture>
+                        <source
+                          srcSet={logo.replace('.png', '.webp')}
+                          type="image/webp"
+                        />
+                        <TechImage
+                          layoutId={tech.toLowerCase()}
+                          src={logo}
+                          alt={tech}
+                        />
+                      </picture>
                       {index === i && (
                         <Name
                           initial={{ x: '-50%', opacity: 0, y: 20 }}

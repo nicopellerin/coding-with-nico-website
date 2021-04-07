@@ -66,20 +66,23 @@ const PageHero: React.FC<Props> = ({
           delay: 0.3,
         }}
       />
-      <HeroImage
-        drag
-        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-        src={img}
-        alt="rocket"
-        animate={{ y: [7, 0, 7], x: [2, 0, 2] }}
-        transition={{
-          type: 'tween',
-          duration: 7,
-          repeat: Infinity,
-          repeatType: 'loop',
-          delay: 0.4,
-        }}
-      />
+      <picture>
+        <source srcSet={`${img.replace('.png', '.webp')}`} type="image/webp" />
+        <HeroImage
+          drag
+          dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
+          src={img}
+          alt="rocket"
+          animate={{ y: [7, 0, 7], x: [2, 0, 2] }}
+          transition={{
+            type: 'tween',
+            duration: 7,
+            repeat: Infinity,
+            repeatType: 'loop',
+            delay: 0.4,
+          }}
+        />
+      </picture>
       <Wave
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="xMinYMin slice"

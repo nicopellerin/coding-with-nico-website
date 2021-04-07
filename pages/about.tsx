@@ -25,10 +25,13 @@ const AboutPage = () => {
                 }}
               >
                 Hi! I'm Nico &#128400;{' '}
-                <img
-                  src="/images/icon-books.png "
-                  style={{ width: '5rem', marginLeft: 12 }}
-                />
+                <picture>
+                  <source srcSet="/images/icon-books.webp" type="image/webp" />
+                  <img
+                    src="/images/icon-books.png"
+                    style={{ width: '5rem', marginLeft: 12 }}
+                  />
+                </picture>
               </Welcome>
               <Text
                 initial={{ opacity: 0, y: -10 }}
