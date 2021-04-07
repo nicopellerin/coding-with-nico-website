@@ -38,8 +38,6 @@ const LayoutBlog: React.FC<Props> = ({
   title = 'Blog',
   bgColor = '#001',
   img,
-  metaTitle,
-  description = "Some blog about tech 'n stuff",
 }: Props) => {
   return (
     <>
