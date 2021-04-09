@@ -74,13 +74,15 @@ export async function getStaticProps({ params }: any) {
     'coverImage',
     'coverImageAlt',
     'draft',
+    'tech',
   ])
   return {
     props: { post },
   }
 }
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const posts = getAllPosts(['slug', 'tech'])
+  console.log('POSTS-----', posts)
   return {
     paths: posts.map((post) => {
       return {

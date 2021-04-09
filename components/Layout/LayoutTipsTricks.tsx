@@ -2,10 +2,25 @@ import React, { ReactNode } from 'react'
 import Head from 'next/head'
 import styled from 'styled-components'
 import { useMedia } from 'react-use-media'
+import { MDXProvider } from '@mdx-js/react'
 
 import PageHero from '../PageHero'
 import Footer from '../Navigation/Footer'
 import SidebarTech from '../SidebarTech'
+import Code from '../Typography/Code'
+import Text from '../Typography/Text'
+import { InlineCode } from '../Typography/InlineCode'
+import Spacer from '../Spacer'
+import { H1, H2 } from '../Typography/Heading'
+
+const components = {
+  h1: H1,
+  h2: H2,
+  p: Text,
+  code: Code,
+  inlineCode: InlineCode,
+  Spacer,
+}
 
 interface Props {
   children: ReactNode
@@ -47,8 +62,10 @@ const LayoutTipsTricks: React.FC<Props> = ({
       </Head>
       <PageHero title={title} bgColor={bgColor} img={img} />
       <Main>
-        <Container>{children}</Container>
-        {isDesktop && <SidebarTech />}
+        <MDXProvider components={components}>
+          <Container>{children}</Container>
+          {isDesktop && <SidebarTech />}
+        </MDXProvider>
       </Main>
       <Footer />
     </>

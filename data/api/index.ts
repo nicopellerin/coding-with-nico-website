@@ -17,17 +17,18 @@ export interface Post {
     content?: string
     description?: string
     slug: string
+    tech: string
 }
 
 const postsDirectory = join(process.cwd(), "data/posts")
 
-export const getPostSlugs = () => {
-    return fs.readdirSync(postsDirectory)
+export const getPostSlugs = (dir = postsDirectory) => {
+    return fs.readdirSync(dir)
 }
 
-export const getPostBySlug = (slug: string, fields: any = []) => {
+export const getPostBySlug = (slug: string, fields: any = [], dir = postsDirectory) => {
     const realSlug = slug.replace(/\.mdx$/, "")
-    const fullPath = join(postsDirectory, `${realSlug}.mdx`)
+    const fullPath = join(dir, `${realSlug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, "utf-8")
     const { data, content } = matter(fileContents)
 
@@ -48,10 +49,10 @@ export const getPostBySlug = (slug: string, fields: any = []) => {
     return items
 }
 
-export const getAllPosts = (fields: any[] = []) => {
-    const slugs = getPostSlugs()
-    
-    const posts: Post[] = slugs.map((slug) => getPostBySlug(slug, fields)).sort((post1, post2) => post1.date > post2.date ? -1 : 1)
+export const getAllPosts = (fields: any[] = [], dir = postsDirectory) => {
+    const slugs = getPostSlugs(dir)
+
+    const posts: Post[] = slugs.map((slug) => getPostBySlug(slug, fields, dir)).sort((post1, post2) => post1.date > post2.date ? -1 : 1)
 
     return posts
 }

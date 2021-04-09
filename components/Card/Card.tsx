@@ -5,14 +5,13 @@ import { motion } from 'framer-motion'
 
 interface Props {
   title: string
-  image: string
   slug: string
   tech?: string
 }
 
-const Card: React.FC<Props> = ({ title, slug }) => {
+const Card: React.FC<Props> = ({ title, slug, tech }) => {
   return (
-    <Link href={slug}>
+    <Link href={`${tech}/${slug}`}>
       <a>
         <Wrapper
           whileHover={{ x: -3 }}

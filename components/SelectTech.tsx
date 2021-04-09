@@ -9,7 +9,7 @@ const techImages = [
   { tech: 'Typescript', logo: '/images/tech/typescript.png' },
   { tech: 'Graphql', logo: '/images/tech/graphql.png' },
   { tech: 'Javascript', logo: '/images/tech/javascript.png' },
-  { tech: 'Rust', logo: '/images/tech/rustlang.png' },
+  { tech: 'Rust', logo: '/images/tech/rust.png' },
 ]
 
 const SelectTech = () => {

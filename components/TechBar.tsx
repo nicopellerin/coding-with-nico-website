@@ -8,7 +8,7 @@ const techImages = [
   { tech: 'typescript', logo: '/images/tech/typescript.png' },
   { tech: 'graphql', logo: '/images/tech/graphql.png' },
   { tech: 'javascript', logo: '/images/tech/javascript.png' },
-  { tech: 'rust', logo: '/images/tech/rustlang.png' },
+  { tech: 'rust', logo: '/images/tech/rust.png' },
 ]
 
 const list = {
@@ -39,7 +39,7 @@ const TechBar = () => {
   return (
     <Wrapper variants={list} initial="hidden" animate="visible">
       {techImages.map(({ tech, logo }) => (
-        <Link href={`/tips-tricks/${tech}`}>
+        <Link href={`/tips-tricks/${tech}`} key={tech}>
           <a>
             <picture>
               <source

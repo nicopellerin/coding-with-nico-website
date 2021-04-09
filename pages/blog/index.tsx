@@ -115,6 +115,10 @@ const Title = styled.h2`
   font-size: 4rem;
   color: var(--pinkTextColor);
   margin-bottom: 20px;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 const Info = styled.div`

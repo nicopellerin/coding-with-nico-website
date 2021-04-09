@@ -1,0 +1,23 @@
+---
+title: 'Swap two values in Javascript'
+tech: 'javascript'
+date: 1617644149294
+ogImage:
+  url: '/og-image.jpg'
+---
+
+# Swap two values in Javascript
+
+```jsx
+let dog = 'Max'
+let cat = 'Nini'
+
+let temp = cat
+cat = dog
+dog = temp[
+  // Using array destructuring
+  (dog, cat)
+] = [cat, dog]
+
+// Result -> dog = "Nini", cat = "Max"
+```
