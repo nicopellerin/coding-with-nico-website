@@ -60,6 +60,10 @@ const Wrapper = styled(motion.div)`
   @media (max-width: 339px) {
     max-width: 300px;
   }
+
+  @media (min-width: 768px) {
+    min-width: 500px;
+  }
 `
 
 const Content = styled.div`

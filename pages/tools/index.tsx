@@ -26,8 +26,12 @@ export default ToolsPage
 // Styles
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+  grid-template-columns: 1fr;
+  justify-items: center;
+  justify-content: center;
   grid-gap: 4rem;
+  width: 100%;
 
   @media (max-width: 1024px) {
     justify-items: center;
