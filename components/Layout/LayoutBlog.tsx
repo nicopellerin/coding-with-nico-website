@@ -79,6 +79,7 @@ const Container = styled.div`
   color: #f4f4f4;
   max-width: 90rem;
   margin: 0 auto;
+  background: #001;
 
   @media (min-width: 1280px) {
     padding: 0rem 0 8rem;

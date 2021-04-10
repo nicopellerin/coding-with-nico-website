@@ -18,4 +18,5 @@ const FooterStyled = styled.footer`
   font-size: 1.6rem;
   color: #f4d7ff;
   font-weight: 500;
+  background: #001;
 `

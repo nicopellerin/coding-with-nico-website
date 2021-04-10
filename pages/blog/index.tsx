@@ -33,7 +33,7 @@ const IndexBlogPage: FC<Props> = ({ posts }) => {
           content="Learn new life changing coding skills &#128640;"
         />
       </Head>
-      <LayoutBlog>
+      <LayoutBlog img="/images/contact.png">
         {posts &&
           posts.map((post) => {
             return (

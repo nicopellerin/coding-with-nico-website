@@ -2,6 +2,10 @@ import * as React from 'react'
 import { FC } from 'react'
 import MDX from '@mdx-js/runtime'
 import { join } from 'path'
+import { motion } from 'framer-motion'
+import styled from 'styled-components'
+import { FaAngleLeft } from 'react-icons/fa'
+import { useRouter } from 'next/router'
 
 import LayoutTipsTricks from '../../../components/Layout/LayoutTipsTricks'
 import { Share } from '../../../components/Share'
@@ -14,6 +18,8 @@ interface Props {
 }
 
 const TipsTricksPost: FC<Props> = ({ post, tech }) => {
+  const router = useRouter()
+
   return (
     <>
       <LayoutTipsTricks
@@ -22,6 +28,14 @@ const TipsTricksPost: FC<Props> = ({ post, tech }) => {
         img="/images/tips.png"
       >
         <MDX>{post.content}</MDX>
+        <BackButton
+          onClick={() => router.back()}
+          whileHover={{ y: -1 }}
+          whileTap={{ y: 1 }}
+        >
+          <FaAngleLeft style={{ marginRight: 5, fontSize: '2rem' }} />
+          Back
+        </BackButton>
         <Share
           url={`https://codingwithnico.com/tips-tricks/${tech}/${post.slug}`}
         />
@@ -71,3 +85,26 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
+
+// Styles
+const BackButton = styled(motion.button)`
+  border: none;
+  padding: 0.8em 1.8em;
+  font-size: 1.8rem;
+  border-radius: 5px;
+  /* background: hsl(284, 80%, 60%); */
+  background: #cc4bc2;
+  color: var(--primaryColorLight2);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  will-change: transform;
+  line-height: 1;
+  margin-top: 50px;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    justify-content: center;
+  }
+`

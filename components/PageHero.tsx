@@ -178,6 +178,7 @@ const HeroImage = styled(motion.img)`
   max-width: 22rem;
   top: 27vh;
   right: 5vw;
+  z-index: -1;
 
   @media (min-width: 600px) {
     top: 18rem;
