@@ -164,6 +164,22 @@ const DropdownMobile: React.FC = () => {
                     size={18}
                     style={{ marginRight: 15 }}
                   />
+                  <LinkStyled href="/tools">Tools</LinkStyled>
+                </DropdownItem>
+                <DropdownItem
+                  onClick={() => setToggleDropdown(false)}
+                  variants={itemVariants}
+                  style={{
+                    borderBottom: '1px solid rgba(221,94,152, 0.2)',
+                    paddingBottom: '2rem',
+                    marginBottom: '2rem',
+                  }}
+                >
+                  <FaChevronRight
+                    color="var(--primaryColorLight)"
+                    size={18}
+                    style={{ marginRight: 15 }}
+                  />
                   <LinkStyled href="/courses">Courses</LinkStyled>
                 </DropdownItem>
                 <DropdownItem

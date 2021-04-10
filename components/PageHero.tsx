@@ -145,6 +145,7 @@ const Title = styled(motion.h1)`
   position: relative;
   line-height: 1;
   font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
 
   @media (max-width: 375px) {
     margin-bottom: -0.5rem;

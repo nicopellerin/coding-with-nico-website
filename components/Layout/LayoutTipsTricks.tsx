@@ -28,6 +28,7 @@ interface Props {
   bgColor?: string
   img?: string
   metaTitle?: string
+  showTechBar?: boolean
 }
 
 const LayoutTipsTricks: React.FC<Props> = ({
@@ -36,6 +37,7 @@ const LayoutTipsTricks: React.FC<Props> = ({
   bgColor = '#001',
   img,
   metaTitle,
+  showTechBar = true,
 }: Props) => {
   const isDesktop = useMedia({
     minWidth: 768,
@@ -64,7 +66,7 @@ const LayoutTipsTricks: React.FC<Props> = ({
       <Main>
         <MDXProvider components={components}>
           <Container>{children}</Container>
-          {isDesktop && <SidebarTech />}
+          {isDesktop && showTechBar && <SidebarTech />}
         </MDXProvider>
       </Main>
       <Footer />
