@@ -102,6 +102,9 @@ const OgCrawler = () => {
               Enter a URL to fetch the website's pages Open Graph info and
               errors.
             </DurationCrawl>
+            <Note>
+              <strong>Note:</strong> Still in experimental phase
+            </Note>
           </>
         )}
       </FormStyled>
@@ -365,4 +368,12 @@ const DurationText = styled.span`
 const FormStyled = styled.form`
   background: #001;
   padding-top: 20px;
+`
+
+const Note = styled.span`
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.4rem;
+  color: var(--primaryColor);
 `
