@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 interface Props {
   title: string
   slug: string
-  tech?: string
+  tech: string
 }
 
 const Card: React.FC<Props> = ({ title, slug, tech }) => {
@@ -43,10 +43,6 @@ const Wrapper = styled(motion.li)`
   position: relative;
   cursor: pointer;
   border-bottom: 2px solid var(--primaryColorDark2);
-
-  @media (max-width: 375px) {
-    /* max-width: 350px; */
-  }
 `
 
 const Content = styled.div`
@@ -63,7 +59,7 @@ const Title = styled(motion.h2)`
   text-align: left;
   transition: color 150ms;
 
-  &:hover {
+  ${Content}:hover & {
     color: var(--pinkTextColor);
   }
 `

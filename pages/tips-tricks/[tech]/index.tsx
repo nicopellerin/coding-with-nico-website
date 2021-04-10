@@ -23,11 +23,7 @@ const TipsAndTricksPage: FC<Props> = ({ posts, tech }) => {
           <TechWrapper>
             <picture>
               <source srcSet={`/images/tech/${tech}.webp`} type="image/webp" />
-              <TechLogo
-                src={`/images/tech/${tech}.png`}
-                layoutId={tech}
-                width="100rem"
-              />
+              <TechLogo src={`/images/tech/${tech}.png`} width="90rem" />
             </picture>
           </TechWrapper>
           <Tech>{tech}</Tech>
@@ -105,7 +101,9 @@ const Tech = styled(motion.h2)`
   text-transform: capitalize;
 `
 
-const TechLogo = styled(motion.img)``
+const TechLogo = styled(motion.img)`
+  border-radius: 5px;
+`
 
 const TechWrapper = styled.div`
   background: rgba(131, 82, 253, 0.1);

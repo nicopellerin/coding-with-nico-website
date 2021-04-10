@@ -12,6 +12,15 @@ const Layout = ({ children, title = 'Coding With Nico' }: Props) => (
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta property="og:title" content="Coding With Nico" />
+      <meta
+        property="og:description"
+        content="Learn new life changing coding skills &#128640;"
+      />
+      <meta
+        name="description"
+        content="Learn new life changing coding skills"
+      />
     </Head>
     {children}
   </>
