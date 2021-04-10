@@ -82,7 +82,7 @@ export async function getStaticProps({ params }: any) {
 }
 export async function getStaticPaths() {
   const posts = getAllPosts(['slug', 'tech'])
-  console.log('POSTS-----', posts)
+
   return {
     paths: posts.map((post) => {
       return {

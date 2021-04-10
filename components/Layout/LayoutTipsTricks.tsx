@@ -53,11 +53,11 @@ const LayoutTipsTricks: React.FC<Props> = ({
         />
         <meta
           name="description"
-          content="Learn new life changing coding skills"
+          content="Learn new life changing coding skills &#128640;"
         />
         <meta
           property="og:description"
-          content="Learn new life changing coding skills"
+          content="Learn new life changing coding skills &#128640;"
         />
       </Head>
       <PageHero title={title} bgColor={bgColor} img={img} />

@@ -26,11 +26,11 @@ const IndexBlogPage: FC<Props> = ({ posts }) => {
         <meta property="og:url" content={`https://codingwithnico.com/blog`} />
         <meta
           name="description"
-          content="Learn new life changing coding skills"
+          content="Learn new life changing coding skills &#128640;"
         />
         <meta
           property="og:description"
-          content="Learn new life changing coding skills"
+          content="Learn new life changing coding skills &#128640;"
         />
       </Head>
       <LayoutBlog>

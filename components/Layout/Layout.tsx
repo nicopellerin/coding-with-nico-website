@@ -19,7 +19,7 @@ const Layout = ({ children, title = 'Coding With Nico' }: Props) => (
       />
       <meta
         name="description"
-        content="Learn new life changing coding skills"
+        content="Learn new life changing coding skills &#128640;"
       />
     </Head>
     {children}
