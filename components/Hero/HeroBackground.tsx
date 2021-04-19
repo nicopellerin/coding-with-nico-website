@@ -81,7 +81,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background: url('/images/gradient1.jpg');
+  background: url('/images/gradient1.webp');
   background-size: cover;
   background-position-y: center;
 
