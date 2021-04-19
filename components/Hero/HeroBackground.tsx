@@ -34,6 +34,7 @@ const HeroBackground: FC = () => {
           </Tagline>
           <Blob
             src="images/blob.svg"
+            alt="Blob"
             style={{ position: 'absolute' }}
             animate={{ rotate: [0, 5, 0], scale: [0.98, 1.03, 0.98] }}
             transition={{
