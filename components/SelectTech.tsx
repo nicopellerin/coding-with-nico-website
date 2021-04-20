@@ -10,6 +10,7 @@ const techImages = [
   { tech: 'Graphql', logo: '/images/tech/graphql.png' },
   { tech: 'Javascript', logo: '/images/tech/javascript.png' },
   { tech: 'Rust', logo: '/images/tech/rust.png' },
+  { tech: 'Next.js', logo: '/images/tech/nextjs.png' },
 ]
 
 const SelectTech = () => {
@@ -78,7 +79,9 @@ const SelectTech = () => {
                   onMouseOver={() => setIndex(i)}
                   onMouseOut={() => setIndex(null)}
                 >
-                  <Link href={`/tips-tricks/${tech.toLowerCase()}`}>
+                  <Link
+                    href={`/tips-tricks/${tech.replace('.', '').toLowerCase()}`}
+                  >
                     <a>
                       <picture>
                         <source
@@ -180,7 +183,7 @@ const Grid = styled(motion.div)`
   z-index: 3;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(6, auto);
     gap: 6rem;
     padding: 5rem 4rem;
   }

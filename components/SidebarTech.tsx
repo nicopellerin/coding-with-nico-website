@@ -11,10 +11,11 @@ const techImages = [
   { tech: 'Graphql', logo: '/images/tech/graphql.png' },
   { tech: 'Javascript', logo: '/images/tech/javascript.png' },
   { tech: 'Rust', logo: '/images/tech/rust.png' },
+  { tech: 'Next.js', logo: '/images/tech/nextjs.png' },
 ]
 
 const SidebarTech = () => {
-  const { pathname } = useRouter()
+  const router = useRouter()
 
   const [open, setOpen] = React.useState(false)
 
@@ -32,10 +33,10 @@ const SidebarTech = () => {
         )}
       </Bar>
       {techImages
-        .filter(({ tech }) => !pathname.includes(tech.toLowerCase()))
+        .filter(({ tech }) => !router.query.tech.includes(tech.toLowerCase()))
         .map(({ tech, logo }) => (
           <li key={tech}>
-            <Link href={`/tips-tricks/${tech.toLowerCase()}`}>
+            <Link href={`/tips-tricks/${tech.replace('.', '').toLowerCase()}`}>
               <a>
                 <Tech src={logo} alt={tech} whileHover={{ scale: 1.03 }} />
               </a>

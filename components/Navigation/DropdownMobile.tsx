@@ -68,13 +68,13 @@ const DropdownMobile: React.FC = () => {
     mobileDropdownState
   )
 
-  const wrapperRef = React.useRef<HTMLDivElement>()
+  const wrapperRef = React.useRef<any>()
 
   useEffect(() => {
     if (toggleDropdown) {
-      disableBodyScroll(wrapperRef.current!)
+      disableBodyScroll(wrapperRef.current)
     } else {
-      enableBodyScroll(wrapperRef.current!)
+      enableBodyScroll(wrapperRef.current)
     }
 
     return () => {
@@ -88,12 +88,12 @@ const DropdownMobile: React.FC = () => {
         {toggleDropdown && (
           <>
             <DropdownWrapper
+              id="dropdown-wrapper"
               initial={{ y: 400, x: '-50%' }}
               animate={{ y: 0 }}
               exit={{ y: 400 }}
               transition={{ type: 'spring', damping: 18 }}
               isRootOrLogin={isRootOrLogin}
-              // @ts-ignore
               ref={wrapperRef}
             >
               <DropdownList

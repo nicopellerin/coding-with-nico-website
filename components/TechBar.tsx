@@ -9,6 +9,7 @@ const techImages = [
   { tech: 'graphql', logo: '/images/tech/graphql.png' },
   { tech: 'javascript', logo: '/images/tech/javascript.png' },
   { tech: 'rust', logo: '/images/tech/rust.png' },
+  { tech: 'nextjs', logo: '/images/tech/nextjs.png' },
 ]
 
 const list = {
@@ -69,7 +70,7 @@ export default TechBar
 const Wrapper = styled(motion.div)`
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(6, auto);
   gap: 3rem;
   margin-left: 0rem;
   margin-bottom: 4rem;
