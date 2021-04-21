@@ -11,6 +11,7 @@ import LayoutTipsTricks from '../../../components/Layout/LayoutTipsTricks'
 import { Share } from '../../../components/Share'
 
 import { getAllPosts, getPostBySlug, Post } from '../../../data/api'
+import Counter from '../../../components/Counter'
 
 interface Props {
   post: Post
@@ -39,6 +40,7 @@ const TipsTricksPost: FC<Props> = ({ post, tech }) => {
         <Share
           url={`https://codingwithnico.com/tips-tricks/${tech}/${post.slug}`}
         />
+        <Counter slug={router.query.slug as string} />
       </LayoutTipsTricks>
     </>
   )
