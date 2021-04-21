@@ -10,6 +10,7 @@ import LayoutBlog from '../../components/Layout/LayoutBlog'
 import { Share } from '../../components/Share'
 
 import { getAllPosts, getPostBySlug, Post } from '../../data/api'
+import Counter from '../../components/Counter'
 
 interface Props {
   post: Post
@@ -56,6 +57,7 @@ const BlogPost: FC<Props> = ({ post }) => {
         </Info>
         <MDX>{post.content}</MDX>
         <Share url={`https://codingwithnico.com/blog/${post.slug}`} />
+        <Counter slug={post.slug} />
       </LayoutBlog>
     </>
   )
