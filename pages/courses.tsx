@@ -22,18 +22,6 @@ const CoursesPage = () => {
           >
             Learn new coding skills <span role="icon">&#128640;</span>
           </Title>
-          {/* <Tagline
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              type: 'spring',
-              damping: 18,
-              stiffness: 60,
-              delay: 0.1,
-            }}
-          >
-            Here you will find courses I offer to help improve your knowledge
-          </Tagline> */}
           <CoursesList />
         </Container>
       </Wrapper>
