@@ -10,9 +10,9 @@ const Counter: FC<Props> = ({ slug }) => {
   const [hits, setHits] = useState<number | undefined>(undefined)
 
   useEffect(() => {
-    if (process.env.NODE_ENV !== 'production') {
-      return
-    }
+    // if (process.env.NODE_ENV !== 'production') {
+    //   return
+    // }
 
     fetch(`/api/hits?slug=${slug}`)
       .then((res) => res.json())
@@ -49,5 +49,5 @@ const Wrapper = styled.div`
 const Text = styled.span`
   font-size: 1.4rem;
   font-weight: 500;
-  color: var(--textColor);
+  color: var(--primaryColorLight);
 `
