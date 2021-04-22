@@ -104,11 +104,11 @@ export default PageHero
 const Wrapper = styled.div`
   height: 36vh;
   background: linear-gradient(45deg);
-  /* background: hsl(257, 58%, 11%); */
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 
   @media (max-width: 600px) {
     height: 42vh;

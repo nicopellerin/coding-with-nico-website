@@ -222,11 +222,11 @@ const InputField = styled.input`
   font-family: inherit;
   border: 1px solid #222;
   height: 5rem;
-  margin-right: 2rem;
   -webkit-appearance: none;
   width: 100%;
 
   @media (min-width: 768px) {
+    margin-right: 2rem;
     min-width: 40rem;
   }
 `
@@ -367,7 +367,7 @@ const DurationText = styled.span`
 
 const FormStyled = styled.form`
   background: #001;
-  padding-top: 20px;
+  padding-top: 4rem;
 `
 
 const Note = styled.span`

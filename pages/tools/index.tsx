@@ -9,12 +9,14 @@ const ToolsPage = () => {
     <>
       <LayoutTipsTricks title="Tools" showTechBar={false}>
         <Wrapper>
-          <ToolsCard
-            title="OpenGraph + Errors Crawler"
-            image={'/images/card-ogcrawler.webp'}
-            link="/tools/og-errors-crawler"
-            tech="golang"
-          />
+          <Container>
+            <ToolsCard
+              title="OpenGraph + Errors Crawler"
+              image={'/images/card-ogcrawler.webp'}
+              link="/tools/og-errors-crawler"
+              tech="golang"
+            />
+          </Container>
         </Wrapper>
       </LayoutTipsTricks>
     </>
@@ -40,4 +42,8 @@ const Wrapper = styled.div`
   @media (max-width: 500px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+`
+
+const Container = styled.div`
+  padding: 2rem 0;
 `
