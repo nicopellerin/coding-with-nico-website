@@ -1,0 +1,34 @@
+---
+title: 'Using environment variables in development with Next.js'
+tech: 'nextjs'
+date: 1617644149294
+ogImage:
+  url: '/og-image.jpg'
+---
+
+# Using environment variables in development with Next.js
+
+To use environment variables in development, you first need to create an `.env.local` file. Secondly, by default,
+all environment variables loading through `.env.local` are only available in the Node.js environment. This means that if your variable
+is going to be accessed on the client-side/browser, it's needs to be prefixed with `NEXT_PUBLIC_`.
+
+Here's an example:
+
+```jsx
+.env.local
+
+// Variable accessed on server-side/API
+const SOME_SECRET = sdfgjsdf9324324324
+
+// Variable access on client-side
+const NEXT_PUBLIC_SOME_PRIVATE_KEY=3458425nsfd
+```
+
+<Spacer height={10} />
+
+```jsx
+someClientSideFile.jsx
+
+// Here's how you access the variable on frontend
+const myPrivateKey = process.env.NEXT_PUBLIC_SOME_PRIVATE_KEY
+```
