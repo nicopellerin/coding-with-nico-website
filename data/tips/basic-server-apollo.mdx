@@ -1,38 +1,21 @@
 ---
-title: 'Basic Server with Apollo'
+title: 'Send credentials to Apollo Graphql Playground'
 tech: 'graphql'
 date: 1617644149294
 ogImage:
   url: '/og-image.jpg'
 ---
 
-# Basic Server with Apollo
+# Send credentials to Apollo Graphql Playground
 
 ```jsx
-const { ApolloServer, gql } = require('apollo-server')
-
-// Graphql schema
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-// Resolvers
-const resolvers = {
-  Query: {
-    hello: () => 'functionsnstuff',
-  },
-}
-
-// Create server
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-})
-
-// Listen to server
-server.listen().then(({ url }) => {
-  console.log(`Server listening at ${url}`)
+  playground: {
+    settings: {
+      'request.credentials': 'include',
+    },
+  },
 })
 ```
