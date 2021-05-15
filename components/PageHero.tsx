@@ -19,7 +19,7 @@ const PageHero: React.FC<Props> = ({
       <Title
         initial={{ opacity: 0, y: 200 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ type: 'spring', damping: 16, bounce: 0.5 }}
+        transition={{ type: 'spring', damping: 18, bounce: 0.5 }}
       >
         {title}
       </Title>
