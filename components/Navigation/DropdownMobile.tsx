@@ -64,17 +64,14 @@ const DropdownMobile: React.FC = () => {
   const { pathname } = useRouter()
   const isRootOrLogin = pathname === '/' || pathname.includes('login')
 
-  const [toggleDropdown, setToggleDropdown] = useRecoilState(
-    mobileDropdownState
-  )
-
-  const wrapperRef = React.useRef<any>()
+  const [toggleDropdown, setToggleDropdown] =
+    useRecoilState(mobileDropdownState)
 
   useEffect(() => {
     if (toggleDropdown) {
-      disableBodyScroll(wrapperRef.current)
+      disableBodyScroll(document.getElementById('dropdown-wrapper')!)
     } else {
-      enableBodyScroll(wrapperRef.current)
+      enableBodyScroll(document.getElementById('dropdown-wrapper')!)
     }
 
     return () => {
@@ -94,7 +91,6 @@ const DropdownMobile: React.FC = () => {
               exit={{ y: 400 }}
               transition={{ type: 'spring', damping: 18 }}
               isRootOrLogin={isRootOrLogin}
-              ref={wrapperRef}
             >
               <DropdownList
                 variants={listVariants}
