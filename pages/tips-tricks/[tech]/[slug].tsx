@@ -1,6 +1,14 @@
 import * as React from 'react'
 import { FC } from 'react'
-import MDX from '@mdx-js/runtime'
+import dynamic from 'next/dynamic'
+import { ChasingDots } from 'better-react-spinkit'
+const MDX = dynamic(() => import('@mdx-js/runtime'), {
+  loading: () => (
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <ChasingDots color="white" size={48} />
+    </div>
+  ),
+})
 import { join } from 'path'
 import { motion } from 'framer-motion'
 import styled from 'styled-components'
@@ -9,9 +17,9 @@ import { useRouter } from 'next/router'
 
 import LayoutTipsTricks from '../../../components/Layout/LayoutTipsTricks'
 import { Share } from '../../../components/Share'
+import Counter from '../../../components/Counter'
 
 import { getAllPosts, getPostBySlug, Post } from '../../../data/api'
-import Counter from '../../../components/Counter'
 
 interface Props {
   post: Post

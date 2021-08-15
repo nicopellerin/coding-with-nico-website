@@ -1,6 +1,14 @@
 import * as React from 'react'
 import { FC } from 'react'
-import MDX from '@mdx-js/runtime'
+import dynamic from 'next/dynamic'
+import { ChasingDots } from 'better-react-spinkit'
+const MDX = dynamic(() => import('@mdx-js/runtime'), {
+  loading: () => (
+    <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <ChasingDots color="white" size={48} />
+    </div>
+  ),
+})
 import styled from 'styled-components'
 import { FaCalendar } from 'react-icons/fa'
 import { format } from 'date-fns'
