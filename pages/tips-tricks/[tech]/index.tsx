@@ -29,7 +29,7 @@ const TipsAndTricksPage: FC<Props> = ({ posts, tech }) => {
           <Tech>{tech}</Tech>
           <CardList>
             {posts.map((post) => (
-              <Card {...post} />
+              <Card key={post.title} {...post} />
             ))}
           </CardList>
         </TemplateContainer>

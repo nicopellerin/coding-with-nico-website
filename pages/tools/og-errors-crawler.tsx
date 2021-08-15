@@ -99,7 +99,7 @@ const OgCrawler = () => {
         {duration === 0 && !isFetching && (
           <>
             <DurationCrawl>
-              Enter a URL to fetch the website's pages Open Graph info and
+              Enter a URL to fetch the website&apos;s pages Open Graph info and
               errors.
             </DurationCrawl>
             <Note>
@@ -122,7 +122,7 @@ const OgCrawler = () => {
                   <a
                     href={error.split(' ')[1]}
                     target="_blank"
-                    rel="nofollowers"
+                    rel="noreferrer"
                   >
                     {error.split(' ')[1]}
                   </a>
@@ -154,7 +154,7 @@ const OgCrawler = () => {
                         <Content>
                           <OgTitle>{title}</OgTitle>
                           <OgDescription>{description}</OgDescription>
-                          <a href={pageUrl} target="_blank" rel="nofollower">
+                          <a href={pageUrl} target="_blank" rel="noreferrer">
                             <PageUrl>{pageUrl}</PageUrl>
                           </a>
                         </Content>
@@ -336,7 +336,7 @@ const Button = styled(motion.button)`
   border-radius: 5px;
   background: #cc4bc2;
   color: var(--pinkTextColor);
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;

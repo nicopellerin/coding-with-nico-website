@@ -86,9 +86,9 @@ const DropdownMobile: React.FC = () => {
           <>
             <DropdownWrapper
               id="dropdown-wrapper"
-              initial={{ y: 400, x: '-50%' }}
+              initial={{ y: 410, x: '-50%' }}
               animate={{ y: 0 }}
-              exit={{ y: 400 }}
+              exit={{ y: 410 }}
               transition={{ type: 'spring', damping: 18 }}
               isRootOrLogin={isRootOrLogin}
             >

@@ -19,13 +19,13 @@ const SoundControl = () => {
 
   useEffect(() => {
     setAudioOn(storage)
-  }, [storage])
+  }, [storage, setAudioOn])
 
   useEffect(() => {
     if (isMobile) {
       setAudioOn(false)
     }
-  }, [isMobile])
+  }, [isMobile, setAudioOn])
 
   let tocSound: HTMLAudioElement
 

@@ -24,12 +24,13 @@ const AboutPage = () => {
                   delay: 0.1,
                 }}
               >
-                Hi! I'm Nico &#128400;{' '}
+                Hi! I&apos;m Nico &#128400;{' '}
                 <picture>
                   <source srcSet="/images/icon-books.webp" type="image/webp" />
                   <img
                     src="/images/icon-books.png"
                     style={{ width: '5rem', marginLeft: 12 }}
+                    alt=""
                   />
                 </picture>
               </Welcome>
@@ -43,10 +44,11 @@ const AboutPage = () => {
                   delay: 0.1,
                 }}
               >
-                Based out of Montreal, Canada, I'm a developer with a passion
-                for all things tech. Currently employed as an application
-                developer, I enjoy continually learning new concepts and staying
-                up-to-date with the latest tech in this fast-paced environment.
+                Based out of Montreal, Canada, I&apos;m a developer with a
+                passion for all things tech. Currently employed as an
+                application developer, I enjoy continually learning new concepts
+                and staying up-to-date with the latest tech in this fast-paced
+                environment.
               </Text>
               <Text
                 initial={{ opacity: 0, y: -10 }}

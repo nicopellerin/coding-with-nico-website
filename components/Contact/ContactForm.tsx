@@ -285,9 +285,11 @@ const Button = styled(motion.button)`
   font-weight: 600;
   display: flex;
   align-items: center;
+  justify-content: center;
   cursor: pointer;
   will-change: transform;
   filter: drop-shadow(0 0 0.75rem rgba(204, 75, 194, 0.5));
+  min-width: 180px;
 
   @media (max-width: 500px) {
     width: 100%;

@@ -1,6 +1,8 @@
-import { createGlobalStyle } from "styled-components"
+import { normalize } from 'polished'
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
+${normalize()}
 
 :root {
   --primaryColor: hsl(257, 98%, 76%);

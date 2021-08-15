@@ -19,7 +19,7 @@ const HeroButton = () => {
   const playSound = () => audioOn && clickSound.play()
 
   return (
-    <Link href="/courses">
+    <Link href="/tips-tricks">
       <a>
         <Button
           whileHover={{ scale: 1.02 }}

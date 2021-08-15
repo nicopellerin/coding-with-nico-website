@@ -18,7 +18,7 @@ const Me = () => {
       skewY: [-5, 2],
     })
     return () => controls.stop()
-  }, [])
+  }, [controls])
 
   const audioOn = useRecoilValue(audioOnState)
 

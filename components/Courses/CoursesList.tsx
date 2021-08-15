@@ -9,8 +9,7 @@ const coursesData = [
     url: 'https://learnframermotion.com',
     img: '/images/og-image.jpg',
     techs: ['react', 'framer-motion'],
-    desc:
-      'Interactive video course that teaches you all things animation using the powerful React library Framer Motion.',
+    desc: 'Interactive video course that teaches you all things animation using the powerful React library Framer Motion.',
   },
 ]
 
@@ -28,7 +27,7 @@ const CoursesList = () => {
     >
       {coursesData.map(({ title, img, url, desc, techs }) => (
         <CourseCard key={url}>
-          <a href={url} target="_blank" rel="noopener">
+          <a href={url} target="_blank" rel="noreferrer">
             <CourseCardImage src={img} alt={title} />
           </a>
           <CourseCardInfo>
@@ -37,13 +36,14 @@ const CoursesList = () => {
               {techs.map((tech) => (
                 <img
                   src={`/images/tech/${tech}.png`}
+                  key={tech}
                   alt={tech}
                   style={{ maxWidth: 30 }}
                 />
               ))}
             </TechsGrid>
             <CourseCardDesc>{desc}</CourseCardDesc>
-            <a href={url} target="_blank" rel="noopener">
+            <a href={url} target="_blank" rel="noreferrer">
               <Button whileHover={{ y: -1 }}>
                 Learn more <FaRocket style={{ marginLeft: 7 }} />
               </Button>

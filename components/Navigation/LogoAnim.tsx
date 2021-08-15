@@ -26,7 +26,7 @@ const LogoAnim = () => {
         rotate: [0, 360],
       })
     }
-  }, [isHover])
+  }, [isHover, controls])
 
   return (
     <div
