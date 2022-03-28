@@ -2,6 +2,7 @@ import * as React from 'react'
 import { FC } from 'react'
 import dynamic from 'next/dynamic'
 import { ChasingDots } from 'better-react-spinkit'
+// @ts-ignore
 const MDX = dynamic(() => import('@mdx-js/runtime'), {
   loading: () => (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
