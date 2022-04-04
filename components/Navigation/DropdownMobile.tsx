@@ -23,8 +23,7 @@ const listVariants = {
     y: 0,
     transition: {
       type: 'spring',
-      damping: 10,
-      stiffness: 80,
+      damping: 12,
       velocity: 2,
       staggerChildren: 0.1,
     },
@@ -33,8 +32,7 @@ const listVariants = {
     opacity: 0,
     transition: {
       type: 'spring',
-      damping: 18,
-      stiffness: 80,
+      damping: 14,
       staggerChildren: 0.3,
     },
   },
@@ -50,8 +48,7 @@ const itemVariants = {
     y: 0,
     transition: {
       type: 'spring',
-      damping: 10,
-      stiffness: 80,
+      damping: 12,
     },
   },
 }
@@ -89,7 +86,7 @@ const DropdownMobile: React.FC = () => {
               initial={{ y: 410, x: '-50%' }}
               animate={{ y: 0 }}
               exit={{ y: 410 }}
-              transition={{ type: 'spring', damping: 18 }}
+              transition={{ type: 'spring', damping: 16 }}
               isRootOrLogin={isRootOrLogin}
             >
               <DropdownList
@@ -206,7 +203,7 @@ const DropdownMobile: React.FC = () => {
                 initial={{ x: '-50%', y: 100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 100, opacity: 0 }}
-                transition={{ type: 'spring', damping: 18, delay: 0.1 }}
+                transition={{ type: 'spring', damping: 16, delay: 0.1 }}
                 onClick={() => setToggleDropdown(false)}
               >
                 <FaTimes

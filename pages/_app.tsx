@@ -15,7 +15,6 @@ import '@fontsource/space-grotesk/500.css'
 
 import Navbar from '../components/Navigation/Navbar'
 import NavbarMobile from '../components/Navigation/NavbarMobile'
-import DropdownMobile from '../components/Navigation/DropdownMobile'
 const Background = dynamic(() => import('../components/ThreeDee/Background'), {
   ssr: false,
 })
@@ -38,7 +37,6 @@ const MyApp = ({ Component, pageProps }: any) => {
         <NavbarMobile />
         {router.pathname !== '/' && <Background bgColor="#001" />}
         <Component {...pageProps} />
-        <DropdownMobile />
         <GlobalStyles />
       </RecoilRoot>
     </>

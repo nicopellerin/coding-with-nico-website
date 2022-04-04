@@ -1,13 +1,14 @@
 import * as React from 'react'
 import { Canvas } from '@react-three/fiber'
 import * as THREE from 'three'
-import Stars from './Stars'
 import {
   EffectComposer,
   DepthOfField,
   Bloom,
   Vignette,
 } from '@react-three/postprocessing'
+
+import Stars from './Stars'
 
 interface Props {
   bgColor?: string
@@ -31,6 +32,7 @@ const Background: React.FC<Props> = ({ bgColor }) => {
         antialias: false,
         stencil: false,
       }}
+      dpr={[1, 2]}
       onCreated={({ gl }) => {
         gl.toneMapping = THREE.ACESFilmicToneMapping
         gl.setClearColor(new THREE.Color(`${bgColor}`))

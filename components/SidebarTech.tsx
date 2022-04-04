@@ -23,7 +23,7 @@ const SidebarTech = () => {
     <Wrapper
       initial={{ x: 100 }}
       animate={{ x: open ? 0 : '6.8rem' }}
-      transition={{ type: 'spring', damping: 18 }}
+      transition={{ type: 'spring', damping: 14 }}
     >
       <Bar onClick={() => setOpen((prevState) => !prevState)}>
         {open ? (

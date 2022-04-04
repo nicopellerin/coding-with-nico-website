@@ -14,17 +14,15 @@ const techImages = [
 
 const list = {
   visible: {
-    opacity: 1,
     transition: {
       delay: 0.5,
       when: 'beforeChildren',
-      staggerChildren: 0.3,
+      staggerChildren: 0.2,
       type: 'spring',
-      damping: 18,
+      damping: 14,
     },
   },
   hidden: {
-    opacity: 0,
     transition: {
       when: 'afterChildren',
     },
@@ -33,7 +31,7 @@ const list = {
 
 const item = {
   visible: { opacity: 1, x: 0 },
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -30 },
 }
 
 const TechBar = () => {
@@ -50,7 +48,7 @@ const TechBar = () => {
               <Logo
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
-                transition={{ type: 'spring', damping: 18 }}
+                transition={{ type: 'spring', damping: 16 }}
                 key={tech}
                 src={logo}
                 alt={tech}

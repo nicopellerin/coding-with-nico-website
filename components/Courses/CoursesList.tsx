@@ -20,8 +20,7 @@ const CoursesList = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{
         type: 'spring',
-        damping: 18,
-        stiffness: 60,
+        damping: 14,
         delay: 0.3,
       }}
     >

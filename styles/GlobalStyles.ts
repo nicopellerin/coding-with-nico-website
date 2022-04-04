@@ -34,17 +34,17 @@ ${normalize()}
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 52.5%;
   box-sizing: border-box;
   height: 100%;
   min-height: 100%;
-
-  @media (max-width: 1500px) {
+  
+  @media (min-width: 1024px) {
     font-size: 56.25%;
   }
-
-  @media (max-width: 1024px) {
-    font-size: 52.5%;
+  
+  @media (min-width: 1500px) {
+    font-size: 62.5%;
   }
 }
 

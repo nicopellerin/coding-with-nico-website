@@ -14,7 +14,7 @@ const HeroBackground: FC = () => {
           <Title
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ type: 'spring', damping: 18, stiffness: 60 }}
+            transition={{ type: 'spring', damping: 14 }}
           >
             Upgrade your coding skills
           </Title>
@@ -23,8 +23,8 @@ const HeroBackground: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{
               type: 'spring',
-              damping: 18,
-              stiffness: 60,
+              damping: 14,
+              // stiffness: 60,
               delay: 0.2,
             }}
           >
@@ -58,8 +58,7 @@ const HeroBackground: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{
               type: 'spring',
-              damping: 18,
-              stiffness: 60,
+              damping: 14,
               delay: 0.2,
             }}
           />
