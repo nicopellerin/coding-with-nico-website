@@ -45,10 +45,9 @@ const AboutPage = () => {
                 }}
               >
                 Based out of Montreal, Canada, I&apos;m a developer with a
-                passion for all things tech. Currently employed as an
-                application developer, I enjoy continually learning new concepts
-                and staying up-to-date with the latest tech in this fast-paced
-                environment.
+                passion for all things tech. Currently employed as a front-end
+                developer, I enjoy continually learning new concepts and staying
+                up-to-date with the latest tech in this fast-paced environment.
               </Text>
               <Text
                 initial={{ opacity: 0, y: -10 }}
