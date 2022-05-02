@@ -20,7 +20,6 @@ const AboutPage = () => {
                 transition={{
                   type: 'spring',
                   damping: 14,
-                  // stiffness: 60,
                   delay: 0.1,
                 }}
               >

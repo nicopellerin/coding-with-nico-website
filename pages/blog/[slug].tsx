@@ -1,15 +1,5 @@
 import * as React from 'react'
 import { FC } from 'react'
-import dynamic from 'next/dynamic'
-import { ChasingDots } from 'better-react-spinkit'
-// @ts-ignore
-const MDX = dynamic(() => import('@mdx-js/runtime'), {
-  loading: () => (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <ChasingDots color="white" size={48} />
-    </div>
-  ),
-})
 import styled from 'styled-components'
 import { FaCalendar } from 'react-icons/fa'
 import { format } from 'date-fns'
@@ -17,9 +7,10 @@ import Head from 'next/head'
 
 import LayoutBlog from '../../components/Layout/LayoutBlog'
 import { Share } from '../../components/Share'
+import Counter from '../../components/Counter'
+import Content from '../../components/Blog/Content'
 
 import { getAllPosts, getPostBySlug, Post } from '../../data/api'
-import Counter from '../../components/Counter'
 
 interface Props {
   post: Post
@@ -64,7 +55,7 @@ const BlogPost: FC<Props> = ({ post }) => {
             {format(post.date, 'MMMM d, yyyy')}
           </PostDate>
         </Info>
-        <MDX>{post.content}</MDX>
+        <Content post={post} />
         <Share url={`https://codingwithnico.com/blog/${post.slug}`} />
         <Counter slug={post.slug} />
       </LayoutBlog>
